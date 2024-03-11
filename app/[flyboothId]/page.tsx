@@ -153,7 +153,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
             onClick={copyURL}
           >
             {!hasCopied
-              ? "Copie l'URL de la page"
+              ? "Copier l'URL de la page"
               : "URL copié dans le presse-papier"}
           </MotionButton>
         </Box>
@@ -211,7 +211,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
               </Center>
               <Link target="_blank" href={`${flyboothId}/upload`}>
                 <MotionButton rightIcon={<ArrowForwardIcon />} size={"lg"}>
-                  {"Accède à l'interface"}
+                  {"Accéder à l'interface"}
                 </MotionButton>
               </Link>
 
@@ -233,7 +233,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
                   onClick={() => printQRCode()}
                   size={"lg"}
                 >
-                  Imprime
+                  Imprimer
                 </MotionButton>
               </Box>
             </Box>
@@ -347,7 +347,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
 
               <Heading size={"md"} pb={7}>
                 {
-                  "Et pour finir, réinitialise cette page pour ton prochain événement !"
+                  "Et pour finir, réinitialise cette page pour ton prochain événement."
                 }
               </Heading>
               <Link href={"/"}>
