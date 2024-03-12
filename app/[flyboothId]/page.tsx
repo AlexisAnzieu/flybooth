@@ -90,7 +90,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
   const onInitHandler = async ({ conductor }: any) => {
     const shortLink = await fetchShortLink(flyboothId);
     if (!shortLink) {
-      conductor.run({ speed: 30, duration: 1000 });
+      conductor.run({ speed: 30, duration: 2000 });
       return;
     }
     setHasSavedLink(true);
