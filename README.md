@@ -31,7 +31,6 @@ As a venue organizer, I wanted to create an app so people could post some pictur
 
 ## Features
 
-- Automatic picture deletion after a certain time
 - Dynamic QR code generation
 - Email sending
 - Image moderation through IA
@@ -43,7 +42,6 @@ As a venue organizer, I wanted to create an app so people could post some pictur
 ### to be added:
 
 - internationalization
-- colors customization
 
 ## Tiers
 
