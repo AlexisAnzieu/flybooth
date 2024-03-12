@@ -11,9 +11,7 @@ import {
 } from "@react-email/components";
 import * as React from "react";
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "https://flybooth.app";
+const BASE_URL = "https://flybooth.app";
 
 export const SendLink = ({ flyboothId }: any) => (
   <Html>
@@ -26,7 +24,7 @@ export const SendLink = ({ flyboothId }: any) => (
           {" Voici un lien qui te permettra d'y accéder en tout temps."}
         </Text>
         <Section style={btnContainer}>
-          <Button style={button} href={`${baseUrl}/${flyboothId}`}>
+          <Button style={button} href={`${BASE_URL}/${flyboothId}`}>
             Accéder à ton Flybooth
           </Button>
         </Section>
