@@ -34,7 +34,7 @@ import {
   AiOutlineMail,
   AiOutlineSend,
 } from "react-icons/ai";
-import Fireworks from "react-canvas-confetti/dist/presets/fireworks";
+import Pride from "react-canvas-confetti/dist/presets/pride";
 
 export type PageProps = {
   params: { flyboothId: string };
@@ -82,24 +82,23 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
   const { onCopy, hasCopied, setValue } = useClipboard("");
   const qrCodeRef = useRef(null);
   const [hasSavedLink, setHasSavedLink] = useState(false);
+
   const [sendingEmail, setSendingEmail] = useState(false);
   const [isSendingEmail, setIsSendingEmail] = useState(false);
-
   const [email, setEmail] = useState("");
 
-  useEffect(() => {
-    const initFlybooth = async () => {
-      const shortLink = await fetchShortLink(flyboothId);
-      if (shortLink) {
-        setHasSavedLink(true);
-        const interfaceType = await fetchInterfaceType(flyboothId);
-        if (interfaceType) {
-          setInterfaceType(interfaceType);
-        }
-      }
-    };
-    initFlybooth();
-  }, [flyboothId]);
+  const onInitHandler = async ({ conductor }: any) => {
+    const shortLink = await fetchShortLink(flyboothId);
+    if (!shortLink) {
+      conductor.run({ speed: 30, duration: 1000 });
+      return;
+    }
+    setHasSavedLink(true);
+    const interfaceType = await fetchInterfaceType(flyboothId);
+    if (interfaceType) {
+      setInterfaceType(interfaceType);
+    }
+  };
 
   useEffect(() => {
     setValue(
@@ -161,9 +160,8 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
 
   return (
     <Box bgColor={"purple"} minH={"100vh"}>
-      {!hasSavedLink && (
-        <Fireworks autorun={{ speed: 3, duration: 1000, delay: 1 }} />
-      )}
+      <Pride onInit={onInitHandler} />
+
       <Container maxW="3xl" textAlign={"center"} color={"white"} pt={10}>
         <Heading size={"xl"}>{"  Bienvenue dans ton flybooth !"}</Heading>
         <Box className="step" borderRadius={20} pb="10" boxShadow={"2xl"}>
