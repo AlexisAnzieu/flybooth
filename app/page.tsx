@@ -12,6 +12,12 @@ import {
   PinInputField,
   useToast,
   Icon,
+  useDisclosure,
+  Modal,
+  ModalBody,
+  Heading,
+  ModalContent,
+  ModalOverlay,
 } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { v4 as uuidv4 } from "uuid";
@@ -21,12 +27,14 @@ import { useState } from "react";
 import MotionButton from "@/component/motion-button";
 import { FaGithub, FaEnvelope, FaRegHeart } from "react-icons/fa";
 import Link from "next/link";
+import { QuestionIcon } from "@chakra-ui/icons";
 
 export default function Index() {
   const router = useRouter();
   const toast = useToast();
   const [isInvalid, setIsInvalid] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleGenerate = () => {
     setIsLoading(true);
@@ -110,91 +118,10 @@ export default function Index() {
             <PinInputField mr={2} />
           </PinInput>
         </Box>
-        <Box pt={100}>
-          <Box pb={5} fontWeight={"600"} fontSize={20}>
-            Foire Aux Questions
-          </Box>
-          <Accordion>
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box as="span" flex="1">
-                    Est-ce gratuit?
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                {`Oui, aucun frais ou compte n'est requis pour utiliser Flybooth. En outre le code source est intégralement disponible sans restriction de copyright.`}
-              </AccordionPanel>
-            </AccordionItem>
 
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box as="span" flex="1">
-                    Comment ça marche ?
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                {`Dédié au organisateurs d'événements, Flybooth est un photobooth
-                en ligne qui permet aux participants de prendre des photos ou
-                d'envoyer des messages à partir de leur smartphone. Les photos
-                et messages peuvent ensuite être projeté en temps réel sur le
-                matériel mis en place par l'organisateur.`}
-              </AccordionPanel>
-            </AccordionItem>
-
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box as="span" flex="1">
-                    Est-il possible de modérer les photos ?
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                {
-                  "Afin de limiter l'activité manuel de l'organisateur au cours de l'événement, les photos inappropriées sont automatiquement supprimées. Il est important de préciser que l'algorithme n'est cependant pas infaillible."
-                }
-              </AccordionPanel>
-            </AccordionItem>
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box as="span" flex="1">
-                    Combien de temps les photos sont-elles conservées ?
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                {
-                  "Les photos sont conservées 7 jours durant lesquels les participants peuvent les revisionner ou les télécharger à partir d'une galerie dédiée."
-                }
-              </AccordionPanel>
-            </AccordionItem>
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box as="span" flex="1">
-                    Combien de photos les participants peuvent-ils poster ?
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                {
-                  "Les participants peuvent poster jusqu'à 1000 photos par événement. Cette limite peut-être augmentée par palier de 10$/1000 photos additionnelles. Plus d'information par courriel."
-                }
-              </AccordionPanel>
-            </AccordionItem>
-          </Accordion>
+        <Box pt={20} cursor={"pointer"} fontSize={50}>
+          <QuestionIcon onClick={onOpen} />
         </Box>
-
         <Box flexGrow={1} minH={35}></Box>
 
         <Box
@@ -231,6 +158,96 @@ export default function Index() {
             </Link>
           </Box>
         </Box>
+
+        <Modal isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent p={2}>
+            <ModalBody>
+              <Heading textAlign={"center"} as="h2" size="md" mb={4}>
+                Foire Aux Questions
+              </Heading>
+              <Accordion>
+                <AccordionItem>
+                  <h2>
+                    <AccordionButton>
+                      <Box as="span" flex="1">
+                        Est-ce gratuit?
+                      </Box>
+                      <AccordionIcon />
+                    </AccordionButton>
+                  </h2>
+                  <AccordionPanel pb={4}>
+                    {`Oui, aucun frais ou compte n'est requis pour utiliser Flybooth. En outre le code source est intégralement disponible sans restriction de copyright.`}
+                  </AccordionPanel>
+                </AccordionItem>
+
+                <AccordionItem>
+                  <h2>
+                    <AccordionButton>
+                      <Box as="span" flex="1">
+                        Comment ça marche ?
+                      </Box>
+                      <AccordionIcon />
+                    </AccordionButton>
+                  </h2>
+                  <AccordionPanel pb={4}>
+                    {`Dédié au organisateurs d'événements, Flybooth est un photobooth
+                en ligne qui permet aux participants de prendre des photos ou
+                d'envoyer des messages à partir de leur smartphone. Les photos
+                et messages peuvent ensuite être projeté en temps réel sur le
+                matériel mis en place par l'organisateur.`}
+                  </AccordionPanel>
+                </AccordionItem>
+
+                <AccordionItem>
+                  <h2>
+                    <AccordionButton>
+                      <Box as="span" flex="1">
+                        Est-il possible de modérer les photos ?
+                      </Box>
+                      <AccordionIcon />
+                    </AccordionButton>
+                  </h2>
+                  <AccordionPanel pb={4}>
+                    {
+                      "Afin de limiter l'activité manuel de l'organisateur au cours de l'événement, les photos inappropriées sont automatiquement supprimées. Il est important de préciser que l'algorithme n'est cependant pas infaillible."
+                    }
+                  </AccordionPanel>
+                </AccordionItem>
+                <AccordionItem>
+                  <h2>
+                    <AccordionButton>
+                      <Box as="span" flex="1">
+                        Combien de temps les photos sont-elles conservées ?
+                      </Box>
+                      <AccordionIcon />
+                    </AccordionButton>
+                  </h2>
+                  <AccordionPanel pb={4}>
+                    {
+                      "Les photos sont conservées 7 jours durant lesquels les participants peuvent les revisionner ou les télécharger à partir d'une galerie dédiée."
+                    }
+                  </AccordionPanel>
+                </AccordionItem>
+                <AccordionItem>
+                  <h2>
+                    <AccordionButton>
+                      <Box as="span" flex="1">
+                        Combien de photos les participants peuvent-ils poster ?
+                      </Box>
+                      <AccordionIcon />
+                    </AccordionButton>
+                  </h2>
+                  <AccordionPanel pb={4}>
+                    {
+                      "Les participants peuvent poster jusqu'à 1000 photos par événement. Cette limite peut-être augmentée par palier de 10$/1000 photos additionnelles. Plus d'information par courriel."
+                    }
+                  </AccordionPanel>
+                </AccordionItem>
+              </Accordion>
+            </ModalBody>
+          </ModalContent>
+        </Modal>
       </Container>
     </Box>
   );

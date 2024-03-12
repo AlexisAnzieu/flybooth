@@ -31,7 +31,7 @@ export const SendLink = ({ flyboothId }: any) => (
           </Button>
         </Section>
         <Text style={paragraph}>
-          À très bientôt!
+          À très bientôt !
           <br />
         </Text>
         <Hr style={hr} />

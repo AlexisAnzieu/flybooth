@@ -14,7 +14,6 @@ import {
 import {
   AbsoluteCenter,
   Box,
-  Button,
   Center,
   Container,
   Divider,
@@ -22,6 +21,7 @@ import {
   Icon,
   Input,
   Select,
+  Stack,
   useClipboard,
   useToast,
 } from "@chakra-ui/react";
@@ -128,7 +128,6 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
     flyboothId: string,
     email: string
   ): Promise<void> => {
-    setIsSendingEmail(true);
     const res = await fetch(
       `/api/send-email?flyboothId=${flyboothId}&email=${email}`,
       { method: "POST" }
@@ -187,7 +186,12 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
           <Box display={"flex"} justifyContent={"space-evenly"}>
             {sendingEmail && (
               <Box display={"flex"} alignItems={"center"}>
-                <form action={() => sendEmail(flyboothId, email)}>
+                <form
+                  action={() => {
+                    setIsSendingEmail(true);
+                    sendEmail(flyboothId, email);
+                  }}
+                >
                   <Input
                     w={180}
                     value={email}
@@ -196,16 +200,17 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
                     placeholder="Email"
                     _placeholder={{ color: "white" }}
                   />
-                  <Button
+                  <MotionButton
                     isLoading={isSendingEmail}
                     rightIcon={<AiOutlineSend />}
                     cursor={"pointer"}
                     fontSize={30}
                     ml={4}
                     type="submit"
-                  ></Button>
+                  ></MotionButton>
+
                   <CloseIcon
-                    ml={10}
+                    ml={5}
                     cursor={"pointer"}
                     onClick={() => setSendingEmail(false)}
                   />
@@ -214,7 +219,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
             )}
 
             {!sendingEmail && (
-              <>
+              <Stack direction={["column", "row"]} spacing={4}>
                 <MotionButton
                   rightIcon={hasCopied ? <CheckIcon /> : <CopyIcon />}
                   colorScheme={hasCopied ? "purple" : "gray"}
@@ -231,7 +236,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
                 >
                   {"Envoyer par mail"}
                 </MotionButton>
-              </>
+              </Stack>
             )}
           </Box>
         </Box>
@@ -337,7 +342,11 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
                 }
               </Heading>
 
-              <Box display={"flex"} justifyContent={"space-evenly"}>
+              <Stack
+                justifyContent={"center"}
+                direction={["column", "row"]}
+                spacing={4}
+              >
                 {interfaceType !== InterfaceSections.messages && (
                   <Box pb={4}>
                     <Link target="_blank" href={`${flyboothId}/coverflow`}>
@@ -360,7 +369,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
                     </Link>
                   </Box>
                 )}
-              </Box>
+              </Stack>
 
               {interfaceType !== InterfaceSections.messages && (
                 <>
