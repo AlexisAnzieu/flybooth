@@ -28,6 +28,9 @@ import MotionButton from "@/component/motion-button";
 import { FaGithub, FaEnvelope, FaRegHeart } from "react-icons/fa";
 import Link from "next/link";
 import { QuestionIcon } from "@chakra-ui/icons";
+import { motion } from "framer-motion";
+
+const MotionIcon = motion(QuestionIcon);
 
 export default function Index() {
   const router = useRouter();
@@ -119,8 +122,17 @@ export default function Index() {
           </PinInput>
         </Box>
 
-        <Box pt={20} cursor={"pointer"} fontSize={50}>
-          <QuestionIcon onClick={onOpen} />
+        <Box pt={20}>
+          <MotionIcon
+            fontSize={50}
+            cursor={"pointer"}
+            whileHover={{ scale: 1.3 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "linear", duration: 0.2 }}
+            borderRadius={25}
+            boxShadow="dark-lg"
+            onClick={onOpen}
+          />
         </Box>
         <Box flexGrow={1} minH={35}></Box>
 
