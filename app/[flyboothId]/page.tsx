@@ -161,7 +161,9 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
 
   return (
     <Box bgColor={"purple"} minH={"100vh"}>
-      {!hasSavedLink && <Fireworks autorun={{ speed: 3, duration: 1000 }} />}
+      {!hasSavedLink && (
+        <Fireworks autorun={{ speed: 3, duration: 1000, delay: 1 }} />
+      )}
       <Container maxW="3xl" textAlign={"center"} color={"white"} pt={10}>
         <Heading size={"xl"}>{"  Bienvenue dans ton flybooth !"}</Heading>
         <Box className="step" borderRadius={20} pb="10" boxShadow={"2xl"}>
