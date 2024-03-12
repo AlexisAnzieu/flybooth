@@ -18,9 +18,10 @@
 
 <p align="center">
   <a href="#about">About</a> •
- <a href="#features">Features</a>
+  <a href="#features">Features</a> •
   <a href="#tiers">Tiers</a> •
   <a href="#installation">Installation</a> •
+  <a href="#architecture-diagram">Architecture Diagram</a>
 </p>
 
 ---
