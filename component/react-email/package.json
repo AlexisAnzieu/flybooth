@@ -1,0 +1,15 @@
+{
+  "name": "emails",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "email dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@react-email/components": "0.0.15",
+    "react-email": "2.1.0"
+  }
+}

@@ -31,13 +31,14 @@ As a venue organizer, I wanted to create an app so people could post some pictur
 
 ## Features
 
-- Picture upload
-- Picture download (single or bulk)
-- Picture coverflow style
-- Dynamic QR code generation
-- PIN for easy access on external screen
 - Automatic picture deletion after a certain time
+- Dynamic QR code generation
+- Email sending
 - Image moderation through IA
+- Picture coverflow style
+- Picture download (single or bulk)
+- Picture upload
+- PIN for easy access on external screen
 
 ### to be added:
 
@@ -48,14 +49,14 @@ As a venue organizer, I wanted to create an app so people could post some pictur
 
 This project uses free Saas products to run:
 
-- **Mysql Database**: PlanetScale
-- **Redis Database**: Upstash
-- **Cronjobs**: Upstash
-- **Image storage**: Cloudinary
-- **Image optimization**: Vercel
-- **Image moderation**: Sighengine
-- **Deployment**: Vercel
 - **Backend API**: Vercel
+- **Deployment**: Vercel
+- **Email sender** Resend
+- **Image moderation**: Sighengine
+- **Image optimization**: Vercel
+- **Image storage**: Cloudinary
+- **Mysql Database**: Turso
+- **Redis Database**: Upstash
 
 ## Installation
 
@@ -63,6 +64,7 @@ This project uses free Saas products to run:
 2. Install the dependencies by running `npm install`.
 3. Fill environment variables in a `.env.local` file at the root of the project. You can find the list of environment variables in the `.env.local.example` file.
 4. Run the development server by running `npm run dev`.
+5. (optionnal ) If you want to preview the email template, go to `./component/react-email`, type `npm i` then `npm run dev`.
 
 ## Architecture Diagram
 
@@ -111,5 +113,5 @@ sequenceDiagram
 ```mermaid
 sequenceDiagram
     Upstash->>+Flybooth: fetch delete-images endpoint
-    Flybooth->>+Cloudinary: delete all images older than 5 days
+    Flybooth->>+Cloudinary: delete all images older than 7 days
 ```

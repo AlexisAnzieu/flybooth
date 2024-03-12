@@ -7,19 +7,23 @@ import {
   ArrowForwardIcon,
   ChatIcon,
   CheckIcon,
+  CloseIcon,
   CopyIcon,
   RepeatIcon,
 } from "@chakra-ui/icons";
 import {
   AbsoluteCenter,
   Box,
+  Button,
   Center,
   Container,
   Divider,
   Heading,
   Icon,
+  Input,
   Select,
   useClipboard,
+  useToast,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -27,6 +31,8 @@ import {
   AiOutlinePicture,
   AiOutlineAppstore,
   AiFillPrinter,
+  AiOutlineMail,
+  AiOutlineSend,
 } from "react-icons/ai";
 
 export type PageProps = {
@@ -71,15 +77,20 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
     InterfaceSections.both
   );
 
+  const toast = useToast();
   const { onCopy, hasCopied, setValue } = useClipboard("");
   const qrCodeRef = useRef(null);
-  const [hasCopiedLink, setHasCopiedLink] = useState(false);
+  const [hasSavedLink, setHasSavedLink] = useState(false);
+  const [sendingEmail, setSendingEmail] = useState(false);
+  const [isSendingEmail, setIsSendingEmail] = useState(false);
+
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     const initFlybooth = async () => {
       const shortLink = await fetchShortLink(flyboothId);
       if (shortLink) {
-        setHasCopiedLink(true);
+        setHasSavedLink(true);
         const interfaceType = await fetchInterfaceType(flyboothId);
         if (interfaceType) {
           setInterfaceType(interfaceType);
@@ -109,8 +120,35 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
 
   const copyURL = async () => {
     onCopy();
-    setHasCopiedLink(true);
+    setHasSavedLink(true);
     await insertShortLink(flyboothId);
+  };
+
+  const sendEmail = async (
+    flyboothId: string,
+    email: string
+  ): Promise<void> => {
+    setIsSendingEmail(true);
+    const res = await fetch(
+      `/api/send-email?flyboothId=${flyboothId}&email=${email}`,
+      { method: "POST" }
+    ).then((res) => res.json());
+
+    if (res.error) {
+      toast({
+        title: "Erreur d'envoi de courriel",
+        description: res.error.message,
+        status: "error",
+        duration: 9000,
+        isClosable: true,
+      });
+    } else {
+      setHasSavedLink(true);
+      setSendingEmail(false);
+      await insertShortLink(flyboothId);
+    }
+
+    setIsSendingEmail(false);
   };
 
   const handleInterfaceTypeChange = async (
@@ -146,19 +184,59 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
             }
           </Heading>
 
-          <MotionButton
-            rightIcon={hasCopied ? <CheckIcon /> : <CopyIcon />}
-            colorScheme={hasCopied ? "purple" : "gray"}
-            size={"lg"}
-            onClick={copyURL}
-          >
-            {!hasCopied
-              ? "Copier l'URL de la page"
-              : "URL copié dans le presse-papier"}
-          </MotionButton>
+          <Box display={"flex"} justifyContent={"space-evenly"}>
+            {sendingEmail && (
+              <Box display={"flex"} alignItems={"center"}>
+                <form action={() => sendEmail(flyboothId, email)}>
+                  <Input
+                    w={180}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    variant="outline"
+                    placeholder="Email"
+                    _placeholder={{ color: "white" }}
+                  />
+                  <Button
+                    isLoading={isSendingEmail}
+                    rightIcon={<AiOutlineSend />}
+                    cursor={"pointer"}
+                    fontSize={30}
+                    ml={4}
+                    type="submit"
+                  ></Button>
+                  <CloseIcon
+                    ml={10}
+                    cursor={"pointer"}
+                    onClick={() => setSendingEmail(false)}
+                  />
+                </form>
+              </Box>
+            )}
+
+            {!sendingEmail && (
+              <>
+                <MotionButton
+                  rightIcon={hasCopied ? <CheckIcon /> : <CopyIcon />}
+                  colorScheme={hasCopied ? "purple" : "gray"}
+                  size={"lg"}
+                  onClick={copyURL}
+                >
+                  {!hasCopied ? "Copier l'URL" : "Copié"}
+                </MotionButton>
+
+                <MotionButton
+                  rightIcon={<AiOutlineMail />}
+                  size={"lg"}
+                  onClick={() => setSendingEmail(true)}
+                >
+                  {"Envoyer par mail"}
+                </MotionButton>
+              </>
+            )}
+          </Box>
         </Box>
 
-        {hasCopiedLink && (
+        {hasSavedLink && (
           <>
             <Box pb="10">
               <Box position="relative" padding="10">
