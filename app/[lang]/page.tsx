@@ -34,7 +34,7 @@ import useTranslation from "next-translate/useTranslation";
 const MotionIcon = motion(QuestionIcon);
 
 export default function Index() {
-  const { t } = useTranslation("main");
+  const { t, lang } = useTranslation("main");
   const g = t("landing.faq.questions");
   console.log(g);
 
@@ -47,7 +47,7 @@ export default function Index() {
   const handleGenerate = () => {
     setIsLoading(true);
     const uuid = uuidv4();
-    router.push(uuid);
+    router.push(`${lang}/${uuid}`);
   };
 
   const handleComplete = async (pin: string) => {
@@ -64,7 +64,7 @@ export default function Index() {
         isClosable: true,
       });
     } else {
-      router.push(`/${flyboothId}/coverflow`);
+      router.push(`${lang}/${flyboothId}/coverflow`);
     }
   };
 
