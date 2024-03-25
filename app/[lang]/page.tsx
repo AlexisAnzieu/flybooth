@@ -22,7 +22,7 @@ import {
 import { useRouter } from "next/navigation";
 import { v4 as uuidv4 } from "uuid";
 import { ReactSVG } from "react-svg";
-import { logoFont } from "./font";
+import { logoFont } from "../font";
 import { useState } from "react";
 import MotionButton from "@/component/motion-button";
 import { FaGithub, FaEnvelope, FaRegHeart } from "react-icons/fa";

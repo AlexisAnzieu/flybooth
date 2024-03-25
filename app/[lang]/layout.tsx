@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import { Providers } from "./providers";
-import { inter } from "./font";
+import { Providers } from "../providers";
+import { inter } from "../font";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://flybooth.app"),
