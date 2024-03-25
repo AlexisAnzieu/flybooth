@@ -87,7 +87,7 @@ export default function Index() {
             beforeInjection={(svg) => {
               svg.setAttribute("style", "width: 80px");
             }}
-            src="https://flybooth.app/logo.svg"
+            src="/logo.svg"
           />
           {t("title")}
         </Box>
