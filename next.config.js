@@ -1,6 +1,7 @@
 const TerserPlugin = require("terser-webpack-plugin");
+const nextTranslate = require("next-translate-plugin");
 
-module.exports = {
+const config = nextTranslate({
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     return {
       ...config,
@@ -19,4 +20,8 @@ module.exports = {
       },
     ],
   },
-};
+});
+
+config.i18n = undefined;
+
+module.exports = config;

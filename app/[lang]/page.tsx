@@ -29,10 +29,13 @@ import { FaGithub, FaEnvelope, FaRegHeart } from "react-icons/fa";
 import Link from "next/link";
 import { QuestionIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
+import useTranslation from "next-translate/useTranslation";
 
 const MotionIcon = motion(QuestionIcon);
 
 export default function Index() {
+  const { t } = useTranslation("main");
+
   const router = useRouter();
   const toast = useToast();
   const [isInvalid, setIsInvalid] = useState(false);
@@ -84,9 +87,9 @@ export default function Index() {
             beforeInjection={(svg) => {
               svg.setAttribute("style", "width: 80px");
             }}
-            src="/logo.svg"
+            src="https://flybooth.app/logo.svg"
           />
-          Flybooth
+          {t("title")}
         </Box>
         <Box className={logoFont.className} pb={50} fontSize={25}>
           - Photobooth on fly, from small gatherings to big venues -
