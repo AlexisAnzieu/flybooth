@@ -31,5 +31,51 @@
         "a4": "Les participants peuvent poster jusqu'à 1000 photos par événement. Cette limite peut-être augmentée par palier de 10$/1000 photos additionnelles. Plus d'information par courriel."
       }
     }
+  },
+  "dashboard": {
+    "title": "Bienvenue dans ton flybooth !",
+    "stepOne": {
+      "title": "Garde précieusement l'URL de cette page. C'est ici que tu retrouveras l'accès à ta galerie et au mur des messages.",
+      "copyButton": {
+        "label": "Copier l'URL",
+        "copied": "Copié"
+      },
+      "emailButton": {
+        "label": "Envoyer par courriel",
+        "placeholder": "Email",
+        "toastError": "Erreur d'envoi de courriel"
+      }
+    },
+    "stepTwo": {
+      "title": "Accède maintenant à l'interface que tu vas partager avec tes invités afin qu'ils puissent",
+      "menu": {
+        "photos": "seulement ajouter des photos.",
+        "messages": "seulement ajouter des messages.",
+        "both": "ajouter des photos et des messages."
+      },
+      "options": {
+        "photos": "Photos",
+        "messages": "Messages",
+        "both": "Photos et messages"
+      },
+      "buttonLabel": "Accéder à l'interface",
+      "subtitle": "Tu peux aussi imprimer le QR code ci-dessous et le coller à des endroits stratégiques pour faciliter l'accès à l'interface.",
+      "printButtonLabel": "Imprimer"
+    },
+    "stepThree": {
+      "title": "Voici ensuite le contenu qui s'actualise automatiquement, à projeter lors de ton événement.",
+      "subtitle": "Pour projeter les photos et messages en temps réel, entre le code de projection suivant dans l'interface de projection.",
+      "buttonPhotoLabel": "Photos",
+      "buttonMessageLabel": "Messages",
+      "projectionCodeLabel": "Code de projection des photos"
+    },
+    "stepFour": {
+      "title": "Enfin, voici une galerie que tu peux partager avec tes invités après l'événement afin de leur permettre de télécharger les photos qu'ils ont le plus appréciées. Attention, les photos sont supprimées du serveur au bout d'une semaine !",
+      "buttonLabel": "Galerie"
+    },
+    "stepFive": {
+      "title": "Et pour finir, réinitialise cette page pour ton prochain événement.",
+      "buttonLabel": "Réinitialiser"
+    }
   }
 }

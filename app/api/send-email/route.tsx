@@ -6,13 +6,14 @@ export async function POST(req: Request) {
   const { searchParams } = new URL(req.url);
   const email = searchParams.get("email") || "";
   const flyboothId = searchParams.get("flyboothId");
+  const lang = searchParams.get("lang");
 
   try {
     const data = await resend.emails.send({
       from: "Flybooth <hello@flybooth.app>",
       to: email,
       subject: "Voici ton lien Flybooth",
-      react: SendLink({ flyboothId }),
+      react: SendLink({ flyboothId, lang }),
     });
 
     return Response.json(data);

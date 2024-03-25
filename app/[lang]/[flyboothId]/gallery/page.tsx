@@ -20,7 +20,7 @@ import Image from "next/image";
 import { BREAKPOINT_VALUES } from "@/lib/constants";
 import { useState } from "react";
 import { PageProps } from "../page";
-import { Resource } from "@/app/[lang]/api/cloudinary/route";
+import { Resource } from "@/app/api/cloudinary/route";
 
 export default function Gallery({ params: { flyboothId } }: PageProps) {
   const numColumns = useBreakpointValue(BREAKPOINT_VALUES);

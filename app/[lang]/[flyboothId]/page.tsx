@@ -35,16 +35,12 @@ import {
   AiOutlineSend,
 } from "react-icons/ai";
 import Pride from "react-canvas-confetti/dist/presets/pride";
+import useTranslation from "next-translate/useTranslation";
 
 export type PageProps = {
   params: { flyboothId: string };
 };
 
-const interfaceText = {
-  [InterfaceSections.both]: "ajouter des photos et des messages.",
-  [InterfaceSections.photos]: "seulement ajouter des photos.",
-  [InterfaceSections.messages]: "seulement ajouter des messages.",
-};
 const insertShortLink = async (flyboothId: string): Promise<void> => {
   await fetch(`/api/short-link?flyboothId=${flyboothId}`, { method: "POST" });
 };
@@ -77,6 +73,14 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
   const [interfaceType, setInterfaceType] = useState<InterfaceSections>(
     InterfaceSections.both
   );
+
+  const { t, lang } = useTranslation("main");
+
+  const interfaceText = {
+    [InterfaceSections.both]: t("dashboard.stepTwo.menu.both"),
+    [InterfaceSections.photos]: t("dashboard.stepTwo.menu.photos"),
+    [InterfaceSections.messages]: t("dashboard.stepTwo.menu.messages"),
+  };
 
   const toast = useToast();
   const { onCopy, hasCopied, setValue } = useClipboard("");
@@ -129,13 +133,13 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
     email: string
   ): Promise<void> => {
     const res = await fetch(
-      `/api/send-email?flyboothId=${flyboothId}&email=${email}`,
+      `/api/send-email?flyboothId=${flyboothId}&email=${email}&lang=${lang}`,
       { method: "POST" }
     ).then((res) => res.json());
 
     if (res.error) {
       toast({
-        title: "Erreur d'envoi de courriel",
+        title: t("dashboard.stepOne.emailButton.toastError"),
         description: res.error.message,
         status: "error",
         duration: 9000,
@@ -163,7 +167,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
       <Pride onInit={onInitHandler} />
 
       <Container maxW="3xl" textAlign={"center"} color={"white"} pt={10}>
-        <Heading size={"xl"}>{"  Bienvenue dans ton flybooth !"}</Heading>
+        <Heading size={"xl"}>{t("dashboard.title")}</Heading>
         <Box className="step" borderRadius={20} pb="10" boxShadow={"2xl"}>
           <Box position="relative" padding="10">
             <Divider />
@@ -180,9 +184,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
           </Box>
 
           <Heading size={"md"} px={3} pb={7}>
-            {
-              "Garde précieusement l'URL de cette page. C'est ici que tu retrouveras l'accès à ta galerie et au mur des messages."
-            }
+            {t("dashboard.stepOne.title")}
           </Heading>
 
           <Box display={"flex"} justifyContent={"space-evenly"}>
@@ -199,7 +201,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     variant="outline"
-                    placeholder="Email"
+                    placeholder={t("dashboard.stepOne.emailButton.placeholder")}
                     _placeholder={{ color: "white" }}
                   />
                   <MotionButton
@@ -228,7 +230,9 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
                   size={"lg"}
                   onClick={copyURL}
                 >
-                  {!hasCopied ? "Copier l'URL" : "Copié"}
+                  {!hasCopied
+                    ? t("dashboard.stepOne.copyButton.label")
+                    : t("dashboard.stepOne.copyButton.copied")}
                 </MotionButton>
 
                 <MotionButton
@@ -236,7 +240,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
                   size={"lg"}
                   onClick={() => setSendingEmail(true)}
                 >
-                  {"Envoyer par mail"}
+                  {t("dashboard.stepOne.emailButton.label")}
                 </MotionButton>
               </Stack>
             )}
@@ -261,7 +265,9 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
               </Box>
 
               <Heading size={"md"}>
-                {`Accède maintenant à l'interface que tu vas partager avec tes invités afin qu'ils puissent ${interfaceText[interfaceType]}`}
+                {`${t("dashboard.stepTwo.title")} ${
+                  interfaceText[interfaceType]
+                }`}
               </Heading>
 
               <Center>
@@ -277,33 +283,31 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
                       style={{ color: "black" }}
                       value={InterfaceSections.both}
                     >
-                      Photos et messages
+                      {t("dashboard.stepTwo.options.both")}
                     </option>
                     <option
                       style={{ color: "black" }}
                       value={InterfaceSections.photos}
                     >
-                      Photos
+                      {t("dashboard.stepTwo.options.photos")}
                     </option>
                     <option
                       style={{ color: "black" }}
                       value={InterfaceSections.messages}
                     >
-                      Messages
+                      {t("dashboard.stepTwo.options.messages")}
                     </option>
                   </Select>
                 </Box>
               </Center>
               <Link target="_blank" href={`${flyboothId}/upload`}>
                 <MotionButton rightIcon={<ArrowForwardIcon />} size={"lg"}>
-                  {"Accéder à l'interface"}
+                  {t("dashboard.stepTwo.buttonLabel")}
                 </MotionButton>
               </Link>
 
               <Heading size={"md"} py={10}>
-                {
-                  "Tu peux aussi imprimer le QR code ci-dessous et le coller à des endroits stratégiques pour faciliter l'accès à l'interface."
-                }
+                {t("dashboard.stepTwo.subtitle")}
               </Heading>
 
               <Box>
@@ -318,7 +322,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
                   onClick={() => printQRCode()}
                   size={"lg"}
                 >
-                  Imprimer
+                  {t("dashboard.stepTwo.printButtonLabel")}
                 </MotionButton>
               </Box>
             </Box>
@@ -339,9 +343,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
               </Box>
 
               <Heading size={"md"} pb={7}>
-                {
-                  "Voici ensuite le contenu qui s'actualise automatiquement, à projeter lors de ton événement."
-                }
+                {t("dashboard.stepThree.title")}
               </Heading>
 
               <Stack
@@ -356,7 +358,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
                         rightIcon={<Icon as={AiOutlinePicture} />}
                         size={"lg"}
                       >
-                        Photos
+                        {t("dashboard.stepThree.buttonPhotoLabel")}
                       </MotionButton>
                     </Link>
                   </Box>
@@ -366,7 +368,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
                   <Box>
                     <Link target="_blank" href={`${flyboothId}/message`}>
                       <MotionButton rightIcon={<ChatIcon />} size={"lg"}>
-                        Messages
+                        {t("dashboard.stepThree.buttonMessageLabel")}
                       </MotionButton>
                     </Link>
                   </Box>
@@ -376,7 +378,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
               {interfaceType !== InterfaceSections.messages && (
                 <>
                   <Heading size={"md"} pt={10}>
-                    Code de projection des photos
+                    {t("dashboard.stepThree.projectionCodeLabel")}
                   </Heading>
 
                   <Box fontSize={60} fontWeight={"600"}>
@@ -402,9 +404,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
               </Box>
 
               <Heading size={"md"} pb={7}>
-                {
-                  "Enfin, voici une galerie que tu peux partager avec tes invités après l'événement afin de leur permettre de télécharger les photos qu'ils ont le plus appréciées. Attention, les photos sont supprimées du serveur au bout d'une semaine !"
-                }
+                {t("dashboard.stepFour.title")}
               </Heading>
 
               <Box pb={4}>
@@ -413,7 +413,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
                     rightIcon={<Icon as={AiOutlineAppstore} />}
                     size={"lg"}
                   >
-                    Galerie
+                    {t("dashboard.stepFour.buttonLabel")}
                   </MotionButton>
                 </Link>
               </Box>
@@ -435,13 +435,11 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
               </Box>
 
               <Heading size={"md"} pb={7}>
-                {
-                  "Et pour finir, réinitialise cette page pour ton prochain événement."
-                }
+                {t("dashboard.stepFive.title")}
               </Heading>
               <Link href={"/"}>
                 <MotionButton rightIcon={<RepeatIcon />} size={"lg"}>
-                  Réinitialiser
+                  {t("dashboard.stepFive.buttonLabel")}
                 </MotionButton>
               </Link>
             </Box>

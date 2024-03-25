@@ -35,9 +35,6 @@ const MotionIcon = motion(QuestionIcon);
 
 export default function Index() {
   const { t, lang } = useTranslation("main");
-  const g = t("landing.faq.questions");
-  console.log(g);
-
   const router = useRouter();
   const toast = useToast();
   const [isInvalid, setIsInvalid] = useState(false);
