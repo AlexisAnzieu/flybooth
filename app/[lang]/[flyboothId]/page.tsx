@@ -437,7 +437,7 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
               <Heading size={"md"} pb={7}>
                 {t("dashboard.stepFive.title")}
               </Heading>
-              <Link href={"/"}>
+              <Link href={`/${lang}`}>
                 <MotionButton rightIcon={<RepeatIcon />} size={"lg"}>
                   {t("dashboard.stepFive.buttonLabel")}
                 </MotionButton>

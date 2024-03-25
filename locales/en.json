@@ -31,5 +31,51 @@
         "a4": "Participants can post up to 1000 photos per event. This limit can be increased by increments of $10/1000 additional photos. More information by email."
       }
     }
+  },
+  "dashboard": {
+    "title": "Welcome to your flybooth!",
+    "stepOne": {
+      "title": "Keep the URL of this page safe. This is where you will find access to your gallery and the message wall.",
+      "copyButton": {
+        "label": "Copy URL",
+        "copied": "Copied"
+      },
+      "emailButton": {
+        "label": "Send by email",
+        "placeholder": "Email",
+        "toastError": "Email sending error"
+      }
+    },
+    "stepTwo": {
+      "title": "Now access the interface that you will share with your guests so they can",
+      "menu": {
+        "photos": "only add photos.",
+        "messages": "only add messages.",
+        "both": "add photos and messages."
+      },
+      "options": {
+        "photos": "Photos",
+        "messages": "Messages",
+        "both": "Photos and messages"
+      },
+      "buttonLabel": "Access the interface",
+      "subtitle": "You can also print the QR code below and stick it in strategic places to facilitate access to the interface.",
+      "printButtonLabel": "Print"
+    },
+    "stepThree": {
+      "title": "Here is the content that updates automatically, to project during your event.",
+      "subtitle": "To project photos and messages in real time, enter the following projection code in the projection interface.",
+      "buttonPhotoLabel": "Photos",
+      "buttonMessageLabel": "Messages",
+      "projectionCodeLabel": "Photo projection code"
+    },
+    "stepFour": {
+      "title": "Finally, here is a gallery that you can share with your guests after the event to allow them to download the photos they liked the most. Be careful, the photos are deleted from the server after a week!",
+      "buttonLabel": "Gallery"
+    },
+    "stepFive": {
+      "title": "And finally, reset this page for your next event.",
+      "buttonLabel": "Reset"
+    }
   }
 }
