@@ -1,0 +1,35 @@
+{
+  "landing": {
+    "subtitle": "Photobooth on fly, from small gatherings to big venues",
+    "cta": {
+      "label": "Create your photobooth",
+      "loading": "Creation in progress..."
+    },
+    "projectionCode": {
+      "label": "or enter the projection code",
+      "toast": {
+        "title": "Not Found",
+        "description": "The projection code is not associated with any Flybooth."
+      }
+    },
+    "footer": {
+      "featureAsk": "Click here to suggest new features",
+      "codedWithLove": "Coded with ❤ in Montreal"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "questions": {
+        "q0": "Is it free?",
+        "a0": "Yes, no fees or account is required to use Flybooth. In addition, the source code is fully available without copyright restrictions.",
+        "q1": "How does it work?",
+        "a1": "Dedicated to event organizers, Flybooth is an online photobooth that allows participants to take photos or send messages from their smartphone. The photos and messages can then be projected in real time on the equipment set up by the organizer.",
+        "q2": "Is it possible to moderate the photos?",
+        "a2": "In order to limit the manual activity of the organizer during the event, inappropriate photos are automatically deleted. It is important to note that the algorithm is not infallible.",
+        "q3": "How long are the photos kept?",
+        "a3": "The photos are kept for 7 days during which participants can review or download them from a dedicated gallery.",
+        "q4": "How many photos can participants post?",
+        "a4": "Participants can post up to 1000 photos per event. This limit can be increased by increments of $10/1000 additional photos. More information by email."
+      }
+    }
+  }
+}

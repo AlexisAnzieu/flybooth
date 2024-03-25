@@ -1,9 +1,7 @@
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { NextRequest, NextResponse } from "next/server";
-
-let locales = ["fr", "en", "es"];
-let defaultLocale = "fr";
+import { locales, defaultLocale } from "./i18n";
 
 // Get the preferred locale, similar to the above or using a library
 function getLocale(headers: Headers) {
@@ -32,5 +30,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/"],
+  matcher: ["/((?!_next).*)"],
 };

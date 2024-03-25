@@ -1,0 +1,35 @@
+{
+  "landing": {
+    "subtitle": "Cabine de fotos voadora, de pequenas reuniões a grandes locais",
+    "cta": {
+      "label": "Crie sua cabine de fotos",
+      "loading": "Criação em andamento..."
+    },
+    "projectionCode": {
+      "label": "ou insira o código de projeção",
+      "toast": {
+        "title": "Não encontrado",
+        "description": "O código de projeção não está associado a nenhum Flybooth."
+      }
+    },
+    "footer": {
+      "featureAsk": "Clique aqui para sugerir novos recursos",
+      "codedWithLove": "Codificado com ❤ em Montreal"
+    },
+    "faq": {
+      "title": "Perguntas frequentes",
+      "questions": {
+        "q0": "É grátis?",
+        "a0": "Sim, não há taxas ou conta necessária para usar o Flybooth. Além disso, o código-fonte está totalmente disponível sem restrições de direitos autorais.",
+        "q1": "Como funciona?",
+        "a1": "Dedicado aos organizadores de eventos, o Flybooth é uma cabine de fotos online que permite aos participantes tirar fotos ou enviar mensagens de seu smartphone. As fotos e mensagens podem então ser projetadas em tempo real no equipamento configurado pelo organizador.",
+        "q2": "É possível moderar as fotos?",
+        "a2": "Para limitar a atividade manual do organizador durante o evento, as fotos inadequadas são automaticamente excluídas. É importante notar que o algoritmo não é infalível.",
+        "q3": "Por quanto tempo as fotos são mantidas?",
+        "a3": "As fotos são mantidas por 7 dias, durante os quais os participantes podem revisá-las ou baixá-las de uma galeria dedicada.",
+        "q4": "Quantas fotos os participantes podem postar?",
+        "a4": "Os participantes podem postar até 1000 fotos por evento. Este limite pode ser aumentado em incrementos de $10/1000 fotos adicionais. Mais informações por e-mail."
+      }
+    }
+  }
+}

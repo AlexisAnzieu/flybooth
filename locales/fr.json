@@ -1,0 +1,35 @@
+{
+  "landing": {
+    "subtitle": "Photomaton à la volée, pour tous type d'événements",
+    "cta": {
+      "label": "Crée ton photobooth",
+      "loading": "Création en cours..."
+    },
+    "projectionCode": {
+      "label": "ou entre le code de projection",
+      "toast": {
+        "title": "Non trouvé",
+        "description": "Le code de projection n'est associé à aucun Flybooth."
+      }
+    },
+    "footer": {
+      "featureAsk": "Clique ici afin de suggérer de nouvelles fonctionnalités",
+      "codedWithLove": "Codé avec ❤ à Montréal"
+    },
+    "faq": {
+      "title": "Foire Aux Questions",
+      "questions": {
+        "q0": "Est-ce que c'est gratuit?",
+        "a0": "Oui, aucun frais ou compte n'est requis pour utiliser Flybooth. En outre le code source est intégralement disponible sans restriction de copyright.",
+        "q1": "Comment ça marche ?",
+        "a1": "Dédié au organisateurs d'événements, Flybooth est un photobooth en ligne qui permet aux participants de prendre des photos ou d'envoyer des messages à partir de leur smartphone. Les photos et messages peuvent ensuite être projeté en temps réel sur le matériel mis en place par l'organisateur.",
+        "q2": "Est-il possible de modérer les photos ?",
+        "a2": "Afin de limiter l'activité manuel de l'organisateur au cours de l'événement, les photos inappropriées sont automatiquement supprimées. Il est important de préciser que l'algorithme n'est cependant pas infaillible.",
+        "q3": "Combien de temps les photos sont-elles conservées ?",
+        "a3": "Les photos sont conservées 7 jours durant lesquels les participants peuvent les revisionner ou les télécharger à partir d'une galerie dédiée.",
+        "q4": "Combien de photos les participants peuvent-ils poster ?",
+        "a4": "Les participants peuvent poster jusqu'à 1000 photos par événement. Cette limite peut-être augmentée par palier de 10$/1000 photos additionnelles. Plus d'information par courriel."
+      }
+    }
+  }
+}

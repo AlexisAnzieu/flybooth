@@ -1,0 +1,35 @@
+{
+  "landing": {
+    "subtitle": "Fotomatón al vuelo, desde pequeñas reuniones hasta grandes lugares",
+    "cta": {
+      "label": "Crea tu fotomatón",
+      "loading": "Creación en progreso..."
+    },
+    "projectionCode": {
+      "label": "o introduce el código de proyección",
+      "toast": {
+        "title": "No encontrado",
+        "description": "El código de proyección no está asociado con ningún Flybooth."
+      }
+    },
+    "footer": {
+      "featureAsk": "Haz clic aquí para sugerir nuevas características",
+      "codedWithLove": "Codificado con ❤ en Montreal"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "questions": {
+        "q0": "¿Es gratis?",
+        "a0": "Sí, no se requieren tarifas ni cuenta para usar Flybooth. Además, el código fuente está completamente disponible sin restricciones de derechos de autor.",
+        "q1": "¿Cómo funciona?",
+        "a1": "Dedicado a los organizadores de eventos, Flybooth es un fotomatón en línea que permite a los participantes tomar fotos o enviar mensajes desde su teléfono inteligente. Las fotos y los mensajes pueden ser proyectados en tiempo real en el equipo configurado por el organizador.",
+        "q2": "¿Es posible moderar las fotos?",
+        "a2": "Para limitar la actividad manual del organizador durante el evento, las fotos inapropiadas se eliminan automáticamente. Es importante tener en cuenta que el algoritmo no es infalible.",
+        "q3": "¿Cuánto tiempo se guardan las fotos?",
+        "a3": "Las fotos se guardan durante 7 días durante los cuales los participantes pueden revisarlas o descargarlas desde una galería dedicada.",
+        "q4": "¿Cuántas fotos pueden publicar los participantes?",
+        "a4": "Los participantes pueden publicar hasta 1000 fotos por evento. Este límite puede aumentarse en incrementos de $10/1000 fotos adicionales. Más información por correo electrónico."
+      }
+    }
+  }
+}
