@@ -1,7 +1,36 @@
-const locales = ["en", "fr", "de", "pt", "es"];
+const countries = [
+  {
+    code: "de",
+    name: "Deutsch",
+    flag: "🇩🇪",
+  },
+  {
+    code: "en",
+    name: "English",
+    flag: "🇬🇧",
+  },
+  {
+    code: "es",
+    name: "Español",
+    flag: "🇪🇸",
+  },
+  {
+    code: "fr",
+    name: "Français",
+    flag: "🇫🇷",
+  },
+  {
+    code: "pt",
+    name: "Português",
+    flag: "🇵🇹",
+  },
+];
+
+const locales = countries.map((country) => country.code);
 const defaultLocale = "en";
 
 module.exports = {
+  countries,
   locales,
   defaultLocale,
   pages: {

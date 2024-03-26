@@ -1,6 +1,6 @@
 {
   "landing": {
-    "subtitle": "Photomaton à la volée, pour tous type d'événements",
+    "subtitle": "Photomaton à la volée, des petites fêtes aux festivals",
     "cta": {
       "label": "Crée ton photobooth",
       "loading": "Création en cours..."
@@ -47,16 +47,11 @@
       }
     },
     "stepTwo": {
-      "title": "Accède maintenant à l'interface que tu vas partager avec tes invités afin qu'ils puissent",
-      "menu": {
-        "photos": "seulement ajouter des photos.",
-        "messages": "seulement ajouter des messages.",
-        "both": "ajouter des photos et des messages."
-      },
+      "title": "Accède maintenant à l'interface que tu vas partager avec tes invités afin qu'ils puissent ajouter",
       "options": {
-        "photos": "Photos",
-        "messages": "Messages",
-        "both": "Photos et messages"
+        "photos": "des photos",
+        "messages": "des messages",
+        "both": "des photos et messages"
       },
       "buttonLabel": "Accéder à l'interface",
       "subtitle": "Tu peux aussi imprimer le QR code ci-dessous et le coller à des endroits stratégiques pour faciliter l'accès à l'interface.",

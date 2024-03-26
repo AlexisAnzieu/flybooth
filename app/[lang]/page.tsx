@@ -18,6 +18,11 @@ import {
   Heading,
   ModalContent,
   ModalOverlay,
+  Button,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
 } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { v4 as uuidv4 } from "uuid";
@@ -27,9 +32,10 @@ import { useState } from "react";
 import MotionButton from "@/component/motion-button";
 import { FaGithub, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
-import { QuestionIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon, QuestionIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 import useTranslation from "next-translate/useTranslation";
+import { countries } from "@/i18n";
 
 const MotionIcon = motion(QuestionIcon);
 
@@ -89,6 +95,30 @@ export default function Index() {
             src="/logo.svg"
           />
           Flybooth
+        </Box>
+        <Box zIndex={999} position="fixed" top={5} right={5} color="black">
+          <Menu>
+            <MenuButton
+              style={{ fontSize: 30 }}
+              as={Button}
+              rightIcon={<ChevronDownIcon />}
+            >
+              {countries.find((country) => country.code === lang)?.flag}
+            </MenuButton>
+
+            <MenuList>
+              {countries.map((country) => (
+                <MenuItem
+                  as="a"
+                  style={{ fontSize: 20 }}
+                  key={country.code}
+                  href={`/${country.code}`}
+                >
+                  {country.flag} {country.name}
+                </MenuItem>
+              ))}
+            </MenuList>
+          </Menu>
         </Box>
         <Box className={logoFont.className} pb={50} fontSize={25}>
           - {t("landing.subtitle")} -

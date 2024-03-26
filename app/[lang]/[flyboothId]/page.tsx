@@ -7,6 +7,7 @@ import {
   ArrowForwardIcon,
   ChatIcon,
   CheckIcon,
+  ChevronDownIcon,
   CloseIcon,
   CopyIcon,
   RepeatIcon,
@@ -14,12 +15,17 @@ import {
 import {
   AbsoluteCenter,
   Box,
+  Button,
   Center,
   Container,
   Divider,
   Heading,
   Icon,
   Input,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   Select,
   Stack,
   useClipboard,
@@ -75,12 +81,6 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
   );
 
   const { t, lang } = useTranslation("main");
-
-  const interfaceText = {
-    [InterfaceSections.both]: t("dashboard.stepTwo.menu.both"),
-    [InterfaceSections.photos]: t("dashboard.stepTwo.menu.photos"),
-    [InterfaceSections.messages]: t("dashboard.stepTwo.menu.messages"),
-  };
 
   const toast = useToast();
   const { onCopy, hasCopied, setValue } = useClipboard("");
@@ -155,11 +155,10 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
   };
 
   const handleInterfaceTypeChange = async (
-    event: React.ChangeEvent<HTMLSelectElement>
+    interfaceType: keyof typeof InterfaceSections
   ) => {
-    const newInterfaceType = event.target.value as keyof typeof interfaceText;
-    setInterfaceType(newInterfaceType);
-    await updateInterfaceType(flyboothId, newInterfaceType);
+    setInterfaceType(interfaceType);
+    await updateInterfaceType(flyboothId, interfaceType);
   };
 
   return (
@@ -264,42 +263,31 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
                 </AbsoluteCenter>
               </Box>
 
-              <Heading size={"md"}>
-                {`${t("dashboard.stepTwo.title")} ${
-                  interfaceText[interfaceType]
-                }`}
+              <Heading size={"md"} pb={5}>
+                {`${t("dashboard.stepTwo.title")}`}
+
+                <Menu>
+                  <MenuButton
+                    m={3}
+                    as={Button}
+                    size={"md"}
+                    rightIcon={<ChevronDownIcon />}
+                  >
+                    {t(`dashboard.stepTwo.options.${interfaceType}`)}
+                  </MenuButton>
+                  <MenuList color={"black"}>
+                    {Object.values(InterfaceSections).map((section) => (
+                      <MenuItem
+                        key={section}
+                        onClick={() => handleInterfaceTypeChange(section)}
+                      >
+                        {t(`dashboard.stepTwo.options.${section}`)}
+                      </MenuItem>
+                    ))}
+                  </MenuList>
+                </Menu>
               </Heading>
 
-              <Center>
-                <Box width={"60%"} p={5}>
-                  <Select
-                    value={interfaceType}
-                    size="lg"
-                    onChange={handleInterfaceTypeChange}
-                    display={"flex"}
-                    variant="outline"
-                  >
-                    <option
-                      style={{ color: "black" }}
-                      value={InterfaceSections.both}
-                    >
-                      {t("dashboard.stepTwo.options.both")}
-                    </option>
-                    <option
-                      style={{ color: "black" }}
-                      value={InterfaceSections.photos}
-                    >
-                      {t("dashboard.stepTwo.options.photos")}
-                    </option>
-                    <option
-                      style={{ color: "black" }}
-                      value={InterfaceSections.messages}
-                    >
-                      {t("dashboard.stepTwo.options.messages")}
-                    </option>
-                  </Select>
-                </Box>
-              </Center>
               <Link target="_blank" href={`${flyboothId}/upload`}>
                 <MotionButton rightIcon={<ArrowForwardIcon />} size={"lg"}>
                   {t("dashboard.stepTwo.buttonLabel")}

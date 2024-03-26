@@ -13,7 +13,7 @@ export default function QrCode({
   flyboothId,
   redirectTo,
 }: Readonly<{
-  flyboothId: string | null;
+  flyboothId: string;
   redirectTo: keyof typeof PAGES;
 }>) {
   const qrCodeSize = useBreakpointValue(BREAKPOINT_VALUES) || 1;
