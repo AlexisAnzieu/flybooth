@@ -95,44 +95,45 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
         p={4}
       >
         {data.map((image: any) => (
-          <Box
-            cursor={"pointer"}
-            onClick={() => openModal(image.src)}
-            key={image.src}
-            position="relative"
-            onMouseEnter={() => setHoveredId(image.id)}
-            onMouseLeave={() => setHoveredId(null)}
-          >
-            <Image
-              alt={image.src}
-              width={500}
-              height={500}
-              style={{
-                borderRadius: 20,
-                objectFit: "cover",
-              }}
-              src={image.src}
-            />
-            {hoveredId === image.id && (
-              <Box
-                cursor={"pointer"}
-                py={1}
-                px={3}
-                fontSize={30}
-                color={"white"}
-                style={{ backgroundColor: "rgba(107, 70, 193, 0.9)" }}
-                onClick={(event) => {
-                  event.stopPropagation();
-                  window.open(createDownloadLink(image.id), "_blank");
+          <Box key={image.src}>
+            <Box
+              position={"relative"}
+              onMouseEnter={() => setHoveredId(image.id)}
+              onMouseLeave={() => setHoveredId(null)}
+            >
+              <Image
+                alt={image.src}
+                width={500}
+                height={500}
+                style={{
+                  cursor: "pointer",
+                  borderRadius: 20,
+                  objectFit: "cover",
                 }}
-                position="absolute"
-                bottom="2"
-                right="3"
-                borderRadius={15}
-              >
-                <DownloadIcon />
-              </Box>
-            )}
+                src={image.src}
+                onClick={() => openModal(image.src)}
+              />
+              {hoveredId === image.id && (
+                <Box
+                  cursor={"pointer"}
+                  py={1}
+                  px={3}
+                  fontSize={30}
+                  color={"white"}
+                  style={{ backgroundColor: "rgba(107, 70, 193, 0.9)" }}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    window.open(createDownloadLink(image.id), "_blank");
+                  }}
+                  position="absolute"
+                  bottom="2"
+                  right="3"
+                  borderRadius={15}
+                >
+                  <DownloadIcon />
+                </Box>
+              )}
+            </Box>
           </Box>
         ))}
       </Box>
