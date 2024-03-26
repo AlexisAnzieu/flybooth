@@ -1,0 +1,118 @@
+{
+  "landing": {
+    "subtitle": "Photobooth al volo, dalle piccole feste ai festival",
+    "cta": {
+      "label": "Crea il tuo photobooth",
+      "loading": "Creazione in corso..."
+    },
+    "projectionCode": {
+      "label": "o inserisci il codice di proiezione",
+      "toast": {
+        "title": "Non trovato",
+        "description": "Il codice di proiezione non è associato a nessun Flybooth."
+      }
+    },
+    "footer": {
+      "featureAsk": "Clicca qui per suggerire nuove funzionalità",
+      "codedWithLove": "Codificato con ❤ a Montreal"
+    },
+    "faq": {
+      "title": "Domande Frequenti",
+      "questions": {
+        "q0": "È gratuito?",
+        "a0": "Sì, non sono richiesti costi o account per utilizzare Flybooth. Inoltre, il codice sorgente è completamente disponibile senza restrizioni di copyright.",
+        "q1": "Come funziona?",
+        "a1": "Dedicato agli organizzatori di eventi, Flybooth è un photobooth online che permette ai partecipanti di scattare foto o inviare messaggi dal loro smartphone. Le foto e i messaggi possono poi essere proiettati in tempo reale sulle attrezzature messe a disposizione dall'organizzatore.",
+        "q2": "È possibile moderare le foto?",
+        "a2": "Per limitare l'attività manuale dell'organizzatore durante l'evento, le foto inappropriate vengono automaticamente eliminate. È importante sottolineare che l'algoritmo non è infallibile.",
+        "q3": "Per quanto tempo vengono conservate le foto?",
+        "a3": "Le foto vengono conservate per 7 giorni durante i quali i partecipanti possono rivederle o scaricarle da una galleria dedicata.",
+        "q4": "Quante foto possono postare i partecipanti?",
+        "a4": "I partecipanti possono postare fino a 1000 foto per evento. Questo limite può essere aumentato di 10$/1000 foto aggiuntive. Per ulteriori informazioni, contattaci via email."
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Benvenuto nel tuo flybooth!",
+    "stepOne": {
+      "title": "Conserva attentamente l'URL di questa pagina. Qui troverai l'accesso alla tua galleria e al muro dei messaggi.",
+      "copyButton": {
+        "label": "Copia l'URL",
+        "copied": "Copiato"
+      },
+      "emailButton": {
+        "label": "Invia via email",
+        "placeholder": "Email",
+        "toastError": "Errore nell'invio dell'email"
+      }
+    },
+    "stepTwo": {
+      "title": "Accedi ora all'interfaccia che condividerai con i tuoi ospiti in modo che possano aggiungere",
+      "options": {
+        "photos": "foto",
+        "messages": "messaggi",
+        "both": "foto e messaggi"
+      },
+      "buttonLabel": "Accedi all'interfaccia",
+      "subtitle": "Puoi anche stampare il codice QR qui sotto e attaccarlo in punti strategici per facilitare l'accesso all'interfaccia.",
+      "printButtonLabel": "Stampa"
+    },
+    "stepThree": {
+      "title": "Ecco il contenuto che si aggiorna automaticamente, da proiettare durante il tuo evento.",
+      "subtitle": "Per proiettare foto e messaggi in tempo reale, inserisci il seguente codice di proiezione nell'interfaccia di proiezione.",
+      "buttonPhotoLabel": "Foto",
+      "buttonMessageLabel": "Messaggi",
+      "projectionCodeLabel": "Codice di proiezione delle foto"
+    },
+    "stepFour": {
+      "title": "Infine, ecco una galleria che puoi condividere con i tuoi ospiti dopo l'evento per permettere loro di scaricare le foto che hanno apprezzato di più. Attenzione, le foto vengono eliminate dal server dopo una settimana!",
+      "buttonLabel": "Galleria"
+    },
+    "stepFive": {
+      "title": "E per finire, resetta questa pagina per il tuo prossimo evento.",
+      "buttonLabel": "Reset"
+    }
+  },
+  "upload": {
+    "message": {
+      "buttonLabel": "Invia un messaggio",
+      "modal": {
+        "name": "Nome",
+        "namePlaceholder": "Freezer",
+        "message": "Messaggio",
+        "messagePlaceholder": "Massimo 200 caratteri.",
+        "button": "Invia"
+      }
+    },
+    "photo": {
+      "buttonLabel": "Invia un selfie"
+    },
+    "toast": {
+      "loading": {
+        "title": "Invio in corso",
+        "description": "Un po' di pazienza..."
+      },
+      "success": {
+        "title": "Inviato",
+        "description": "È online!"
+      },
+      "error": {
+        "title": "Non inviato",
+        "description": "È codificato male :("
+      }
+    }
+  },
+  "textBoard": {
+    "loading": "Caricamento messaggi...",
+    "noPhotos": "Pubblica un messaggio!"
+  },
+  "coverflow": {
+    "loading": "Caricamento coverflow...",
+    "noPhotos": "Pubblica una foto nel photobooth!"
+  },
+  "gallery": {
+    "loading": "Caricamento galleria...",
+    "download": "Scarica",
+    "noPhotos": "Nessuna foto è stata pubblicata al momento."
+  }
+}

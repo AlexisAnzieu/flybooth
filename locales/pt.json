@@ -1,0 +1,118 @@
+{
+  "landing": {
+    "subtitle": "Cabine de fotos voadora, de pequenas reuniões a grandes locais",
+    "cta": {
+      "label": "Crie sua cabine de fotos",
+      "loading": "Criação em andamento..."
+    },
+    "projectionCode": {
+      "label": "ou insira o código de projeção",
+      "toast": {
+        "title": "Não encontrado",
+        "description": "O código de projeção não está associado a nenhum Flybooth."
+      }
+    },
+    "footer": {
+      "featureAsk": "Clique aqui para sugerir novos recursos",
+      "codedWithLove": "Codificado com ❤ em Montreal"
+    },
+    "faq": {
+      "title": "Perguntas frequentes",
+      "questions": {
+        "q0": "É grátis?",
+        "a0": "Sim, não há taxas ou conta necessária para usar o Flybooth. Além disso, o código-fonte está totalmente disponível sem restrições de direitos autorais.",
+        "q1": "Como funciona?",
+        "a1": "Dedicado aos organizadores de eventos, o Flybooth é uma cabine de fotos online que permite aos participantes tirar fotos ou enviar mensagens de seu smartphone. As fotos e mensagens podem então ser projetadas em tempo real no equipamento configurado pelo organizador.",
+        "q2": "É possível moderar as fotos?",
+        "a2": "Para limitar a atividade manual do organizador durante o evento, as fotos inadequadas são automaticamente excluídas. É importante notar que o algoritmo não é infalível.",
+        "q3": "Por quanto tempo as fotos são mantidas?",
+        "a3": "As fotos são mantidas por 7 dias, durante os quais os participantes podem revisá-las ou baixá-las de uma galeria dedicada.",
+        "q4": "Quantas fotos os participantes podem postar?",
+        "a4": "Os participantes podem postar até 1000 fotos por evento. Este limite pode ser aumentado em incrementos de $10/1000 fotos adicionais. Mais informações por e-mail."
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Bem-vindo ao seu flybooth!",
+    "stepOne": {
+      "title": "Guarde bem a URL desta página. Aqui você encontrará o acesso à sua galeria e ao mural de mensagens.",
+      "copyButton": {
+        "label": "Copiar URL",
+        "copied": "Copiado"
+      },
+      "emailButton": {
+        "label": "Enviar por e-mail",
+        "placeholder": "E-mail",
+        "toastError": "Erro ao enviar o e-mail"
+      }
+    },
+    "stepTwo": {
+      "title": "Acesse agora a interface que você vai compartilhar com seus convidados para que eles possam adicionar",
+      "options": {
+        "photos": "fotos",
+        "messages": "mensagens",
+        "both": "fotos e mensagens"
+      },
+      "buttonLabel": "Acessar a interface",
+      "subtitle": "Você também pode imprimir o código QR abaixo e colá-lo em locais estratégicos para facilitar o acesso à interface.",
+      "printButtonLabel": "Imprimir"
+    },
+    "stepThree": {
+      "title": "Aqui está o conteúdo que se atualiza automaticamente, para projetar durante o seu evento.",
+      "subtitle": "Para projetar as fotos e mensagens em tempo real, insira o seguinte código de projeção na interface de projeção.",
+      "buttonPhotoLabel": "Fotos",
+      "buttonMessageLabel": "Mensagens",
+      "projectionCodeLabel": "Código de projeção de fotos"
+    },
+    "stepFour": {
+      "title": "Por fim, aqui está uma galeria que você pode compartilhar com seus convidados após o evento para que eles possam baixar as fotos que mais gostaram. Cuidado, as fotos são excluídas do servidor após uma semana!",
+      "buttonLabel": "Galeria"
+    },
+    "stepFive": {
+      "title": "E para terminar, reinicie esta página para o seu próximo evento.",
+      "buttonLabel": "Reiniciar"
+    }
+  },
+  "upload": {
+    "message": {
+      "buttonLabel": "Enviar uma mensagem",
+      "modal": {
+        "name": "Nome",
+        "namePlaceholder": "Freezer",
+        "message": "Mensagem",
+        "messagePlaceholder": "Máximo de 200 caracteres.",
+        "button": "Enviar"
+      }
+    },
+    "photo": {
+      "buttonLabel": "Enviar uma selfie"
+    },
+    "toast": {
+      "loading": {
+        "title": "Enviando",
+        "description": "Um pouco de paciência..."
+      },
+      "success": {
+        "title": "Enviado",
+        "description": "Está online!"
+      },
+      "error": {
+        "title": "Não enviado",
+        "description": "Está mal codificado :("
+      }
+    }
+  },
+  "textBoard": {
+    "loading": "Carregando mensagens...",
+    "noPhotos": "Poste uma mensagem!"
+  },
+  "coverflow": {
+    "loading": "Carregando coverflow...",
+    "noPhotos": "Publique uma foto no photobooth!"
+  },
+  "gallery": {
+    "loading": "Carregando galeria...",
+    "download": "Baixar",
+    "noPhotos": "Nenhuma foto foi publicada até o momento."
+  }
+}

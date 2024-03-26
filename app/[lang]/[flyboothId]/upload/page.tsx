@@ -27,29 +27,13 @@ import { PageProps } from "../page";
 import useSWR from "swr";
 import fetcher from "@/lib/fetcher";
 import { motion } from "framer-motion";
-
-const defaultMessage = {
-  loading: {
-    title: "En cours d'envoi",
-    description: "Un peu de patience...",
-    position: "top" as ToastPosition,
-  },
-  success: {
-    title: "Envoyé",
-    description: "C'est en ligne !",
-    position: "top" as ToastPosition,
-  },
-  error: {
-    title: "Non envoyé",
-    description: "C'est mal codé :(",
-    position: "top" as ToastPosition,
-  },
-};
+import useTranslation from "next-translate/useTranslation";
 
 export default function Upload({
   params: { flyboothId },
 }: Readonly<PageProps>) {
   const toast = useToast();
+  const { t } = useTranslation("main");
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [author, setAuthor] = useState("");
@@ -63,6 +47,24 @@ export default function Upload({
   const initialRef = useRef(null);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const defaultMessage = {
+    loading: {
+      title: t("upload.toast.loading.title"),
+      description: t("upload.toast.loading.description"),
+      position: "top" as ToastPosition,
+    },
+    success: {
+      title: t("upload.toast.success.title"),
+      description: t("upload.toast.success.description"),
+      position: "top" as ToastPosition,
+    },
+    error: {
+      title: t("upload.toast.error.title"),
+      description: t("upload.toast.error.description"),
+      position: "top" as ToastPosition,
+    },
+  };
 
   function createFormData(uploadPreset: string, file: File) {
     const fd = new FormData();
@@ -113,25 +115,29 @@ export default function Upload({
         <ModalContent>
           <ModalBody p={6}>
             <FormControl>
-              <FormLabel fontSize={30}>Prénom</FormLabel>
+              <FormLabel fontSize={30}>
+                {t("upload.message.modal.name")}
+              </FormLabel>
               <Input
                 value={author}
                 focusBorderColor="purple.400"
                 fontSize={25}
                 ref={initialRef}
-                placeholder="Freezer"
+                placeholder={t("upload.message.modal.namePlaceholder")}
                 onChange={(e) => setAuthor(e.target.value)}
               />
             </FormControl>
 
             <FormControl mt={4}>
-              <FormLabel fontSize={30}>Message</FormLabel>
+              <FormLabel fontSize={30}>
+                {t("upload.message.modal.message")}
+              </FormLabel>
               <Textarea
                 value={text}
                 height={"200px"}
                 fontSize={25}
                 focusBorderColor="purple.400"
-                placeholder="200 caractères max"
+                placeholder={t("upload.message.modal.messagePlaceholder")}
                 onChange={(e) => setText(e.target.value)}
               />
             </FormControl>
@@ -145,7 +151,7 @@ export default function Upload({
               mr={3}
               color={"white"}
             >
-              Envoyer
+              {t("upload.message.modal.button")}
             </Button>
           </ModalFooter>
         </ModalContent>
@@ -184,11 +190,11 @@ export default function Upload({
                 borderRadius={25}
                 fontSize={40}
                 p={10}
+                m={10}
                 bgColor="white"
                 color="purple"
               >
-                Envoyer <br />
-                un selfie
+                {t("upload.photo.buttonLabel")}
               </Box>
             </Box>
           </Box>
@@ -217,11 +223,11 @@ export default function Upload({
                 borderRadius={25}
                 fontSize={40}
                 p={10}
+                m={10}
                 bgColor="purple"
                 color="white "
               >
-                Envoyer un <br />
-                message
+                {t("upload.message.buttonLabel")}
               </Box>
             </Box>
           </Box>

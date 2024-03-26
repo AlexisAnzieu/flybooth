@@ -1,0 +1,118 @@
+{
+  "landing": {
+    "subtitle": "Fliegender Fotostand, von kleinen Treffen bis zu großen Veranstaltungsorten",
+    "cta": {
+      "label": "Erstellen Sie Ihren Fotostand",
+      "loading": "Erstellung läuft..."
+    },
+    "projectionCode": {
+      "label": "oder geben Sie den Projektionscode ein",
+      "toast": {
+        "title": "Nicht gefunden",
+        "description": "Der Projektionscode ist keinem Flybooth zugeordnet."
+      }
+    },
+    "footer": {
+      "featureAsk": "Klicken Sie hier, um neue Funktionen vorzuschlagen",
+      "codedWithLove": "Mit ❤ in Montreal codiert"
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "questions": {
+        "q0": "Ist es kostenlos?",
+        "a0": "Ja, es fallen keine Gebühren an und es ist kein Konto erforderlich, um Flybooth zu nutzen. Darüber hinaus ist der Quellcode vollständig ohne Urheberrechtsbeschränkungen verfügbar.",
+        "q1": "Wie funktioniert es?",
+        "a1": "Flybooth ist ein Online-Fotostand, der sich an Veranstalter richtet und es Teilnehmern ermöglicht, Fotos zu machen oder Nachrichten von ihrem Smartphone aus zu senden. Die Fotos und Nachrichten können dann in Echtzeit auf der vom Veranstalter eingerichteten Ausrüstung projiziert werden.",
+        "q2": "Ist es möglich, die Fotos zu moderieren?",
+        "a2": "Um die manuelle Aktivität des Veranstalters während der Veranstaltung zu begrenzen, werden unangemessene Fotos automatisch gelöscht. Es ist wichtig zu beachten, dass der Algorithmus nicht unfehlbar ist.",
+        "q3": "Wie lange werden die Fotos aufbewahrt?",
+        "a3": "Die Fotos werden 7 Tage lang aufbewahrt, in denen die Teilnehmer sie in einer speziellen Galerie überprüfen oder herunterladen können.",
+        "q4": "Wie viele Fotos können die Teilnehmer posten?",
+        "a4": "Die Teilnehmer können bis zu 1000 Fotos pro Veranstaltung posten. Dieses Limit kann in Schritten von 10$/1000 zusätzlichen Fotos erhöht werden. Weitere Informationen per E-Mail."
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Willkommen in deinem Flybooth!",
+    "stepOne": {
+      "title": "Bewahre die URL dieser Seite gut auf. Hier findest du den Zugang zu deiner Galerie und zur Nachrichtenwand.",
+      "copyButton": {
+        "label": "URL kopieren",
+        "copied": "Kopiert"
+      },
+      "emailButton": {
+        "label": "Per E-Mail senden",
+        "placeholder": "E-Mail",
+        "toastError": "Fehler beim Senden der E-Mail"
+      }
+    },
+    "stepTwo": {
+      "title": "Gehe jetzt zur Schnittstelle, die du mit deinen Gästen teilen wirst, damit sie hinzufügen können",
+      "options": {
+        "photos": "Fotos",
+        "messages": "Nachrichten",
+        "both": "Fotos und Nachrichten"
+      },
+      "buttonLabel": "Zur Schnittstelle gehen",
+      "subtitle": "Du kannst auch den untenstehenden QR-Code ausdrucken und an strategischen Stellen aufkleben, um den Zugang zur Schnittstelle zu erleichtern.",
+      "printButtonLabel": "Drucken"
+    },
+    "stepThree": {
+      "title": "Hier ist dann der Inhalt, der sich automatisch aktualisiert und während deiner Veranstaltung projiziert wird.",
+      "subtitle": "Um Fotos und Nachrichten in Echtzeit zu projizieren, gib den folgenden Projektionscode in die Projektionsschnittstelle ein.",
+      "buttonPhotoLabel": "Fotos",
+      "buttonMessageLabel": "Nachrichten",
+      "projectionCodeLabel": "Projektionscode für Fotos"
+    },
+    "stepFour": {
+      "title": "Schließlich, hier ist eine Galerie, die du mit deinen Gästen nach der Veranstaltung teilen kannst, damit sie ihre Lieblingsfotos herunterladen können. Achtung, die Fotos werden nach einer Woche vom Server gelöscht!",
+      "buttonLabel": "Galerie"
+    },
+    "stepFive": {
+      "title": "Und zum Schluss, setze diese Seite für deine nächste Veranstaltung zurück.",
+      "buttonLabel": "Zurücksetzen"
+    }
+  },
+  "upload": {
+    "message": {
+      "buttonLabel": "Eine Nachricht senden",
+      "modal": {
+        "name": "Vorname",
+        "namePlaceholder": "Freezer",
+        "message": "Nachricht",
+        "messagePlaceholder": "Maximal 200 Zeichen.",
+        "button": "Senden"
+      }
+    },
+    "photo": {
+      "buttonLabel": "Ein Selfie senden"
+    },
+    "toast": {
+      "loading": {
+        "title": "Senden läuft",
+        "description": "Ein wenig Geduld..."
+      },
+      "success": {
+        "title": "Gesendet",
+        "description": "Es ist online!"
+      },
+      "error": {
+        "title": "Nicht gesendet",
+        "description": "Es ist schlecht codiert :("
+      }
+    }
+  },
+  "textBoard": {
+    "loading": "Nachrichten werden geladen...",
+    "noPhotos": "Poste eine Nachricht!"
+  },
+  "coverflow": {
+    "loading": "Coverflow wird geladen...",
+    "noPhotos": "Veröffentliche ein Foto im Photobooth!"
+  },
+  "gallery": {
+    "loading": "Galerie wird geladen...",
+    "download": "Herunterladen",
+    "noPhotos": "Bisher wurden keine Fotos veröffentlicht."
+  }
+}

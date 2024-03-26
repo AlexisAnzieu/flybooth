@@ -13,10 +13,12 @@ import * as React from "react";
 
 const BASE_URL = "https://flybooth.app";
 
-export const SendLink = ({ flyboothId }: any) => (
+export const SendLink = ({ flyboothId, lang }: any) => (
   <Html>
     <Head />
-    <Preview>Voici le lien vers ton flybooth, garde le précieusement !</Preview>
+    <Preview>
+      Voici le lien vers ton flybooth, garde le précieusement - {lang} !
+    </Preview>
     <Body style={main}>
       <Container style={container}>
         <Text style={paragraph}>{"Merci d'avoir créé ton Flybooth !"}</Text>

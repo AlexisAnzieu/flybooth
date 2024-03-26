@@ -1,0 +1,123 @@
+{
+  "landing": {
+    "subtitle": "Photobooth on fly, from small gatherings to big venues",
+    "cta": {
+      "label": "Create your photobooth",
+      "loading": "Creation in progress..."
+    },
+    "projectionCode": {
+      "label": "or enter the projection code",
+      "toast": {
+        "title": "Not Found",
+        "description": "The projection code is not associated with any Flybooth."
+      }
+    },
+    "footer": {
+      "featureAsk": "Click here to suggest new features",
+      "codedWithLove": "Coded with ❤ in Montreal"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "questions": {
+        "q0": "Is it free?",
+        "a0": "Yes, no fees or account is required to use Flybooth. In addition, the source code is fully available without copyright restrictions.",
+        "q1": "How does it work?",
+        "a1": "Dedicated to event organizers, Flybooth is an online photobooth that allows participants to take photos or send messages from their smartphone. The photos and messages can then be projected in real time on the equipment set up by the organizer.",
+        "q2": "Is it possible to moderate the photos?",
+        "a2": "In order to limit the manual activity of the organizer during the event, inappropriate photos are automatically deleted. It is important to note that the algorithm is not infallible.",
+        "q3": "How long are the photos kept?",
+        "a3": "The photos are kept for 7 days during which participants can review or download them from a dedicated gallery.",
+        "q4": "How many photos can participants post?",
+        "a4": "Participants can post up to 1000 photos per event. This limit can be increased by increments of $10/1000 additional photos. More information by email."
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Welcome to your flybooth!",
+    "stepOne": {
+      "title": "Keep the URL of this page safe. This is where you will find access to your gallery and the message wall.",
+      "copyButton": {
+        "label": "Copy URL",
+        "copied": "Copied"
+      },
+      "emailButton": {
+        "label": "Send by email",
+        "placeholder": "Email",
+        "toastError": "Email sending error"
+      }
+    },
+    "stepTwo": {
+      "title": "Now access the interface that you will share with your guests so they can",
+      "menu": {
+        "photos": "only add photos.",
+        "messages": "only add messages.",
+        "both": "add photos and messages."
+      },
+      "options": {
+        "photos": "Photos",
+        "messages": "Messages",
+        "both": "Photos and messages"
+      },
+      "buttonLabel": "Access the interface",
+      "subtitle": "You can also print the QR code below and stick it in strategic places to facilitate access to the interface.",
+      "printButtonLabel": "Print"
+    },
+    "stepThree": {
+      "title": "Here is the content that updates automatically, to project during your event.",
+      "subtitle": "To project photos and messages in real time, enter the following projection code in the projection interface.",
+      "buttonPhotoLabel": "Photos",
+      "buttonMessageLabel": "Messages",
+      "projectionCodeLabel": "Photo projection code"
+    },
+    "stepFour": {
+      "title": "Finally, here is a gallery that you can share with your guests after the event to allow them to download the photos they liked the most. Be careful, the photos are deleted from the server after a week!",
+      "buttonLabel": "Gallery"
+    },
+    "stepFive": {
+      "title": "And finally, reset this page for your next event.",
+      "buttonLabel": "Reset"
+    }
+  },
+  "upload": {
+    "message": {
+      "buttonLabel": "Send a message",
+      "modal": {
+        "name": "First name",
+        "namePlaceholder": "Freezer",
+        "message": "Message",
+        "messagePlaceholder": "200 characters max.",
+        "button": "Send"
+      }
+    },
+    "photo": {
+      "buttonLabel": "Send a selfie"
+    },
+    "toast": {
+      "loading": {
+        "title": "Sending",
+        "description": "A little patience..."
+      },
+      "success": {
+        "title": "Sent",
+        "description": "It's online!"
+      },
+      "error": {
+        "title": "Not sent",
+        "description": "It's badly coded :("
+      }
+    }
+  },
+  "textBoard": {
+    "loading": "Loading messages...",
+    "noPhotos": "Post a message!"
+  },
+  "coverflow": {
+    "loading": "Coverflow loading...",
+    "noPhotos": "Publish a photo in the photobooth!"
+  },
+  "gallery": {
+    "loading": "Gallery loading...",
+    "download": "Download",
+    "noPhotos": "No photos have been published yet."
+  }
+}

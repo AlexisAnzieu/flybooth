@@ -11,8 +11,10 @@ import "swiper/css/autoplay";
 import "swiper/css/effect-coverflow";
 import QrCode, { PAGES } from "@/component/qr-code";
 import { PageProps } from "../page";
+import useTranslation from "next-translate/useTranslation";
 
 export default function Gallery({ params: { flyboothId } }: PageProps) {
+  const { t } = useTranslation("main");
   const { data, isLoading, error } = useSWR(
     `/api/cloudinary?flyboothId=${flyboothId}`,
     (url) =>
@@ -31,7 +33,7 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
   if (isLoading) {
     return (
       <Center p={100}>
-        <Heading pr={10}>Photos en cours de chargement</Heading>
+        <Heading pr={10}>{t("coverflow.loading")}</Heading>
         <Spinner
           thickness="4px"
           speed="0.65s"
@@ -46,7 +48,7 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
   if (!data?.length || error) {
     return (
       <Center p={100} flexDir={"column"}>
-        <Heading pb={10}>{"Poste une photo dans le photobooth !"}</Heading>
+        <Heading pb={10}>{t("coverflow.noPhotos")}</Heading>
         <Box>
           <QrCode redirectTo={PAGES.upload} flyboothId={flyboothId} />
         </Box>

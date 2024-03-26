@@ -25,14 +25,17 @@ import { ReactSVG } from "react-svg";
 import { logoFont } from "../font";
 import { useState } from "react";
 import MotionButton from "@/component/motion-button";
-import { FaGithub, FaEnvelope, FaRegHeart } from "react-icons/fa";
+import { FaGithub, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
 import { QuestionIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
+import useTranslation from "next-translate/useTranslation";
+import LanguageSwitcher from "@/component/language-switcher";
 
 const MotionIcon = motion(QuestionIcon);
 
 export default function Index() {
+  const { t, lang } = useTranslation("main");
   const router = useRouter();
   const toast = useToast();
   const [isInvalid, setIsInvalid] = useState(false);
@@ -42,7 +45,7 @@ export default function Index() {
   const handleGenerate = () => {
     setIsLoading(true);
     const uuid = uuidv4();
-    router.push(uuid);
+    router.push(`${lang}/${uuid}`);
   };
 
   const handleComplete = async (pin: string) => {
@@ -52,14 +55,14 @@ export default function Index() {
     if (!flyboothId) {
       setIsInvalid(true);
       toast({
-        title: "Non trouvé",
-        description: "Le code de projection n'est associé à aucun flybooth.",
+        title: t("landing.projectionCode.toast.title"),
+        description: t("landing.projectionCode.toast.description"),
         status: "error",
         duration: 9000,
         isClosable: true,
       });
     } else {
-      router.push(`/${flyboothId}/coverflow`);
+      router.push(`${lang}/${flyboothId}/coverflow`);
     }
   };
 
@@ -70,9 +73,11 @@ export default function Index() {
         flexDirection={"column"}
         maxW="3xl"
         textAlign={"center"}
-        pt={5}
         minH={"100vh"}
       >
+        <Box as="header" w="100%" pt={3} color="black" textAlign={"right"}>
+          <LanguageSwitcher currentLang={lang} />
+        </Box>
         <Box
           className={logoFont.className}
           display={"flex"}
@@ -89,23 +94,23 @@ export default function Index() {
           Flybooth
         </Box>
         <Box className={logoFont.className} pb={50} fontSize={25}>
-          - Photobooth on fly, from small gatherings to big venues -
+          - {t("landing.subtitle")} -
         </Box>
 
         <Box pb={10}>
           <MotionButton
-            loadingText="Création en cours..."
+            loadingText={t("landing.cta.loading")}
             isLoading={isLoading}
             boxShadow={"dark-lg"}
             onClick={handleGenerate}
             size={"lg"}
           >
-            Crée ton photobooth
+            {t("landing.cta.label")}
           </MotionButton>
         </Box>
 
         <Box fontWeight={"600"} fontSize={20}>
-          {"ou entre le code de projection"}
+          {t("landing.projectionCode.label")}
         </Box>
         <Box>
           <PinInput
@@ -144,7 +149,7 @@ export default function Index() {
         >
           <Box fontWeight={"600"} textDecoration={"underline"}>
             <Link target="_blank" href="https://flybooth.canny.io/new-features">
-              Clique ici afin de suggérer de nouvelles fonctionnalités
+              {t("landing.footer.featureAsk")}
             </Link>
           </Box>
         </Box>
@@ -161,7 +166,7 @@ export default function Index() {
             </Link>
           </Box>
           <Box fontWeight={"600"} fontSize={20}>
-            Codé avec <Icon as={FaRegHeart} /> à Montréal
+            {t("landing.footer.codedWithLove")}
           </Box>
 
           <Box fontSize={27}>
@@ -176,86 +181,26 @@ export default function Index() {
           <ModalContent p={2}>
             <ModalBody>
               <Heading textAlign={"center"} as="h2" size="md" mb={4}>
-                Foire Aux Questions
+                {t("landing.faq.title")}
               </Heading>
               <Accordion>
-                <AccordionItem>
-                  <h2>
-                    <AccordionButton>
-                      <Box as="span" flex="1">
-                        Est-ce gratuit?
-                      </Box>
-                      <AccordionIcon />
-                    </AccordionButton>
-                  </h2>
-                  <AccordionPanel pb={4}>
-                    {`Oui, aucun frais ou compte n'est requis pour utiliser Flybooth. En outre le code source est intégralement disponible sans restriction de copyright.`}
-                  </AccordionPanel>
-                </AccordionItem>
-
-                <AccordionItem>
-                  <h2>
-                    <AccordionButton>
-                      <Box as="span" flex="1">
-                        Comment ça marche ?
-                      </Box>
-                      <AccordionIcon />
-                    </AccordionButton>
-                  </h2>
-                  <AccordionPanel pb={4}>
-                    {`Dédié au organisateurs d'événements, Flybooth est un photobooth
-                en ligne qui permet aux participants de prendre des photos ou
-                d'envoyer des messages à partir de leur smartphone. Les photos
-                et messages peuvent ensuite être projeté en temps réel sur le
-                matériel mis en place par l'organisateur.`}
-                  </AccordionPanel>
-                </AccordionItem>
-
-                <AccordionItem>
-                  <h2>
-                    <AccordionButton>
-                      <Box as="span" flex="1">
-                        Est-il possible de modérer les photos ?
-                      </Box>
-                      <AccordionIcon />
-                    </AccordionButton>
-                  </h2>
-                  <AccordionPanel pb={4}>
-                    {
-                      "Afin de limiter l'activité manuel de l'organisateur au cours de l'événement, les photos inappropriées sont automatiquement supprimées. Il est important de préciser que l'algorithme n'est cependant pas infaillible."
-                    }
-                  </AccordionPanel>
-                </AccordionItem>
-                <AccordionItem>
-                  <h2>
-                    <AccordionButton>
-                      <Box as="span" flex="1">
-                        Combien de temps les photos sont-elles conservées ?
-                      </Box>
-                      <AccordionIcon />
-                    </AccordionButton>
-                  </h2>
-                  <AccordionPanel pb={4}>
-                    {
-                      "Les photos sont conservées 7 jours durant lesquels les participants peuvent les revisionner ou les télécharger à partir d'une galerie dédiée."
-                    }
-                  </AccordionPanel>
-                </AccordionItem>
-                <AccordionItem>
-                  <h2>
-                    <AccordionButton>
-                      <Box as="span" flex="1">
-                        Combien de photos les participants peuvent-ils poster ?
-                      </Box>
-                      <AccordionIcon />
-                    </AccordionButton>
-                  </h2>
-                  <AccordionPanel pb={4}>
-                    {
-                      "Les participants peuvent poster jusqu'à 1000 photos par événement. Cette limite peut-être augmentée par palier de 10$/1000 photos additionnelles. Plus d'information par courriel."
-                    }
-                  </AccordionPanel>
-                </AccordionItem>
+                {Array(5)
+                  .fill(null)
+                  .map((_, index) => (
+                    <AccordionItem key={`faq-${index}`}>
+                      <h2>
+                        <AccordionButton>
+                          <Box as="span" flex="1">
+                            {t(`landing.faq.questions.q${index}`)}
+                          </Box>
+                          <AccordionIcon />
+                        </AccordionButton>
+                      </h2>
+                      <AccordionPanel pb={4}>
+                        {t(`landing.faq.questions.a${index}`)}
+                      </AccordionPanel>
+                    </AccordionItem>
+                  ))}
               </Accordion>
             </ModalBody>
           </ModalContent>

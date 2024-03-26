@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import useTranslation from "next-translate/useTranslation";
 
 import { Providers } from "../providers";
 import { inter } from "../font";
@@ -22,8 +23,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { lang } = useTranslation();
+
   return (
-    <html lang="en">
+    <html lang={lang}>
       <link rel="shortcut icon" href="/favicon.svg" />
       <body className={inter.className}>
         <Providers>{children}</Providers>

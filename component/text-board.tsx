@@ -5,6 +5,7 @@ import fetcher from "@/lib/fetcher";
 import { Box, Center, Heading, Spinner } from "@chakra-ui/react";
 import useSWR from "swr";
 import QrCode, { PAGES } from "./qr-code";
+import useTranslation from "next-translate/useTranslation";
 
 type Text = {
   message: string;
@@ -14,6 +15,7 @@ type Text = {
 };
 
 export default function TextBoard({ flyboothId }: { flyboothId: string }) {
+  const { t } = useTranslation("main");
   const { data, isLoading } = useSWR<Text[]>(
     `/api/texts?flyboothId=${flyboothId}`,
     fetcher,
@@ -25,7 +27,7 @@ export default function TextBoard({ flyboothId }: { flyboothId: string }) {
   if (isLoading) {
     return (
       <Center p={100} color={"white"}>
-        <Heading pr={10}>Messages en cours de chargement</Heading>
+        <Heading pr={10}>{t("textBoard.loading")}</Heading>
         <Spinner
           thickness="4px"
           speed="0.65s"
@@ -41,7 +43,7 @@ export default function TextBoard({ flyboothId }: { flyboothId: string }) {
     return (
       <Center p={100} flexDir={"column"}>
         <Heading textAlign={"center"} size={"3xl"} pb={10}>
-          {"Poste un message !"}
+          {t("textBoard.noPhotos")}
         </Heading>
         <QrCode redirectTo={PAGES.upload} flyboothId={flyboothId} />
       </Center>
