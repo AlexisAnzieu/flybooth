@@ -13,6 +13,8 @@ import QrCode, { PAGES } from "@/component/qr-code";
 import { PageProps } from "../page";
 import useTranslation from "next-translate/useTranslation";
 
+const SLIDE_PER_VIEW = 3;
+
 export default function Gallery({ params: { flyboothId } }: PageProps) {
   const { t } = useTranslation("main");
   const { data, isLoading, error } = useSWR(
@@ -60,16 +62,20 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
     <Box
       bgColor={"black"}
       height={"100vh"}
-      style={{
-        display: "flex",
-        alignItems: "center",
-      }}
+      display={"flex"}
+      alignItems={"center"}
     >
       <Swiper
+        style={{
+          paddingTop: 55,
+          paddingBottom: 55,
+          paddingLeft: 20,
+          paddingRight: 20,
+        }}
         centeredSlides={true}
         effect={"coverflow"}
         modules={[Autoplay, EffectCoverflow]}
-        slidesPerView={data.length > 3 ? 3 : data.length}
+        slidesPerView={Math.min(data.length, SLIDE_PER_VIEW)}
         autoplay={{
           delay: 2000,
         }}
@@ -89,6 +95,7 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
             }}
           >
             <img
+              width={"650vh"}
               alt={image.src}
               style={{
                 borderRadius: 20,

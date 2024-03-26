@@ -49,9 +49,9 @@
     "stepTwo": {
       "title": "Now access the interface that you will share with your guests so they can add",
       "options": {
-        "photos": "photos.",
-        "messages": "messages.",
-        "both": "both photos and messages."
+        "photos": "photos",
+        "messages": "messages",
+        "both": "both photos and messages"
       },
       "buttonLabel": "Access the interface",
       "subtitle": "You can also print the QR code below and stick it in strategic places to facilitate access to the interface.",
