@@ -1,0 +1,118 @@
+{
+  "landing": {
+    "subtitle": "从小型派对到音乐节的即时照片亭",
+    "cta": {
+      "label": "创建你的照片亭",
+      "loading": "正在创建..."
+    },
+    "projectionCode": {
+      "label": "或输入投影码",
+      "toast": {
+        "title": "未找到",
+        "description": "投影码未与任何Flybooth关联。"
+      }
+    },
+    "footer": {
+      "featureAsk": "点击这里提出新功能建议",
+      "codedWithLove": "在蒙特利尔用❤编码"
+    },
+    "faq": {
+      "title": "常见问题解答",
+      "questions": {
+        "q0": "这是免费的吗？",
+        "a0": "是的，使用Flybooth不需要任何费用或账户。此外，源代码完全可用，没有版权限制。",
+        "q1": "这是如何工作的？",
+        "a1": "Flybooth是一个在线照片亭，专为活动组织者设计，允许参与者从他们的智能手机上拍照或发送消息。然后，照片和消息可以实时投影到组织者设置的设备上。",
+        "q2": "可以审查照片吗？",
+        "a2": "为了在活动期间减少组织者的手动活动，不适当的照片会自动删除。但是，重要的是要指出，算法并不是百分之百准确的。",
+        "q3": "照片会保存多久？",
+        "a3": "照片会保存7天，期间参与者可以在专用画廊中重新查看或下载照片。",
+        "q4": "参与者可以发布多少照片？",
+        "a4": "参与者可以在每个活动中发布多达1000张照片。这个限制可以通过每增加10美元/1000张额外照片来提高。更多信息请通过电子邮件联系。"
+      }
+    }
+  },
+  "dashboard": {
+    "title": "欢迎来到你的flybooth！",
+    "stepOne": {
+      "title": "请妥善保管这个页面的URL。你可以在这里找到你的画廊和消息墙的访问权限。",
+      "copyButton": {
+        "label": "复制URL",
+        "copied": "已复制"
+      },
+      "emailButton": {
+        "label": "通过电子邮件发送",
+        "placeholder": "电子邮件",
+        "toastError": "发送电子邮件错误"
+      }
+    },
+    "stepTwo": {
+      "title": "现在访问你将与你的客人分享的界面，以便他们可以添加",
+      "options": {
+        "photos": "照片",
+        "messages": "消息",
+        "both": "照片和消息"
+      },
+      "buttonLabel": "访问界面",
+      "subtitle": "你也可以打印下面的QR码，并将其粘贴在战略位置以便于访问界面。",
+      "printButtonLabel": "打印"
+    },
+    "stepThree": {
+      "title": "接下来是自动更新的内容，可以在你的活动中投影。",
+      "subtitle": "要实时投影照片和消息，请在投影界面中输入以下投影码。",
+      "buttonPhotoLabel": "照片",
+      "buttonMessageLabel": "消息",
+      "projectionCodeLabel": "照片投影码"
+    },
+    "stepFour": {
+      "title": "最后，这是一个你可以在活动结束后与你的客人分享的画廊，以便他们可以下载他们最喜欢的照片。注意，照片在一周后会从服务器上删除！",
+      "buttonLabel": "画廊"
+    },
+    "stepFive": {
+      "title": "最后，为你的下一个活动重置这个页面。",
+      "buttonLabel": "重置"
+    }
+  },
+  "upload": {
+    "message": {
+      "buttonLabel": "发送消息",
+      "modal": {
+        "name": "名字",
+        "namePlaceholder": "Freezer",
+        "message": "消息",
+        "messagePlaceholder": "最多200个字符。",
+        "button": "发送"
+      }
+    },
+    "photo": {
+      "buttonLabel": "发送自拍照"
+    },
+    "toast": {
+      "loading": {
+        "title": "正在发送",
+        "description": "请稍候..."
+      },
+      "success": {
+        "title": "已发送",
+        "description": "已上线！"
+      },
+      "error": {
+        "title": "未发送",
+        "description": "编码错误 :("
+      }
+    }
+  },
+  "textBoard": {
+    "loading": "正在加载消息...",
+    "noPhotos": "发布一条消息！"
+  },
+  "coverflow": {
+    "loading": "正在加载coverflow...",
+    "noPhotos": "在photobooth中发布一张照片！"
+  },
+  "gallery": {
+    "loading": "正在加载画廊...",
+    "download": "下载",
+    "noPhotos": "目前还没有发布任何照片。"
+  }
+}

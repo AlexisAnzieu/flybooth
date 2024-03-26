@@ -33,7 +33,6 @@ export async function GET(req: Request) {
   }
 
   const data = await response.json();
-  console.log(data);
 
   if (data.nudity.sexual_display > 0.5 || data.nudity.sexual_activity > 0.5) {
     console.log("Nudity detected, deleting image from Cloudinary");

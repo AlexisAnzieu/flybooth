@@ -77,5 +77,47 @@
       "title": "And finally, reset this page for your next event.",
       "buttonLabel": "Reset"
     }
+  },
+  "upload": {
+    "message": {
+      "buttonLabel": "Send a message",
+      "modal": {
+        "name": "First name",
+        "namePlaceholder": "Freezer",
+        "message": "Message",
+        "messagePlaceholder": "200 characters max.",
+        "button": "Send"
+      }
+    },
+    "photo": {
+      "buttonLabel": "Send a selfie"
+    },
+    "toast": {
+      "loading": {
+        "title": "Sending",
+        "description": "A little patience..."
+      },
+      "success": {
+        "title": "Sent",
+        "description": "It's online!"
+      },
+      "error": {
+        "title": "Not sent",
+        "description": "It's badly coded :("
+      }
+    }
+  },
+  "textBoard": {
+    "loading": "Loading messages...",
+    "noPhotos": "Post a message!"
+  },
+  "coverflow": {
+    "loading": "Coverflow loading...",
+    "noPhotos": "Publish a photo in the photobooth!"
+  },
+  "gallery": {
+    "loading": "Gallery loading...",
+    "download": "Download",
+    "noPhotos": "No photos have been published yet."
   }
 }

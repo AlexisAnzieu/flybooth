@@ -1,5 +1,10 @@
 const countries = [
   {
+    code: "cn",
+    name: "中文",
+    flag: "🇨🇳",
+  },
+  {
     code: "de",
     name: "Deutsch",
     flag: "🇩🇪",
@@ -20,9 +25,19 @@ const countries = [
     flag: "🇫🇷",
   },
   {
+    code: "it",
+    name: "Italiano",
+    flag: "🇮🇹",
+  },
+  {
     code: "pt",
     name: "Português",
     flag: "🇵🇹",
+  },
+  {
+    code: "ru",
+    name: "Русский",
+    flag: "🇷🇺",
   },
 ];
 

@@ -31,5 +31,88 @@
         "a4": "Los participantes pueden publicar hasta 1000 fotos por evento. Este límite puede aumentarse en incrementos de $10/1000 fotos adicionales. Más información por correo electrónico."
       }
     }
+  },
+  "dashboard": {
+    "title": "¡Bienvenido a tu flybooth!",
+    "stepOne": {
+      "title": "Guarda bien la URL de esta página. Aquí encontrarás el acceso a tu galería y al muro de mensajes.",
+      "copyButton": {
+        "label": "Copiar la URL",
+        "copied": "Copiado"
+      },
+      "emailButton": {
+        "label": "Enviar por correo electrónico",
+        "placeholder": "Correo electrónico",
+        "toastError": "Error al enviar el correo electrónico"
+      }
+    },
+    "stepTwo": {
+      "title": "Accede ahora a la interfaz que vas a compartir con tus invitados para que puedan añadir",
+      "options": {
+        "photos": "fotos",
+        "messages": "mensajes",
+        "both": "fotos y mensajes"
+      },
+      "buttonLabel": "Acceder a la interfaz",
+      "subtitle": "También puedes imprimir el código QR de abajo y pegarlo en lugares estratégicos para facilitar el acceso a la interfaz.",
+      "printButtonLabel": "Imprimir"
+    },
+    "stepThree": {
+      "title": "Aquí tienes el contenido que se actualiza automáticamente, para proyectar durante tu evento.",
+      "subtitle": "Para proyectar las fotos y mensajes en tiempo real, introduce el siguiente código de proyección en la interfaz de proyección.",
+      "buttonPhotoLabel": "Fotos",
+      "buttonMessageLabel": "Mensajes",
+      "projectionCodeLabel": "Código de proyección de fotos"
+    },
+    "stepFour": {
+      "title": "Por último, aquí tienes una galería que puedes compartir con tus invitados después del evento para que puedan descargar las fotos que más les hayan gustado. ¡Cuidado, las fotos se borran del servidor después de una semana!",
+      "buttonLabel": "Galería"
+    },
+    "stepFive": {
+      "title": "Y para terminar, reinicia esta página para tu próximo evento.",
+      "buttonLabel": "Reiniciar"
+    }
+  },
+  "upload": {
+    "message": {
+      "buttonLabel": "Enviar un mensaje",
+      "modal": {
+        "name": "Nombre",
+        "namePlaceholder": "Freezer",
+        "message": "Mensaje",
+        "messagePlaceholder": "Máximo 200 caracteres.",
+        "button": "Enviar"
+      }
+    },
+    "photo": {
+      "buttonLabel": "Enviar un selfie"
+    },
+    "toast": {
+      "loading": {
+        "title": "Enviando",
+        "description": "Un poco de paciencia..."
+      },
+      "success": {
+        "title": "Enviado",
+        "description": "¡Está en línea!"
+      },
+      "error": {
+        "title": "No enviado",
+        "description": "Está mal codificado :("
+      }
+    }
+  },
+  "textBoard": {
+    "loading": "Cargando mensajes...",
+    "noPhotos": "¡Publica un mensaje!"
+  },
+  "coverflow": {
+    "loading": "Cargando coverflow...",
+    "noPhotos": "¡Publica una foto en el photobooth!"
+  },
+  "gallery": {
+    "loading": "Cargando galería...",
+    "download": "Descargar",
+    "noPhotos": "No se ha publicado ninguna foto por el momento."
   }
 }
