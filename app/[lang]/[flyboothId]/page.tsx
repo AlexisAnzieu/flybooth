@@ -42,6 +42,7 @@ import {
 } from "react-icons/ai";
 import Pride from "react-canvas-confetti/dist/presets/pride";
 import useTranslation from "next-translate/useTranslation";
+import LanguageSwitcher from "@/component/language-switcher";
 
 export type PageProps = {
   params: { flyboothId: string };
@@ -164,8 +165,10 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
   return (
     <Box bgColor={"purple"} minH={"100vh"}>
       <Pride onInit={onInitHandler} />
-
-      <Container maxW="3xl" textAlign={"center"} color={"white"} pt={10}>
+      <Container maxW="3xl" textAlign={"center"} color={"white"}>
+        <Box as="header" w="100%" pt={3} color="black" textAlign={"right"}>
+          <LanguageSwitcher currentLang={lang} />
+        </Box>
         <Heading size={"xl"}>{t("dashboard.title")}</Heading>
         <Box className="step" borderRadius={20} pb="10" boxShadow={"2xl"}>
           <Box position="relative" padding="10">
