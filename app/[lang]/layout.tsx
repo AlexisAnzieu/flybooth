@@ -6,17 +6,22 @@ import useTranslation from "next-translate/useTranslation";
 import { Providers } from "../providers";
 import { inter } from "../font";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://flybooth.app"),
-  title: "Flybooth - Photobooth",
-  description: " Photobooth on fly, from small gatherings to big venues.",
-  openGraph: {
-    images: ["/opengraph.png"],
-    description: "Photobooth on fly, from small gatherings to big venues.",
+export function generateMetadata(): Metadata {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { t } = useTranslation("main");
+
+  return {
+    metadataBase: new URL("https://flybooth.app"),
     title: "Flybooth - Photobooth",
-    url: "https://flybooth.app",
-  },
-};
+    description: t("landing.subtitle"),
+    openGraph: {
+      images: ["/opengraph.png"],
+      description: t("landing.subtitle"),
+      title: "Flybooth - Photobooth",
+      url: "https://flybooth.app",
+    },
+  };
+}
 
 export default function RootLayout({
   children,

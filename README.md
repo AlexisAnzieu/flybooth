@@ -39,10 +39,7 @@ As a venue organizer, I wanted to create an app so people could post some pictur
 - Picture download (single or bulk)
 - Picture upload
 - PIN for easy access on external screen
-
-### to be added:
-
-- internationalization
+- Internationalization
 
 ## Tiers
 
