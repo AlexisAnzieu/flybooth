@@ -26,7 +26,6 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
-  Select,
   Stack,
   useClipboard,
   useToast,

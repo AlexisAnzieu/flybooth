@@ -50,7 +50,7 @@ This project uses free Saas products to run:
 
 - **Backend API**: Vercel
 - **Deployment**: Vercel
-- **Email sender** Resend
+- **Email sender**: Resend
 - **Image moderation**: Sighengine
 - **Image optimization**: Vercel
 - **Image storage**: Cloudinary

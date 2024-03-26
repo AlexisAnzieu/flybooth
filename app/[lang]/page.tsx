@@ -187,7 +187,7 @@ export default function Index() {
                 {Array(5)
                   .fill(null)
                   .map((_, index) => (
-                    <AccordionItem key={index}>
+                    <AccordionItem key={`faq-${index}`}>
                       <h2>
                         <AccordionButton>
                           <Box as="span" flex="1">
