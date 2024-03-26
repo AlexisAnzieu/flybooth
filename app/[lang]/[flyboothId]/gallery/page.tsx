@@ -21,8 +21,10 @@ import { BREAKPOINT_VALUES } from "@/lib/constants";
 import { useState } from "react";
 import { PageProps } from "../page";
 import { Resource } from "@/app/api/cloudinary/route";
+import useTranslation from "next-translate/useTranslation";
 
 export default function Gallery({ params: { flyboothId } }: PageProps) {
+  const { t } = useTranslation("main");
   const numColumns = useBreakpointValue(BREAKPOINT_VALUES);
   const [hoveredId, setHoveredId] = useState(null);
   const [pictureUrl, setPictureUrl] = useState("");
@@ -62,7 +64,7 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
   if (isLoading) {
     return (
       <Center p={100}>
-        <Heading pr={10}>Photos en cours de chargement</Heading>
+        <Heading pr={10}>{t("gallery.loading")}</Heading>
         <Spinner
           thickness="4px"
           speed="0.65s"
@@ -77,9 +79,7 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
   if (!data?.length) {
     return (
       <Center p={100}>
-        <Heading pr={10}>
-          {"Personne n'a posté de photos pour l'instant"}
-        </Heading>
+        <Heading pr={10}>{t("gallery.noPhotos")}</Heading>
       </Center>
     );
   }

@@ -72,5 +72,47 @@
       "title": "Et pour finir, réinitialise cette page pour ton prochain événement.",
       "buttonLabel": "Réinitialiser"
     }
+  },
+  "upload": {
+    "message": {
+      "buttonLabel": "Envoyer un message",
+      "modal": {
+        "name": "Prénom",
+        "namePlaceholder": "Freezer",
+        "message": "Message",
+        "messagePlaceholder": "200 caractères max.",
+        "button": "Envoyer"
+      }
+    },
+    "photo": {
+      "buttonLabel": "Envoyer un selfie"
+    },
+    "toast": {
+      "loading": {
+        "title": "En cours d'envoi",
+        "description": "Un peu de patience..."
+      },
+      "success": {
+        "title": "Envoyé",
+        "description": "C'est en ligne !"
+      },
+      "error": {
+        "title": "Non envoyé",
+        "description": "C'est mal codé :("
+      }
+    }
+  },
+  "textBoard": {
+    "loading": "Messages en cours de chargement...",
+    "noPhotos": "Poste un message !"
+  },
+  "coverflow": {
+    "loading": "Coverflow en cours de chargement...",
+    "noPhotos": "Publie une photo dans le photobooth !"
+  },
+  "gallery": {
+    "loading": "Galerie en cours de chargement...",
+    "download": "Télécharger",
+    "noPhotos": "Aucune photo n'a été publiée pour le moment."
   }
 }
