@@ -43,7 +43,9 @@
       "emailButton": {
         "label": "Per E-Mail senden",
         "placeholder": "E-Mail",
-        "toastError": "Fehler beim Senden der E-Mail"
+        "toastError": "Fehler beim Senden der E-Mail",
+        "toastSuccess": "E-Mail gesendet",
+        "toastSuccessDescription": "Die URL dieser Seite wurde an die folgende Adresse gesendet: "
       }
     },
     "stepTwo": {
@@ -59,7 +61,6 @@
     },
     "stepThree": {
       "title": "Hier ist dann der Inhalt, der sich automatisch aktualisiert und während deiner Veranstaltung projiziert wird.",
-      "subtitle": "Um Fotos und Nachrichten in Echtzeit zu projizieren, gib den folgenden Projektionscode in die Projektionsschnittstelle ein.",
       "buttonPhotoLabel": "Fotos",
       "buttonMessageLabel": "Nachrichten",
       "projectionCodeLabel": "Projektionscode für Fotos"
@@ -114,5 +115,16 @@
     "loading": "Galerie wird geladen...",
     "download": "Herunterladen",
     "noPhotos": "Bisher wurden keine Fotos veröffentlicht."
+  },
+  "email": {
+    "sendLink": {
+      "buttonLabel": "Greifen Sie auf Ihre Flybooth zu",
+      "ending": "Bis bald !",
+      "footer": "In Montreal mit ❤ codiert",
+      "preview": "Hier ist der Link zu Ihrem Flybooth, bewahren Sie ihn gut auf!",
+      "subject": "Hier ist Ihr Flybooth!",
+      "subtitle": "Hier ist ein Link, über den Sie jederzeit darauf zugreifen können.",
+      "title": "Vielen Dank für die Erstellung Ihres Flybooth!"
+    }
   }
 }

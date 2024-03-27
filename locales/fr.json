@@ -43,7 +43,9 @@
       "emailButton": {
         "label": "Envoyer par courriel",
         "placeholder": "Email",
-        "toastError": "Erreur d'envoi de courriel"
+        "toastError": "Erreur d'envoi de courriel",
+        "toastSuccess": "Courriel envoyé",
+        "toastSuccessDescription": "L'URL de cette page a été envoyée à l'adresse suivante : "
       }
     },
     "stepTwo": {
@@ -59,7 +61,6 @@
     },
     "stepThree": {
       "title": "Voici ensuite le contenu qui s'actualise automatiquement, à projeter lors de ton événement.",
-      "subtitle": "Pour projeter les photos et messages en temps réel, entre le code de projection suivant dans l'interface de projection.",
       "buttonPhotoLabel": "Photos",
       "buttonMessageLabel": "Messages",
       "projectionCodeLabel": "Code de projection des photos"
@@ -114,5 +115,16 @@
     "loading": "Galerie en cours de chargement...",
     "download": "Télécharger",
     "noPhotos": "Aucune photo n'a été publiée pour le moment."
+  },
+  "email": {
+    "sendLink": {
+      "subject": "Voici ton Flybooth !",
+      "preview": "Voici le lien vers ton Flybooth, garde le précieusement !",
+      "title": "Merci d'avoir créé ton Flybooth !",
+      "subtitle": "Voici un lien qui te permettra d'y accéder en tout temps.",
+      "buttonLabel": "Accéder à ton Flybooth",
+      "ending": "À bientôt !",
+      "footer": "Codé avec ❤ à Montréal"
+    }
   }
 }

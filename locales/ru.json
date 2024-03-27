@@ -36,11 +36,16 @@
     "title": "Добро пожаловать в ваш Flybooth!",
     "stepOne": {
       "title": "Храните URL этой страницы в безопасном месте. Здесь вы найдете доступ к вашей галерее и стене сообщений.",
-      "copyButton": { "label": "Скопировать URL", "copied": "Скопировано" },
+      "copyButton": {
+        "label": "Скопировать URL",
+        "copied": "Скопировано"
+      },
       "emailButton": {
         "label": "Отправить по электронной почте",
         "placeholder": "Email",
-        "toastError": "Ошибка отправки электронной почты"
+        "toastError": "Ошибка отправки электронной почты",
+        "toastSuccess": "Письмо отправлено",
+        "toastSuccessDescription": "URL этой страницы был отправлен на следующий адрес: "
       }
     },
     "stepTwo": {
@@ -56,7 +61,6 @@
     },
     "stepThree": {
       "title": "Вот следующий контент, который автоматически обновляется, чтобы проецировать его на вашем мероприятии.",
-      "subtitle": "Чтобы проецировать фотографии и сообщения в реальном времени, введите следующий код проекции в интерфейс проекции.",
       "buttonPhotoLabel": "Фотографии",
       "buttonMessageLabel": "Сообщения",
       "projectionCodeLabel": "Код проекции фотографий"
@@ -68,48 +72,59 @@
     "stepFive": {
       "title": "И, наконец, сбросьте эту страницу для вашего следующего мероприятия.",
       "buttonLabel": "Сбросить"
-    },
-    "upload": {
-      "message": {
-        "buttonLabel": "Отправить сообщение",
-        "modal": {
-          "name": "Имя",
-          "namePlaceholder": "Freezer",
-          "message": "Сообщение",
-          "messagePlaceholder": "Максимум 200 символов.",
-          "button": "Отправить"
-        }
-      },
-      "photo": {
-        "buttonLabel": "Отправить селфи"
-      },
-      "toast": {
-        "loading": {
-          "title": "Отправка",
-          "description": "Немного терпения..."
-        },
-        "success": {
-          "title": "Отправлено",
-          "description": "Это в сети!"
-        },
-        "error": {
-          "title": "Не отправлено",
-          "description": "Это плохо закодировано :("
-        }
+    }
+  },
+  "upload": {
+    "message": {
+      "buttonLabel": "Отправить сообщение",
+      "modal": {
+        "name": "Имя",
+        "namePlaceholder": "Freezer",
+        "message": "Сообщение",
+        "messagePlaceholder": "Максимум 200 символов.",
+        "button": "Отправить"
       }
     },
-    "textBoard": {
-      "loading": "Загрузка сообщений...",
-      "noPhotos": "Опубликуйте сообщение!"
+    "photo": {
+      "buttonLabel": "Отправить селфи"
     },
-    "coverflow": {
-      "loading": "Загрузка coverflow...",
-      "noPhotos": "Опубликуйте фотографию в фотобудке!"
-    },
-    "gallery": {
-      "loading": "Загрузка галереи...",
-      "download": "Скачать",
-      "noPhotos": "Пока не опубликовано ни одной фотографии."
+    "toast": {
+      "loading": {
+        "title": "Отправка",
+        "description": "Немного терпения..."
+      },
+      "success": {
+        "title": "Отправлено",
+        "description": "Это в сети!"
+      },
+      "error": {
+        "title": "Не отправлено",
+        "description": "Это плохо закодировано :("
+      }
+    }
+  },
+  "textBoard": {
+    "loading": "Загрузка сообщений...",
+    "noPhotos": "Опубликуйте сообщение!"
+  },
+  "coverflow": {
+    "loading": "Загрузка coverflow...",
+    "noPhotos": "Опубликуйте фотографию в фотобудке!"
+  },
+  "gallery": {
+    "loading": "Загрузка галереи...",
+    "download": "Скачать",
+    "noPhotos": "Пока не опубликовано ни одной фотографии."
+  },
+  "email": {
+    "sendLink": {
+      "buttonLabel": "Получите доступ к вашей Flybooth",
+      "ending": "До скорой встречи !",
+      "footer": "Кодировано ❤ в Монреале",
+      "preview": "Вот ссылка на ваш Flybooth, сохраните ее!",
+      "subject": "Вот ваш Flybooth!",
+      "subtitle": "Вот ссылка, которая позволит вам получить к нему доступ в любое время.",
+      "title": "Спасибо за создание вашего Flybooth!"
     }
   }
 }

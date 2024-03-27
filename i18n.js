@@ -52,5 +52,5 @@ module.exports = {
     "*": ["main"],
   },
   loadLocaleFrom: (lang) =>
-    import(`./locales/${lang}.json`).then((m) => m.default),
+    import(`@/locales/${lang}.json`).then((m) => m.default),
 };

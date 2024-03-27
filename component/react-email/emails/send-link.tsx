@@ -1,3 +1,4 @@
+import { defaultLocale } from "@/i18n";
 import {
   Body,
   Button,
@@ -13,33 +14,48 @@ import * as React from "react";
 
 const BASE_URL = "https://flybooth.app";
 
-export const SendLink = ({ flyboothId, lang }: any) => (
-  <Html>
-    <Head />
-    <Preview>
-      Voici le lien vers ton flybooth, garde le précieusement - {lang} !
-    </Preview>
-    <Body style={main}>
-      <Container style={container}>
-        <Text style={paragraph}>{"Merci d'avoir créé ton Flybooth !"}</Text>
-        <Text style={paragraph}>
-          {" Voici un lien qui te permettra d'y accéder en tout temps."}
-        </Text>
-        <Section style={btnContainer}>
-          <Button style={button} href={`${BASE_URL}/${flyboothId}`}>
-            Accéder à ton Flybooth
-          </Button>
-        </Section>
-        <Text style={paragraph}>
-          À très bientôt !
-          <br />
-        </Text>
-        <Hr style={hr} />
-        <Text style={footer}>{"Codé avec <3 à Montréal"}</Text>
-      </Container>
-    </Body>
-  </Html>
-);
+const defaultTranslations = {
+  preview: "Here is the link to your Flybooth, keep it safe!",
+  title: "Thank you for creating your Flybooth!",
+  subtitle: "Here is a link that will allow you to access it at any time.",
+  buttonLabel: "Access the Flybooth",
+  ending: "See you soon!",
+  footer: "Coded with ❤ in Montreal",
+};
+
+export const SendLink = ({
+  flyboothId = "flyboothId",
+  lang = defaultLocale,
+  translations = defaultTranslations,
+}: {
+  flyboothId: string;
+  lang: string;
+  translations: typeof defaultTranslations;
+}) => {
+  return (
+    <Html lang={lang}>
+      <Head />
+      <Preview>{translations.preview}</Preview>
+      <Body style={main}>
+        <Container style={container}>
+          <Text style={paragraph}>{translations.title}</Text>
+          <Text style={paragraph}>{translations.subtitle}</Text>
+          <Section style={btnContainer}>
+            <Button style={button} href={`${BASE_URL}/${lang}/${flyboothId}`}>
+              {translations.buttonLabel}
+            </Button>
+          </Section>
+          <Text style={paragraph}>
+            {translations.ending}
+            <br />
+          </Text>
+          <Hr style={hr} />
+          <Text style={footer}>{translations.footer}</Text>
+        </Container>
+      </Body>
+    </Html>
+  );
+};
 
 export default SendLink;
 
@@ -53,10 +69,6 @@ const main = {
 const container = {
   margin: "0 auto",
   padding: "20px 0 48px",
-};
-
-const logo = {
-  margin: "0 auto",
 };
 
 const paragraph = {

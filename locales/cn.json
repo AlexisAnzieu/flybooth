@@ -43,7 +43,9 @@
       "emailButton": {
         "label": "通过电子邮件发送",
         "placeholder": "电子邮件",
-        "toastError": "发送电子邮件错误"
+        "toastError": "发送电子邮件错误",
+        "toastSuccess": "邮件已发送",
+        "toastSuccessDescription": "此页面的URL已发送至以下地址："
       }
     },
     "stepTwo": {
@@ -59,7 +61,6 @@
     },
     "stepThree": {
       "title": "接下来是自动更新的内容，可以在你的活动中投影。",
-      "subtitle": "要实时投影照片和消息，请在投影界面中输入以下投影码。",
       "buttonPhotoLabel": "照片",
       "buttonMessageLabel": "消息",
       "projectionCodeLabel": "照片投影码"
@@ -114,5 +115,16 @@
     "loading": "正在加载画廊...",
     "download": "下载",
     "noPhotos": "目前还没有发布任何照片。"
+  },
+  "email": {
+    "sendLink": {
+      "buttonLabel": "访问您的Flybooth",
+      "ending": "再见！",
+      "footer": "在蒙特利尔用❤编码",
+      "preview": "这是您的Flybooth链接，请妥善保管！",
+      "subject": "这是您的Flybooth！",
+      "subtitle": "这是一个链接，您可以随时访问。",
+      "title": "感谢您创建您的Flybooth！"
+    }
   }
 }

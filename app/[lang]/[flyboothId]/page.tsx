@@ -146,6 +146,14 @@ export default function Index({ params: { flyboothId } }: Readonly<PageProps>) {
         isClosable: true,
       });
     } else {
+      toast({
+        title: t("dashboard.stepOne.emailButton.toastSuccess"),
+        description:
+          t("dashboard.stepOne.emailButton.toastSuccessDescription") + email,
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      });
       setHasSavedLink(true);
       setSendingEmail(false);
       await insertShortLink(flyboothId);
