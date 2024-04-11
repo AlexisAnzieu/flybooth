@@ -16,12 +16,12 @@ export function generateMetadata(): Metadata {
 
   return {
     metadataBase: new URL("https://flybooth.app"),
-    title: "Flybooth - Photobooth",
+    title: "Flybooth - Photobooth on fly",
     description: t("landing.subtitle"),
     openGraph: {
       images: ["/opengraph.png"],
       description: t("landing.subtitle"),
-      title: "Flybooth - Photobooth",
+      title: "Flybooth - Photobooth on fly",
       url: "https://flybooth.app",
     },
   };
