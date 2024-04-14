@@ -35,7 +35,7 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
   if (isLoading) {
     return (
       <Center p={100}>
-        <Heading pr={10}>{t("coverflow.loading")}</Heading>
+        <Heading pr={10}>{t("coverflow.loading") || ''}</Heading>
         <Spinner
           thickness="4px"
           speed="0.65s"
@@ -50,7 +50,7 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
   if (!data?.length || error) {
     return (
       <Center p={100} flexDir={"column"}>
-        <Heading pb={10}>{t("coverflow.noPhotos")}</Heading>
+        <Heading pb={10}>{t("coverflow.noPhotos") || ''}</Heading>
         <Box>
           <QrCode redirectTo={PAGES.upload} flyboothId={flyboothId} />
         </Box>
