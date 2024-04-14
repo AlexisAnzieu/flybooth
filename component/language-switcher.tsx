@@ -2,6 +2,10 @@ import { countries } from "@/i18n";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { usePathname } from "next/navigation";
+import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
+
+polyfillCountryFlagEmojis();
+
 
 export default function LanguageSwitcher({
   currentLang,

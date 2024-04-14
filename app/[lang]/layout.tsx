@@ -5,9 +5,7 @@ import useTranslation from "next-translate/useTranslation";
 
 import { Providers } from "../providers";
 import { inter } from "../font";
-import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
 
-polyfillCountryFlagEmojis();
 
 
 export function generateMetadata(): Metadata {
