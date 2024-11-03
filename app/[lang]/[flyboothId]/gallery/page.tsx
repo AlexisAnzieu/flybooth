@@ -7,6 +7,8 @@ import {
   Button,
   Center,
   Heading,
+  Icon,
+  Link,
   Modal,
   ModalContent,
   ModalOverlay,
@@ -22,6 +24,7 @@ import { useState } from "react";
 import { PageProps } from "../page";
 import { Resource } from "@/app/api/cloudinary/route";
 import useTranslation from "next-translate/useTranslation";
+import { FaEnvelope, FaGithub } from "react-icons/fa";
 
 export default function Gallery({ params: { flyboothId } }: PageProps) {
   const { t } = useTranslation("main");
@@ -137,7 +140,6 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
           </Box>
         ))}
       </Box>
-
       {data.length < 30 && (
         <Box
           display={"flex"}
@@ -160,6 +162,29 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
           </Button>
         </Box>
       )}
+      <Box
+        color={"white"}
+        backgroundColor={"black"}
+        as={"footer"}
+        display={"flex"}
+        justifyContent={"space-evenly"}
+        p={5}
+      >
+        <Box fontSize={27}>
+          <Link href="mailto:contact@h2t.club">
+            <Icon as={FaEnvelope} />
+          </Link>
+        </Box>
+        <Box fontWeight={"600"} fontSize={20}>
+          {t("landing.footer.codedWithLove")}
+        </Box>
+
+        <Box fontSize={27}>
+          <Link href="https://github.com/AlexisAnzieu/flybooth">
+            <Icon as={FaGithub} />
+          </Link>
+        </Box>
+      </Box>
 
       <Modal size={"xl"} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
