@@ -153,6 +153,19 @@ export default function Index() {
             </Link>
           </Box>
         </Box>
+        
+        <Box
+          as={"footer"}
+          display={"flex"}
+          justifyContent={"space-evenly"}
+          pb={5}
+        >
+          <Box fontWeight={"600"} textDecoration={"underline"}>
+            <Link href={`/${lang}/printer`}>
+              {t("landing.footer.thermalPrinter")}
+            </Link>
+          </Box>
+        </Box>
 
         <Box
           as={"footer"}

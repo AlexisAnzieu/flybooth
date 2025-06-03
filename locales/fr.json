@@ -14,7 +14,8 @@
     },
     "footer": {
       "featureAsk": "Clique ici afin de suggérer de nouvelles fonctionnalités",
-      "codedWithLove": "Codé avec ❤ à Montréal"
+      "codedWithLove": "Codé avec ❤ à Montréal",
+      "thermalPrinter": "Louer une imprimante thermique"
     },
     "faq": {
       "title": "Foire Aux Questions",
@@ -125,6 +126,111 @@
       "buttonLabel": "Accéder à ton Flybooth",
       "ending": "À bientôt !",
       "footer": "Codé avec ❤ à Montréal"
+    }
+  },
+  "printer": {
+    "hero": {
+      "title": "Impression thermique instantanée pour votre événement Flybooth",
+      "subtitle": "Transformez votre expérience photo numérique avec nos imprimantes thermiques écologiques, rapides et abordables. Permettez à vos invités de repartir immédiatement avec des souvenirs physiques.",
+      "cta": "Voir les options de location",
+      "back": "Retour à Flybooth"
+    },
+    "features": {
+      "title": "Pourquoi choisir nos imprimantes thermiques ?",
+      "subtitle": "Nos imprimantes thermiques sont le complément parfait à votre expérience Flybooth, offrant à vos invités des souvenirs physiques de votre photobooth numérique.",
+      "cards": {
+        "instantPrinting": {
+          "title": "Impression instantanée",
+          "description": "Les photos s'impriment en quelques secondes, offrant à vos invités un souvenir immédiat"
+        },
+        "ecoFriendly": {
+          "title": "Écologique",
+          "description": "Le papier thermique est recyclable et nos imprimantes consomment peu d'énergie"
+        },
+        "lowEnergy": {
+          "title": "Faible consommation",
+          "description": "Nos imprimantes fonctionnent efficacement sur batterie pendant des heures"
+        },
+        "costEffective": {
+          "title": "Économique",
+          "description": "Bien moins cher que l'impression photo traditionnelle pour les événements"
+        },
+        "fastSetup": {
+          "title": "Installation rapide",
+          "description": "Connectez-vous à votre Flybooth en quelques minutes avec nos instructions simples"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "Comment ça marche",
+      "subtitle": "La mise en place de votre imprimante thermique Flybooth est rapide et facile",
+      "steps": {
+        "step1": {
+          "title": "Louez et recevez",
+          "description": "Choisissez votre forfait et nous livrerons l'imprimante à votre emplacement avant votre événement"
+        },
+        "step2": {
+          "title": "Connectez et installez",
+          "description": "Suivez nos instructions simples pour connecter l'imprimante à votre événement Flybooth"
+        },
+        "step3": {
+          "title": "Imprimez et profitez",
+          "description": "À mesure que les invités prennent des photos, ils reçoivent instantanément des copies imprimées à emporter"
+        }
+      }
+    },
+    "pricing": {
+      "title": "Options de location d'imprimantes",
+      "subtitle": "Choisissez le forfait qui correspond le mieux aux besoins de votre événement",
+      "perDay": "par jour",
+      "rentNow": "Louer maintenant",
+      "packages": {
+        "basic": {
+          "title": "Forfait de base",
+          "description": "Parfait pour les petites réunions et événements personnels",
+          "features": [
+            "1 Imprimante thermique",
+            "200 feuilles de papier thermique",
+            "Location de 24 heures",
+            "Support technique",
+            "Livraison et retour gratuits"
+          ]
+        },
+        "standard": {
+          "title": "Forfait standard",
+          "description": "Idéal pour les événements et fêtes de taille moyenne",
+          "features": [
+            "2 Imprimantes thermiques",
+            "500 feuilles de papier thermique",
+            "Location de 36 heures",
+            "Support technique prioritaire",
+            "Livraison et retour gratuits",
+            "Batterie de secours"
+          ]
+        },
+        "premium": {
+          "title": "Forfait premium",
+          "description": "Idéal pour les grands événements, mariages et événements d'entreprise",
+          "features": [
+            "3 Imprimantes thermiques",
+            "1000 feuilles de papier thermique",
+            "Location de 48 heures",
+            "Support premium 24/7",
+            "Livraison express et ramassage",
+            "Batteries de secours",
+            "Personnalisation des impressions"
+          ]
+        }
+      }
+    },
+    "cta": {
+      "title": "Prêt à améliorer votre expérience Flybooth ?",
+      "subtitle": "Contactez-nous dès aujourd'hui pour réserver votre imprimante thermique pour votre prochain événement. Quantités limitées, réservez tôt !",
+      "button": "Contactez-nous pour une réservation"
+    },
+    "footer": {
+      "rights": "Tous droits réservés.",
+      "codedWithLove": "Codé avec ❤ à Montréal"
     }
   }
 }

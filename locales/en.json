@@ -14,7 +14,8 @@
     },
     "footer": {
       "featureAsk": "Click here to suggest new features",
-      "codedWithLove": "Coded with ❤ in Montreal"
+      "codedWithLove": "Coded with ❤ in Montreal",
+      "thermalPrinter": "Rent a Thermal Printer"
     },
     "faq": {
       "title": "Frequently Asked Questions",
@@ -125,6 +126,111 @@
       "buttonLabel": "Access to your Flybooth",
       "ending": "See you soon!",
       "footer": "Coded with ❤ in Montreal"
+    }
+  },
+  "printer": {
+    "hero": {
+      "title": "Instant Thermal Printing for Your Flybooth Event",
+      "subtitle": "Transform your digital photo experience with our eco-friendly, fast, and affordable thermal printers. Let your guests take home physical memories instantly.",
+      "cta": "View Rental Options",
+      "back": "Back to Flybooth"
+    },
+    "features": {
+      "title": "Why Choose Our Thermal Printers?",
+      "subtitle": "Our thermal printers provide a perfect complement to your Flybooth experience, giving your guests physical takeaways from your digital photobooth.",
+      "cards": {
+        "instantPrinting": {
+          "title": "Instant Printing",
+          "description": "Photos print in seconds, giving your guests an immediate keepsake"
+        },
+        "ecoFriendly": {
+          "title": "Eco-Friendly",
+          "description": "Thermal paper is recyclable and our printers use minimal energy"
+        },
+        "lowEnergy": {
+          "title": "Low Energy",
+          "description": "Our printers run efficiently on battery power for hours"
+        },
+        "costEffective": {
+          "title": "Cost-Effective",
+          "description": "Much cheaper than traditional photo printing for events"
+        },
+        "fastSetup": {
+          "title": "Fast Setup",
+          "description": "Connect to your Flybooth in minutes with our simple instructions"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "Setting up your Flybooth thermal printer is quick and easy",
+      "steps": {
+        "step1": {
+          "title": "Rent & Receive",
+          "description": "Choose your package and we'll deliver the printer to your location before your event"
+        },
+        "step2": {
+          "title": "Connect & Setup",
+          "description": "Follow our simple instructions to connect the printer to your Flybooth event"
+        },
+        "step3": {
+          "title": "Print & Enjoy",
+          "description": "As guests take photos, they'll receive instant printed copies to take home"
+        }
+      }
+    },
+    "pricing": {
+      "title": "Printer Rental Options",
+      "subtitle": "Choose the package that best fits your event needs",
+      "perDay": "per day",
+      "rentNow": "Rent Now",
+      "packages": {
+        "basic": {
+          "title": "Basic Package",
+          "description": "Perfect for small gatherings and personal events",
+          "features": [
+            "1 Thermal Printer",
+            "200 sheets of thermal paper",
+            "24-hour rental",
+            "Technical support",
+            "Free shipping and return"
+          ]
+        },
+        "standard": {
+          "title": "Standard Package",
+          "description": "Ideal for medium-sized events and parties",
+          "features": [
+            "2 Thermal Printers",
+            "500 sheets of thermal paper",
+            "36-hour rental",
+            "Priority technical support",
+            "Free shipping and return",
+            "Backup battery pack"
+          ]
+        },
+        "premium": {
+          "title": "Premium Package",
+          "description": "Best for large events, weddings, and corporate functions",
+          "features": [
+            "3 Thermal Printers",
+            "1000 sheets of thermal paper",
+            "48-hour rental",
+            "24/7 premium support",
+            "Express delivery and pickup",
+            "Backup battery packs",
+            "Custom branding on prints"
+          ]
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to enhance your Flybooth experience?",
+      "subtitle": "Contact us today to reserve your thermal printer for your upcoming event. Limited quantities available, so book early!",
+      "button": "Contact for Reservation"
+    },
+    "footer": {
+      "rights": "All rights reserved.",
+      "codedWithLove": "Coded with ❤ in Montreal"
     }
   }
 }
