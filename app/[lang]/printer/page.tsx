@@ -195,8 +195,46 @@ export default function PrinterPage() {
     <Box bgColor={bgColor} minH="100vh">
       <Container maxW="7xl">
         {/* Header */}
-        <Box as="header" w="100%" pt={3} textAlign="right">
-          <LanguageSwitcher currentLang={lang} />
+        <Box 
+          as="header" 
+          position="sticky"
+          top={0}
+          zIndex={10}
+          w="100vw"
+          left={0}
+          right={0}
+          marginLeft="calc(-50vw + 50%)"
+          marginRight="calc(-50vw + 50%)"
+          backdropFilter="blur(10px)"
+          bg={useColorModeValue('rgba(255, 255, 255, 0.8)', 'rgba(26, 32, 44, 0.8)')}
+          borderBottom="1px"
+          borderColor={useColorModeValue('gray.200', 'gray.700')}
+        >
+          <Container maxW="7xl">
+            <Flex 
+              justify="space-between" 
+              align="center"
+              py={4}
+              px={6}
+            >
+              <Box 
+                className={logoFont.className}
+                display="flex"
+                alignItems="center"
+                gap={2}
+                fontSize="xl"
+              >
+                <ReactSVG
+                  beforeInjection={(svg) => {
+                    svg.setAttribute("style", "width: 30px");
+                  }}
+                  src="/logo.svg"
+                />
+                Flybooth
+              </Box>
+              <LanguageSwitcher currentLang={lang} />
+            </Flex>
+          </Container>
         </Box>
 
         {/* Hero Section */}

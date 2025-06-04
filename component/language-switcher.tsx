@@ -17,21 +17,31 @@ export default function LanguageSwitcher({
     <Menu>
       <MenuButton
         variant="ghost"
-        color={"white"}
+        color="inherit"
         style={{ fontSize: 30 }}
         as={Button}
         rightIcon={<ChevronDownIcon />}
+        _hover={{ bg: 'rgba(0, 0, 0, 0.05)' }}
+        p={2}
+        rounded="full"
       >
         {countries.find((country) => country.code === currentLang)?.flag}
       </MenuButton>
 
-      <MenuList>
+      <MenuList
+        shadow="lg"
+        borderRadius="xl"
+        p={2}
+      >
         {countries
           .filter((c) => c.code !== currentLang)
           .map((country) => (
             <MenuItem
               as="a"
               style={{ fontSize: 20 }}
+              p={3}
+              borderRadius="lg"
+              _hover={{ bg: 'purple.50' }}
               key={country.code}
               href={pathname.replace(/\/[a-z]{2}/, `/${country.code}`)}
             >

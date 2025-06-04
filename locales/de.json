@@ -126,5 +126,110 @@
       "subtitle": "Hier ist ein Link, über den Sie jederzeit darauf zugreifen können.",
       "title": "Vielen Dank für die Erstellung Ihres Flybooth!"
     }
+  },
+  "printer": {
+    "hero": {
+      "title": "Sofortiger Thermodruck für Ihre Flybooth-Veranstaltung",
+      "subtitle": "Verwandeln Sie Ihr digitales Fotoerlebnis mit unseren umweltfreundlichen, schnellen und kostengünstigen Thermodruckern. Lassen Sie Ihre Gäste sofort physische Erinnerungen mit nach Hause nehmen.",
+      "cta": "Mietoptionen anzeigen",
+      "back": "Zurück zu Flybooth"
+    },
+    "features": {
+      "title": "Warum unsere Thermodrucker wählen?",
+      "subtitle": "Unsere Thermodrucker bieten eine perfekte Ergänzung zu Ihrem Flybooth-Erlebnis und geben Ihren Gästen physische Erinnerungen an Ihre digitale Fotobox.",
+      "cards": {
+        "instantPrinting": {
+          "title": "Sofortdruck",
+          "description": "Fotos werden in Sekunden gedruckt und bieten Ihren Gästen sofortige Erinnerungen"
+        },
+        "ecoFriendly": {
+          "title": "Umweltfreundlich",
+          "description": "Thermopapier ist recycelbar und unsere Drucker verbrauchen minimal Energie"
+        },
+        "lowEnergy": {
+          "title": "Energiesparend",
+          "description": "Unsere Drucker laufen stundenlang effizient mit Batteriestrom"
+        },
+        "costEffective": {
+          "title": "Kostengünstig",
+          "description": "Viel günstiger als traditioneller Fotodruck für Veranstaltungen"
+        },
+        "fastSetup": {
+          "title": "Schnelle Einrichtung",
+          "description": "Verbinden Sie sich in Minuten mit Ihrer Flybooth durch unsere einfachen Anweisungen"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "Wie es funktioniert",
+      "subtitle": "Die Einrichtung Ihres Flybooth-Thermodruckers ist schnell und einfach",
+      "steps": {
+        "step1": {
+          "title": "Mieten & Empfangen",
+          "description": "Wählen Sie Ihr Paket und wir liefern den Drucker vor Ihrer Veranstaltung an Ihren Standort"
+        },
+        "step2": {
+          "title": "Verbinden & Einrichten",
+          "description": "Folgen Sie unseren einfachen Anweisungen, um den Drucker mit Ihrer Flybooth-Veranstaltung zu verbinden"
+        },
+        "step3": {
+          "title": "Drucken & Genießen",
+          "description": "Während die Gäste Fotos machen, erhalten sie sofort gedruckte Kopien zum Mitnehmen"
+        }
+      }
+    },
+    "pricing": {
+      "title": "Drucker-Mietoptionen",
+      "subtitle": "Wählen Sie das Paket, das am besten zu Ihren Veranstaltungsbedürfnissen passt",
+      "perDay": "pro Tag",
+      "rentNow": "Jetzt mieten",
+      "packages": {
+        "basic": {
+          "title": "Basis-Paket",
+          "description": "Perfekt für kleine Zusammenkünfte und private Veranstaltungen",
+          "features": [
+            "1 Thermodrucker",
+            "200 Blatt Thermopapier",
+            "24-Stunden-Miete",
+            "Technischer Support",
+            "Kostenloser Versand und Rückgabe"
+          ]
+        },
+        "standard": {
+          "title": "Standard-Paket",
+          "description": "Ideal für mittelgroße Veranstaltungen und Feiern",
+          "features": [
+            "2 Thermodrucker",
+            "500 Blatt Thermopapier",
+            "36-Stunden-Miete",
+            "Prioritäts-Support",
+            "Kostenloser Versand und Rückgabe",
+            "Ersatz-Akku"
+          ]
+        },
+        "premium": {
+          "title": "Premium-Paket",
+          "description": "Am besten für große Veranstaltungen, Hochzeiten und Firmenfeiern",
+          "features": [
+            "3 Thermodrucker",
+            "1000 Blatt Thermopapier",
+            "48-Stunden-Miete",
+            "24/7 Premium-Support",
+            "Express-Lieferung und Abholung",
+            "Ersatz-Akkus",
+            "Individuelles Branding auf Drucken"
+          ]
+        }
+      }
+    },
+    "cta": {
+      "title": "Bereit, Ihr Flybooth-Erlebnis zu verbessern?",
+      "subtitle": "Kontaktieren Sie uns noch heute, um Ihren Thermodrucker für Ihre kommende Veranstaltung zu reservieren. Begrenzte Stückzahl verfügbar, also buchen Sie frühzeitig!",
+      "button": "Kontakt für Reservierung"
+    },
+    "footer": {
+      "rights": "Alle Rechte vorbehalten.",
+      "codedWithLove": "Mit ❤ in Montreal codiert"
+    }
   }
 }

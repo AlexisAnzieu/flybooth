@@ -126,5 +126,110 @@
       "subtitle": "这是一个链接，您可以随时访问。",
       "title": "感谢您创建您的Flybooth！"
     }
+  },
+  "printer": {
+    "hero": {
+      "title": "Flybooth活动即时热敏打印",
+      "subtitle": "通过我们环保、快速、实惠的热敏打印机，让您的数字照片体验更上一层楼。让您的客人即时带走实体纪念品。",
+      "cta": "查看租赁选项",
+      "back": "返回Flybooth"
+    },
+    "features": {
+      "title": "为什么选择我们的热敏打印机？",
+      "subtitle": "我们的热敏打印机为您的Flybooth体验提供完美补充，为您的客人提供数字照片亭的实体纪念品。",
+      "cards": {
+        "instantPrinting": {
+          "title": "即时打印",
+          "description": "照片几秒钟内打印完成，为您的客人提供即时纪念品"
+        },
+        "ecoFriendly": {
+          "title": "环保",
+          "description": "热敏纸可回收，我们的打印机能耗极低"
+        },
+        "lowEnergy": {
+          "title": "低能耗",
+          "description": "我们的打印机可以用电池高效运行数小时"
+        },
+        "costEffective": {
+          "title": "成本效益",
+          "description": "比传统活动照片打印更加经济"
+        },
+        "fastSetup": {
+          "title": "快速设置",
+          "description": "通过我们简单的说明，几分钟内即可连接到您的Flybooth"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "如何运作",
+      "subtitle": "设置您的Flybooth热敏打印机快速简便",
+      "steps": {
+        "step1": {
+          "title": "租赁和接收",
+          "description": "选择您的套餐，我们会在您的活动前将打印机送到您的位置"
+        },
+        "step2": {
+          "title": "连接和设置",
+          "description": "按照我们简单的说明将打印机连接到您的Flybooth活动"
+        },
+        "step3": {
+          "title": "打印和享受",
+          "description": "当客人拍照时，他们会立即收到可以带回家的打印照片"
+        }
+      }
+    },
+    "pricing": {
+      "title": "打印机租赁选项",
+      "subtitle": "选择最适合您活动需求的套餐",
+      "perDay": "每天",
+      "rentNow": "立即租赁",
+      "packages": {
+        "basic": {
+          "title": "基础套餐",
+          "description": "非常适合小型聚会和个人活动",
+          "features": [
+            "1台热敏打印机",
+            "200张热敏纸",
+            "24小时租赁",
+            "技术支持",
+            "免费配送和退回"
+          ]
+        },
+        "standard": {
+          "title": "标准套餐",
+          "description": "适合中等规模的活动和派对",
+          "features": [
+            "2台热敏打印机",
+            "500张热敏纸",
+            "36小时租赁",
+            "优先技术支持",
+            "免费配送和退回",
+            "备用电池"
+          ]
+        },
+        "premium": {
+          "title": "高级套餐",
+          "description": "最适合大型活动、婚礼和企业活动",
+          "features": [
+            "3台热敏打印机",
+            "1000张热敏纸",
+            "48小时租赁",
+            "24/7高级支持",
+            "快速配送和取件",
+            "备用电池",
+            "打印定制品牌"
+          ]
+        }
+      }
+    },
+    "cta": {
+      "title": "准备好提升您的Flybooth体验了吗？",
+      "subtitle": "立即联系我们，为您即将举行的活动预订热敏打印机。数量有限，请尽早预订！",
+      "button": "联系预订"
+    },
+    "footer": {
+      "rights": "保留所有权利。",
+      "codedWithLove": "在蒙特利尔用❤编码"
+    }
   }
 }

@@ -126,5 +126,110 @@
       "subtitle": "Ecco un link che ti permetterà di accedervi in ​​qualsiasi momento.",
       "title": "Grazie per aver creato il tuo Flybooth!"
     }
+  },
+  "printer": {
+    "hero": {
+      "title": "Stampa termica istantanea per il tuo evento Flybooth",
+      "subtitle": "Trasforma la tua esperienza fotografica digitale con le nostre stampanti termiche ecologiche, veloci ed economiche. Permetti ai tuoi ospiti di portare a casa ricordi fisici istantaneamente.",
+      "cta": "Vedi opzioni di noleggio",
+      "back": "Torna a Flybooth"
+    },
+    "features": {
+      "title": "Perché scegliere le nostre stampanti termiche?",
+      "subtitle": "Le nostre stampanti termiche forniscono un complemento perfetto alla tua esperienza Flybooth, dando ai tuoi ospiti ricordi fisici del tuo photobooth digitale.",
+      "cards": {
+        "instantPrinting": {
+          "title": "Stampa istantanea",
+          "description": "Le foto si stampano in pochi secondi, offrendo ai tuoi ospiti un ricordo immediato"
+        },
+        "ecoFriendly": {
+          "title": "Ecologico",
+          "description": "La carta termica è riciclabile e le nostre stampanti consumano energia minima"
+        },
+        "lowEnergy": {
+          "title": "Basso consumo",
+          "description": "Le nostre stampanti funzionano efficientemente a batteria per ore"
+        },
+        "costEffective": {
+          "title": "Conveniente",
+          "description": "Molto più economico della stampa fotografica tradizionale per eventi"
+        },
+        "fastSetup": {
+          "title": "Configurazione rapida",
+          "description": "Connettiti al tuo Flybooth in pochi minuti con le nostre semplici istruzioni"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "Come funziona",
+      "subtitle": "Configurare la tua stampante termica Flybooth è veloce e facile",
+      "steps": {
+        "step1": {
+          "title": "Noleggia e ricevi",
+          "description": "Scegli il tuo pacchetto e consegneremo la stampante nella tua location prima dell'evento"
+        },
+        "step2": {
+          "title": "Connetti e configura",
+          "description": "Segui le nostre semplici istruzioni per collegare la stampante al tuo evento Flybooth"
+        },
+        "step3": {
+          "title": "Stampa e goditi",
+          "description": "Mentre gli ospiti scattano foto, riceveranno copie stampate istantaneamente da portare a casa"
+        }
+      }
+    },
+    "pricing": {
+      "title": "Opzioni di noleggio stampanti",
+      "subtitle": "Scegli il pacchetto più adatto alle esigenze del tuo evento",
+      "perDay": "al giorno",
+      "rentNow": "Noleggia ora",
+      "packages": {
+        "basic": {
+          "title": "Pacchetto base",
+          "description": "Perfetto per piccoli ritrovi ed eventi personali",
+          "features": [
+            "1 Stampante termica",
+            "200 fogli di carta termica",
+            "Noleggio 24 ore",
+            "Supporto tecnico",
+            "Spedizione e reso gratuiti"
+          ]
+        },
+        "standard": {
+          "title": "Pacchetto standard",
+          "description": "Ideale per eventi e feste di medie dimensioni",
+          "features": [
+            "2 Stampanti termiche",
+            "500 fogli di carta termica",
+            "Noleggio 36 ore",
+            "Supporto tecnico prioritario",
+            "Spedizione e reso gratuiti",
+            "Batteria di riserva"
+          ]
+        },
+        "premium": {
+          "title": "Pacchetto premium",
+          "description": "Il migliore per grandi eventi, matrimoni e funzioni aziendali",
+          "features": [
+            "3 Stampanti termiche",
+            "1000 fogli di carta termica",
+            "Noleggio 48 ore",
+            "Supporto premium 24/7",
+            "Consegna e ritiro express",
+            "Batterie di riserva",
+            "Personalizzazione delle stampe"
+          ]
+        }
+      }
+    },
+    "cta": {
+      "title": "Pronto a migliorare la tua esperienza Flybooth?",
+      "subtitle": "Contattaci oggi per prenotare la tua stampante termica per il tuo prossimo evento. Quantità limitate, prenota presto!",
+      "button": "Contatta per prenotazione"
+    },
+    "footer": {
+      "rights": "Tutti i diritti riservati.",
+      "codedWithLove": "Codificato con ❤ a Montreal"
+    }
   }
 }
