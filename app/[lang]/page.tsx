@@ -25,7 +25,7 @@ import { ReactSVG } from "react-svg";
 import { logoFont } from "../font";
 import { useState } from "react";
 import MotionButton from "@/component/motion-button";
-import { FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaEnvelope, FaPrint } from "react-icons/fa";
 import Link from "next/link";
 import { QuestionIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
@@ -67,15 +67,63 @@ export default function Index() {
   };
 
   return (
-    <Box bgColor={"purple"} color={"white"}>
+    <Box bgColor={"purple"} color={"white"} display="flex" flexDirection="column" minH="100vh">
+      {/* Printer Banner - Positioned at the top of the page */}
+      <Box
+        as={Link}
+        href={`/${lang}/printer`}
+        py={{ base: 4, md: 3 }}
+        bg="rgba(0, 0, 0, 0.2)"
+        color="white"
+        cursor="pointer"
+        transition="all 0.3s"
+        _hover={{ bg: "rgba(0, 0, 0, 0.3)" }}
+        textDecoration="none"
+        display="block"
+        width="100%"
+      >
+        <Container
+          maxW="3xl"
+          display="flex"
+          flexDirection={{ base: "column", sm: "row" }}
+          justifyContent="space-between"
+          alignItems="center"
+          gap={{ base: 2, sm: 0 }}
+        >
+          <Box display="flex" alignItems="center" mb={{ base: 2, sm: 0 }}>
+            <Icon as={FaPrint} mr={3} fontSize={{ base: "md", md: "lg" }} />
+            {t("landing.printer.bannerText")}
+          </Box>
+          <Box
+            px={4}
+            py={1}
+            borderRadius="md"
+            bg="white"
+            color="purple"
+            fontWeight="bold"
+            transition="all 0.2s"
+            _hover={{ 
+              bg: "gray.100", 
+              transform: "scale(1.05)",
+              boxShadow: "0px 0px 10px rgba(255, 255, 255, 0.3)"
+            }}
+            minWidth={{ base: "120px", md: "auto" }}
+            textAlign="center"
+          >
+            {t("landing.printer.buttonText")}
+          </Box>
+        </Container>
+      </Box>
+
       <Container
         display={"flex"}
         flexDirection={"column"}
         maxW="3xl"
         textAlign={"center"}
-        minH={"100vh"}
+        flexGrow={1}
+        py={4}
       >
-        <Box as="header" w="100%" pt={3} color="black" textAlign={"right"}>
+        <Box as="header" w="100%" color="black" textAlign={"right"}>
           <LanguageSwitcher currentLang={lang} />
         </Box>
         <Box
@@ -139,53 +187,49 @@ export default function Index() {
             onClick={onOpen}
           />
         </Box>
-        <Box flexGrow={1} minH={35}></Box>
-
-        <Box
-          as={"footer"}
-          display={"flex"}
-          justifyContent={"space-evenly"}
-          pb={5}
-        >
-          <Box fontWeight={"600"} textDecoration={"underline"}>
-            <Link target="_blank" href="https://flybooth.canny.io/new-features">
-              {t("landing.footer.featureAsk")}
-            </Link>
-          </Box>
-        </Box>
         
-        <Box
-          as={"footer"}
-          display={"flex"}
-          justifyContent={"space-evenly"}
-          pb={5}
+        <Box flexGrow={1} minH={10}></Box>
+        
+        {/* Footer section with border separation */}
+        <Box 
+          as="footer" 
+          mt={4} 
+          mb={4}
+          borderTopWidth="1px"
+          borderTopColor="rgba(255, 255, 255, 0.1)"
+          pt={4}
         >
-          <Box fontWeight={"600"} textDecoration={"underline"}>
-            <Link href={`/${lang}/printer`}>
-              {t("landing.footer.thermalPrinter")}
-            </Link>
-          </Box>
-        </Box>
-
-        <Box
-          as={"footer"}
-          display={"flex"}
-          justifyContent={"space-evenly"}
-          pb={5}
-        >
-          <Box fontSize={27}>
-            <Link href="mailto:contact@h2t.club">
-              <Icon as={FaEnvelope} />
-            </Link>
-          </Box>
-          <Box fontWeight={"600"} fontSize={20}>
-            {t("landing.footer.codedWithLove")}
+          <Box
+            display={"flex"}
+            justifyContent={"space-evenly"}
+            pb={4}
+          >
+            <Box fontWeight={"600"} textDecoration={"underline"}>
+              <Link target="_blank" href="https://flybooth.canny.io/new-features">
+                {t("landing.footer.featureAsk")}
+              </Link>
+            </Box>
           </Box>
 
-          <Box fontSize={27}>
-            <Link href="https://github.com/AlexisAnzieu/flybooth">
-              <Icon as={FaGithub} />
-            </Link>
+          <Box
+            display={"flex"}
+            justifyContent={"space-evenly"}
+            pb={4}
+          >
+            <Box fontSize={27}>
+              <Link href="mailto:contact@h2t.club">
+                <Icon as={FaEnvelope} />
+              </Link>
+            </Box>
+            <Box fontWeight={"600"} fontSize={20}>
+              {t("landing.footer.codedWithLove")}
+            </Box>
+
+            <Box fontSize={27}>
+              <Link href="https://github.com/AlexisAnzieu/flybooth">
+                <Icon as={FaGithub} />
+              </Link>
+            </Box>
           </Box>
         </Box>
 

@@ -1,6 +1,10 @@
 {
   "landing": {
     "subtitle": "Photobooth on fly, from small gatherings to big venues",
+    "printer": {
+      "bannerText": "Novelty! Get your thermal printer for instant memories at your event!",
+      "buttonText": "Rent Now"
+    },
     "cta": {
       "label": "Create your photobooth",
       "loading": "Creation in progress..."

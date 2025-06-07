@@ -1,6 +1,10 @@
 {
   "landing": {
     "subtitle": "Photobooth al volo, dalle piccole feste ai festival",
+    "printer": {
+      "bannerText": "Novità! Ottieni la tua stampante termica per ricordi istantanei al tuo evento!",
+      "buttonText": "Noleggia ora"
+    },
     "cta": {
       "label": "Crea il tuo photobooth",
       "loading": "Creazione in corso..."

@@ -1,6 +1,10 @@
 {
   "landing": {
     "subtitle": "Cabine de fotos voadora, de pequenas reuniões a grandes locais",
+    "printer": {
+      "bannerText": "Novidade! Obtenha sua impressora térmica para memórias instantâneas no seu evento!",
+      "buttonText": "Alugar agora"
+    },
     "cta": {
       "label": "Crie sua cabine de fotos",
       "loading": "Criação em andamento..."

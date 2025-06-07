@@ -1,6 +1,10 @@
 {
   "landing": {
     "subtitle": "Fliegender Fotostand, von kleinen Treffen bis zu großen Veranstaltungsorten",
+    "printer": {
+      "bannerText": "Neuheit! Holen Sie sich Ihren Thermodrucker für sofortige Erinnerungen bei Ihrer Veranstaltung!",
+      "buttonText": "Jetzt mieten"
+    },
     "cta": {
       "label": "Erstellen Sie Ihren Fotostand",
       "loading": "Erstellung läuft..."

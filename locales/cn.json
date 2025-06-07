@@ -1,6 +1,10 @@
 {
   "landing": {
     "subtitle": "从小型派对到音乐节的即时照片亭",
+    "printer": {
+      "bannerText": "新品！获取您的热敏打印机，在您的活动中即时打印珍贵回忆！",
+      "buttonText": "立即租赁"
+    },
     "cta": {
       "label": "创建你的照片亭",
       "loading": "正在创建..."

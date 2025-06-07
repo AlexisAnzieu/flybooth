@@ -1,6 +1,10 @@
 {
   "landing": {
     "subtitle": "Photomaton à la volée, des petites fêtes aux festivals",
+    "printer": {
+      "bannerText": "Nouveauté! Obtenez votre imprimante thermique pour des souvenirs instantanés!",
+      "buttonText": "Louer"
+    },
     "cta": {
       "label": "Crée ton photobooth",
       "loading": "Création en cours..."

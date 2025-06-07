@@ -1,6 +1,10 @@
 {
   "landing": {
     "subtitle": "Fotomatón al vuelo, desde pequeñas reuniones hasta grandes lugares",
+    "printer": {
+      "bannerText": "¡Novedad! Consigue tu impresora térmica para recuerdos instantáneos en tu evento!",
+      "buttonText": "Alquilar"
+    },
     "cta": {
       "label": "Crea tu fotomatón",
       "loading": "Creación en progreso..."
