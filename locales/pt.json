@@ -18,7 +18,8 @@
     },
     "footer": {
       "featureAsk": "Clique aqui para sugerir novos recursos",
-      "codedWithLove": "Codificado com ❤ em Montreal"
+      "codedWithLove": "Codificado com ❤ em Montreal",
+      "thermalPrinter": "Alugue uma impressora térmica"
     },
     "faq": {
       "title": "Perguntas frequentes",
@@ -133,7 +134,7 @@
   },
   "printer": {
     "hero": {
-      "title": "Impressão térmica instantânea para seu evento Flybooth",
+      "title": "Impressão térmica instantânea para seu evento",
       "subtitle": "Transforme sua experiência fotográfica digital com nossas impressoras térmicas ecológicas, rápidas e acessíveis. Permita que seus convidados levem lembranças físicas instantaneamente.",
       "cta": "Ver opções de aluguel",
       "back": "Voltar ao Flybooth"
@@ -148,11 +149,11 @@
         },
         "ecoFriendly": {
           "title": "Ecológico",
-          "description": "Papel térmico é reciclável e nossas impressoras usam energia mínima"
+          "description": "Papel térmico é reciclável e não requer cartuchos de tinta"
         },
         "lowEnergy": {
           "title": "Baixo consumo",
-          "description": "Nossas impressoras funcionam eficientemente com bateria por horas"
+          "description": "Nossas impressoras funcionam com eficiência usando muito pouca energia"
         },
         "costEffective": {
           "title": "Custo-benefício",

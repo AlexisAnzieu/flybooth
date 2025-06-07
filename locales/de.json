@@ -18,7 +18,8 @@
     },
     "footer": {
       "featureAsk": "Klicken Sie hier, um neue Funktionen vorzuschlagen",
-      "codedWithLove": "Mit ❤ in Montreal codiert"
+      "codedWithLove": "Mit ❤ in Montreal codiert",
+      "thermalPrinter": "Einen Thermodrucker mieten"
     },
     "faq": {
       "title": "Häufig gestellte Fragen",
@@ -133,14 +134,14 @@
   },
   "printer": {
     "hero": {
-      "title": "Sofortiger Thermodruck für Ihre Flybooth-Veranstaltung",
-      "subtitle": "Verwandeln Sie Ihr digitales Fotoerlebnis mit unseren umweltfreundlichen, schnellen und kostengünstigen Thermodruckern. Lassen Sie Ihre Gäste sofort physische Erinnerungen mit nach Hause nehmen.",
+      "title": "Sofortiger Thermodruck für Ihre Veranstaltung",
+      "subtitle": "Transformieren Sie Ihr digitales Fotoerlebnis mit unseren umweltfreundlichen, schnellen und kostengünstigen Thermodruckern. Ermöglichen Sie Ihren Gästen, sofort physische Erinnerungen mitzunehmen.",
       "cta": "Mietoptionen anzeigen",
       "back": "Zurück zu Flybooth"
     },
     "features": {
       "title": "Warum unsere Thermodrucker wählen?",
-      "subtitle": "Unsere Thermodrucker bieten eine perfekte Ergänzung zu Ihrem Flybooth-Erlebnis und geben Ihren Gästen physische Erinnerungen an Ihre digitale Fotobox.",
+      "subtitle": "Unsere Thermodrucker bieten die perfekte Ergänzung zu Ihrem Flybooth-Erlebnis und geben Ihren Gästen physische Erinnerungen aus Ihrer digitalen Fotobox.",
       "cards": {
         "instantPrinting": {
           "title": "Sofortdruck",
@@ -148,37 +149,37 @@
         },
         "ecoFriendly": {
           "title": "Umweltfreundlich",
-          "description": "Thermopapier ist recycelbar und unsere Drucker verbrauchen minimal Energie"
+          "description": "Thermopapier ist recycelbar und benötigt keine Tintenpatronen"
         },
         "lowEnergy": {
-          "title": "Energiesparend",
-          "description": "Unsere Drucker laufen stundenlang effizient mit Batteriestrom"
+          "title": "Energieeffizient",
+          "description": "Unsere Drucker arbeiten sehr energiesparend und effizient"
         },
         "costEffective": {
           "title": "Kostengünstig",
-          "description": "Viel günstiger als traditioneller Fotodruck für Veranstaltungen"
+          "description": "Deutlich günstiger als herkömmlicher Fotodruck für Veranstaltungen"
         },
         "fastSetup": {
           "title": "Schnelle Einrichtung",
-          "description": "Verbinden Sie sich in Minuten mit Ihrer Flybooth durch unsere einfachen Anweisungen"
+          "description": "Verbinden Sie sich in wenigen Minuten mit Ihrer Flybooth durch unsere einfachen Anleitungen"
         }
       }
     },
     "howItWorks": {
-      "title": "Wie es funktioniert",
+      "title": "So funktioniert es",
       "subtitle": "Die Einrichtung Ihres Flybooth-Thermodruckers ist schnell und einfach",
       "steps": {
         "step1": {
-          "title": "Mieten & Empfangen",
+          "title": "Mieten & Erhalten",
           "description": "Wählen Sie Ihr Paket und wir liefern den Drucker vor Ihrer Veranstaltung an Ihren Standort"
         },
         "step2": {
           "title": "Verbinden & Einrichten",
-          "description": "Folgen Sie unseren einfachen Anweisungen, um den Drucker mit Ihrer Flybooth-Veranstaltung zu verbinden"
+          "description": "Befolgen Sie unsere einfachen Anweisungen, um den Drucker mit Ihrer Flybooth-Veranstaltung zu verbinden"
         },
         "step3": {
           "title": "Drucken & Genießen",
-          "description": "Während die Gäste Fotos machen, erhalten sie sofort gedruckte Kopien zum Mitnehmen"
+          "description": "Während Ihre Gäste Fotos machen, erhalten sie sofort gedruckte Exemplare zum Mitnehmen"
         }
       }
     },
@@ -196,7 +197,7 @@
             "200 Blatt Thermopapier",
             "24-Stunden-Miete",
             "Technischer Support",
-            "Kostenloser Versand und Rückgabe"
+            "Kostenlose Lieferung und Abholung"
           ]
         },
         "standard": {
@@ -207,28 +208,28 @@
             "500 Blatt Thermopapier",
             "36-Stunden-Miete",
             "Prioritäts-Support",
-            "Kostenloser Versand und Rückgabe",
-            "Ersatz-Akku"
+            "Kostenlose Lieferung und Abholung",
+            "Ersatzakku"
           ]
         },
         "premium": {
           "title": "Premium-Paket",
-          "description": "Am besten für große Veranstaltungen, Hochzeiten und Firmenfeiern",
+          "description": "Optimal für große Veranstaltungen, Hochzeiten und Firmenfeiern",
           "features": [
             "3 Thermodrucker",
             "1000 Blatt Thermopapier",
             "48-Stunden-Miete",
             "24/7 Premium-Support",
             "Express-Lieferung und Abholung",
-            "Ersatz-Akkus",
-            "Individuelles Branding auf Drucken"
+            "Ersatzakkus",
+            "Individuelles Branding der Ausdrucke"
           ]
         }
       }
     },
     "cta": {
       "title": "Bereit, Ihr Flybooth-Erlebnis zu verbessern?",
-      "subtitle": "Kontaktieren Sie uns noch heute, um Ihren Thermodrucker für Ihre kommende Veranstaltung zu reservieren. Begrenzte Stückzahl verfügbar, also buchen Sie frühzeitig!",
+      "subtitle": "Kontaktieren Sie uns noch heute, um Ihren Thermodrucker für Ihre kommende Veranstaltung zu reservieren. Begrenzte Stückzahl verfügbar, buchen Sie frühzeitig!",
       "button": "Kontakt für Reservierung"
     },
     "footer": {

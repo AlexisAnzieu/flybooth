@@ -9,7 +9,6 @@ import {
   Text,
   Image,
   SimpleGrid,
-  Badge,
   List,
   ListItem,
   ListIcon,
@@ -190,7 +189,6 @@ export default function PrinterPage() {
       ],
     },
   ];
-
   return (
     <Box bgColor={bgColor} minH="100vh">
       <Container maxW="7xl">
@@ -217,101 +215,63 @@ export default function PrinterPage() {
               py={4}
               px={6}
             >
-              <Box 
-                className={logoFont.className}
-                display="flex"
-                alignItems="center"
-                gap={2}
-                fontSize="xl"
-              >
-                <ReactSVG
-                  beforeInjection={(svg) => {
-                    svg.setAttribute("style", "width: 30px");
-                  }}
-                  src="/logo.svg"
-                />
-                Flybooth
-              </Box>
-              <LanguageSwitcher currentLang={lang} />
+              <Link href={`/${lang}`} style={{ textDecoration: 'none' }}>
+                <Box 
+                  className={logoFont.className}
+                  display="flex"
+                  alignItems="center"
+                  gap={2}
+                  fontSize="xl"
+                  cursor="pointer"
+                >
+                  <ReactSVG
+                    beforeInjection={(svg) => {
+                      svg.setAttribute("style", "width: 30px");
+                      svg.setAttribute("fill", "black");
+                    }}
+                    src="/logo.svg"
+                  />
+                  Flybooth Printer
+                </Box>
+              </Link>
+              <LanguageSwitcher currentLang={lang} chevronColor="black" />
             </Flex>
           </Container>
         </Box>
 
         {/* Hero Section */}
-        <Flex
-          direction={{ base: "column", md: "row" }}
-          align="center"
-          justify="space-between"
+        <Box
           py={16}
+          textAlign="center"
         >
-          <Box maxW={{ base: "100%", md: "50%" }} mb={{ base: 10, md: 0 }}>
-            <Box
-              className={logoFont.className}
-              display="flex"
-              alignItems="center"
-              gap={3}
-              fontSize={{ base: 40, md: 50 }}
-              mb={4}
-            >
-              <ReactSVG
-                beforeInjection={(svg) => {
-                  svg.setAttribute("style", "width: 60px");
-                }}
-                src="/logo.svg"
-              />
-              Flybooth Printer
-            </Box>
+          <VStack spacing={6} maxW="3xl" mx="auto">
             <Heading
               as="h1"
               size="xl"
-              mb={6}
               lineHeight="shorter"
               fontWeight="bold"
             >
               {t("printer.hero.title")}
             </Heading>
-            <Text fontSize="xl" mb={8} color={useColorModeValue("gray.600", "gray.400")}>
+            <Text 
+              fontSize="xl" 
+              color={useColorModeValue("gray.600", "gray.400")}
+              maxW="2xl"
+            >
               {t("printer.hero.subtitle")}
             </Text>
-            <Stack direction={{ base: "column", sm: "row" }} spacing={4}>
-              <MotionButton
-                size="lg"
-                colorScheme="purple"
-                fontSize="md"
-                as={Link}
-                href="#pricing"
-              >
-                {t("printer.hero.cta")}
-              </MotionButton>
-              <Button
-                as={Link}
-                href={`/${lang}`}
-                size="lg"
-                fontSize="md"
-                variant="outline"
-                colorScheme="purple"
-                rightIcon={<ChevronRightIcon />}
-              >
-                {t("printer.hero.back")}
-              </Button>
-            </Stack>
-          </Box>
-
-          <MotionBox
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            maxW={{ base: "100%", md: "45%" }}
-          >
-            <MotionImage
-              whileHover={{ scale: 1.05 }}
-              src="https://images.unsplash.com/photo-1625895197185-efcec01cffe0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-              alt="Thermal printer example"
-              rounded="lg"
-              shadow="2xl"
-            />
-          </MotionBox>
-        </Flex>
+            <MotionButton
+              size="lg"
+              colorScheme="purple"
+              fontSize="md"
+              as={Link}
+              href="#pricing"
+              mt={4}
+            >
+              {t("printer.hero.cta")}
+            </MotionButton>
+          </VStack>
+        </Box>
 
         {/* Features Section */}
         <Box py={16}>

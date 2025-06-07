@@ -9,8 +9,10 @@ polyfillCountryFlagEmojis();
 
 export default function LanguageSwitcher({
   currentLang,
+  chevronColor = 'white',
 }: {
   currentLang: string;
+  chevronColor?: string;
 }) {
   const pathname = usePathname();
   return (
@@ -20,7 +22,7 @@ export default function LanguageSwitcher({
         color="inherit"
         style={{ fontSize: 30 }}
         as={Button}
-        rightIcon={<ChevronDownIcon />}
+        rightIcon={<ChevronDownIcon color={chevronColor} />}
         _hover={{ bg: 'rgba(0, 0, 0, 0.05)' }}
         p={2}
         rounded="full"

@@ -134,14 +134,14 @@
   },
   "printer": {
     "hero": {
-      "title": "Instant Thermal Printing for Your Flybooth Event",
+      "title": "Instant Photo Printing for Your Event",
       "subtitle": "Transform your digital photo experience with our eco-friendly, fast, and affordable thermal printers. Let your guests take home physical memories instantly.",
       "cta": "View Rental Options",
       "back": "Back to Flybooth"
     },
     "features": {
       "title": "Why Choose Our Thermal Printers?",
-      "subtitle": "Our thermal printers provide a perfect complement to your Flybooth experience, giving your guests physical takeaways from your digital photobooth.",
+      "subtitle": "Our thermal printers provide a perfect complement to your experience, giving your guests physical takeaways from your digital photobooth.",
       "cards": {
         "instantPrinting": {
           "title": "Instant Printing",
@@ -149,11 +149,11 @@
         },
         "ecoFriendly": {
           "title": "Eco-Friendly",
-          "description": "Thermal paper is recyclable and our printers use minimal energy"
+          "description": "Thermal paper is recyclable and do not require ink cartridges, reducing waste"
         },
         "lowEnergy": {
           "title": "Low Energy",
-          "description": "Our printers run efficiently on battery power for hours"
+          "description": "Our printers run efficiently on very little power, making them perfect for events"
         },
         "costEffective": {
           "title": "Cost-Effective",

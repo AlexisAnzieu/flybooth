@@ -134,7 +134,7 @@
   },
   "printer": {
     "hero": {
-      "title": "Impression thermique instantanée pour votre événement Flybooth",
+      "title": "Impression thermique instantanée pour votre événement",
       "subtitle": "Transformez votre expérience photo numérique avec nos imprimantes thermiques écologiques, rapides et abordables. Permettez à vos invités de repartir immédiatement avec des souvenirs physiques.",
       "cta": "Voir les options de location",
       "back": "Retour à Flybooth"
@@ -149,11 +149,11 @@
         },
         "ecoFriendly": {
           "title": "Écologique",
-          "description": "Le papier thermique est recyclable et nos imprimantes consomment peu d'énergie"
+          "description": "Le papier thermique est recyclable et ne nécessite pas de cartouches d'encre"
         },
         "lowEnergy": {
           "title": "Faible consommation",
-          "description": "Nos imprimantes fonctionnent efficacement sur batterie pendant des heures"
+          "description": "Nos imprimantes fonctionnent efficacement avec très peu d'énergie"
         },
         "costEffective": {
           "title": "Économique",

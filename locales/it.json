@@ -18,7 +18,8 @@
     },
     "footer": {
       "featureAsk": "Clicca qui per suggerire nuove funzionalità",
-      "codedWithLove": "Codificato con ❤ a Montreal"
+      "codedWithLove": "Codificato con ❤ a Montreal",
+      "thermalPrinter": "Noleggia una stampante termica"
     },
     "faq": {
       "title": "Domande Frequenti",
@@ -127,13 +128,13 @@
       "footer": "Codificato con ❤ a Montreal",
       "preview": "Ecco il collegamento al tuo Flybooth, tienilo al sicuro!",
       "subject": "Ecco il tuo Flybooth!",
-      "subtitle": "Ecco un link che ti permetterà di accedervi in ​​qualsiasi momento.",
+      "subtitle": "Ecco un link che ti permetterà di accedervi in qualsiasi momento.",
       "title": "Grazie per aver creato il tuo Flybooth!"
     }
   },
   "printer": {
     "hero": {
-      "title": "Stampa termica istantanea per il tuo evento Flybooth",
+      "title": "Stampa termica istantanea per il tuo evento",
       "subtitle": "Trasforma la tua esperienza fotografica digitale con le nostre stampanti termiche ecologiche, veloci ed economiche. Permetti ai tuoi ospiti di portare a casa ricordi fisici istantaneamente.",
       "cta": "Vedi opzioni di noleggio",
       "back": "Torna a Flybooth"
@@ -148,11 +149,11 @@
         },
         "ecoFriendly": {
           "title": "Ecologico",
-          "description": "La carta termica è riciclabile e le nostre stampanti consumano energia minima"
+          "description": "La carta termica è riciclabile e non richiede cartucce d'inchiostro"
         },
         "lowEnergy": {
           "title": "Basso consumo",
-          "description": "Le nostre stampanti funzionano efficientemente a batteria per ore"
+          "description": "Le nostre stampanti funzionano in modo efficiente con pochissima energia"
         },
         "costEffective": {
           "title": "Conveniente",
