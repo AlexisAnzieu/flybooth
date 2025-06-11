@@ -19,7 +19,13 @@ import {
   Divider,
 } from "@chakra-ui/react";
 import { CheckIcon, ChevronRightIcon } from "@chakra-ui/icons";
-import { FaPrint, FaLeaf, FaBolt, FaMoneyBillWave, FaClock } from "react-icons/fa";
+import {
+  FaPrint,
+  FaLeaf,
+  FaBolt,
+  FaMoneyBillWave,
+  FaClock,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
 import { logoFont } from "../../font";
 import { ReactSVG } from "react-svg";
@@ -30,7 +36,6 @@ import Link from "next/link";
 
 const MotionBox = motion(Box);
 const MotionFlex = motion(Flex);
-const MotionImage = motion(Image);
 
 interface FeatureCardProps {
   icon: React.ComponentType;
@@ -57,61 +62,6 @@ const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
           {description}
         </Text>
       </Flex>
-    </MotionBox>
-  );
-};
-
-interface PricingCardProps {
-  price: number;
-  title: string;
-  description: string;
-  features: string[];
-}
-
-const PricingCard = ({ price, title, description, features }: PricingCardProps) => {
-  return (
-    <MotionBox
-      whileHover={{ y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
-      maxW="330px"
-      w="full"
-      rounded="lg"
-      overflow="hidden"
-      borderWidth="1px"
-      p={6}
-      bg={useColorModeValue("white", "gray.800")}
-    >
-      <Box mb={4}>
-        <Text fontSize="4xl" fontWeight="bold">
-          ${price}
-        </Text>
-        <Text fontSize="sm" color={useColorModeValue("gray.600", "gray.400")}>
-          per day
-        </Text>
-      </Box>
-      <Heading as="h3" size="md" mb={2}>
-        {title}
-      </Heading>
-      <Text color={useColorModeValue("gray.600", "gray.400")} mb={6}>
-        {description}
-      </Text>
-      <Divider mb={6} />
-      <List spacing={3}>
-        {features.map((feature: string, index: number) => (
-          <ListItem key={index}>
-            <ListIcon as={CheckIcon} color="purple.500" />
-            {feature}
-          </ListItem>
-        ))}
-      </List>
-      <MotionButton
-        colorScheme="purple"
-        mt={8}
-        size="lg"
-        w="full"
-        variant="solid"
-      >
-        Rent Now
-      </MotionButton>
     </MotionBox>
   );
 };
@@ -150,51 +100,22 @@ export default function PrinterPage() {
 
   const pricingOptions = [
     {
-      price: 49,
-      title: t("printer.pricing.packages.basic.title"),
-      description: t("printer.pricing.packages.basic.description"),
-      features: [
-        "1 Thermal Printer",
-        "200 sheets of thermal paper",
-        "24-hour rental",
-        "Technical support",
-        "Free shipping and return",
-      ],
-    },
-    {
-      price: 79,
+      price: 200,
       title: t("printer.pricing.packages.standard.title"),
       description: t("printer.pricing.packages.standard.description"),
-      features: [
-        "2 Thermal Printers",
-        "500 sheets of thermal paper",
-        "36-hour rental",
-        "Priority technical support",
-        "Free shipping and return",
-        "Backup battery pack",
-      ],
-    },
-    {
-      price: 129,
-      title: t("printer.pricing.packages.premium.title"),
-      description: t("printer.pricing.packages.premium.description"),
-      features: [
-        "3 Thermal Printers",
-        "1000 sheets of thermal paper",
-        "48-hour rental",
-        "24/7 premium support",
-        "Express delivery and pickup",
-        "Backup battery packs",
-        "Custom branding on prints",
-      ],
+      features: t(
+        "printer.pricing.packages.standard.features",
+        {},
+        { returnObjects: true }
+      ) as string[],
     },
   ];
   return (
     <Box bgColor={bgColor} minH="100vh">
       <Container maxW="7xl">
         {/* Header */}
-        <Box 
-          as="header" 
+        <Box
+          as="header"
           position="sticky"
           top={0}
           zIndex={10}
@@ -204,19 +125,17 @@ export default function PrinterPage() {
           marginLeft="calc(-50vw + 50%)"
           marginRight="calc(-50vw + 50%)"
           backdropFilter="blur(10px)"
-          bg={useColorModeValue('rgba(255, 255, 255, 0.8)', 'rgba(26, 32, 44, 0.8)')}
+          bg={useColorModeValue(
+            "rgba(255, 255, 255, 0.8)",
+            "rgba(26, 32, 44, 0.8)"
+          )}
           borderBottom="1px"
-          borderColor={useColorModeValue('gray.200', 'gray.700')}
+          borderColor={useColorModeValue("gray.200", "gray.700")}
         >
           <Container maxW="7xl">
-            <Flex 
-              justify="space-between" 
-              align="center"
-              py={4}
-              px={6}
-            >
-              <Link href={`/${lang}`} style={{ textDecoration: 'none' }}>
-                <Box 
+            <Flex justify="space-between" align="center" py={4} px={6}>
+              <Link href={`/${lang}`} style={{ textDecoration: "none" }}>
+                <Box
                   className={logoFont.className}
                   display="flex"
                   alignItems="center"
@@ -239,38 +158,92 @@ export default function PrinterPage() {
           </Container>
         </Box>
 
-        {/* Hero Section */}
+        {/* Featured Pricing Section - Moved to Top */}
         <Box
           py={16}
-          textAlign="center"
+          mt={10}
+          rounded="lg"
+          bg="purple.600"
+          color="white"
+          px={{ base: 4, md: 10 }}
         >
-          <VStack spacing={6} maxW="3xl" mx="auto">
-            <Heading
-              as="h1"
-              size="xl"
-              lineHeight="shorter"
-              fontWeight="bold"
+          <SimpleGrid
+            columns={{ base: 1, lg: 2 }}
+            spacing={10}
+            alignItems="center"
+          >
+            <Box
+              textAlign={{ base: "center", lg: "left" }}
+              mb={{ base: 10, lg: 0 }}
             >
-              {t("printer.hero.title")}
-            </Heading>
-            <Text 
-              fontSize="xl" 
-              color={useColorModeValue("gray.600", "gray.400")}
-              maxW="2xl"
-            >
-              {t("printer.hero.subtitle")}
-            </Text>
-            <MotionButton
-              size="lg"
-              colorScheme="purple"
-              fontSize="md"
-              as={Link}
-              href="#pricing"
-              mt={4}
-            >
-              {t("printer.hero.cta")}
-            </MotionButton>
-          </VStack>
+              <Heading size="2xl" mb={6}>
+                {t("printer.pricing.title")}
+              </Heading>
+              <Text fontSize="xl" mb={8} maxW="2xl">
+                {t("printer.pricing.subtitle")}
+              </Text>
+              <MotionButton
+                size="lg"
+                colorScheme="white"
+                variant="outline"
+                _hover={{ bg: "white", color: "purple.600" }}
+                as="a"
+                href="mailto:contact@h2t.club"
+              >
+                {t("printer.cta.button")}
+              </MotionButton>
+            </Box>
+            <Flex justify="center">
+              <MotionBox
+                whileHover={{
+                  y: -10,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                }}
+                maxW="400px"
+                w="full"
+                rounded="lg"
+                overflow="hidden"
+                borderWidth="1px"
+                p={8}
+                bg={useColorModeValue("white", "gray.800")}
+                color={useColorModeValue("gray.800", "white")}
+                transform="scale(1.05)"
+              >
+                <Box mb={4} textAlign="center">
+                  <Text fontSize="6xl" fontWeight="bold" color="purple.500">
+                    ${pricingOptions[0].price}
+                  </Text>
+                  <Text
+                    fontSize="md"
+                    color={useColorModeValue("gray.600", "gray.400")}
+                  >
+                    per day
+                  </Text>
+                </Box>
+                <Heading as="h3" size="lg" mb={4} textAlign="center">
+                  {pricingOptions[0].title}
+                </Heading>
+                <Text
+                  color={useColorModeValue("gray.600", "gray.400")}
+                  mb={6}
+                  textAlign="center"
+                >
+                  {pricingOptions[0].description}
+                </Text>
+                <Divider mb={6} />
+                <List spacing={3}>
+                  {pricingOptions[0].features.map(
+                    (feature: string, index: number) => (
+                      <ListItem key={index}>
+                        <ListIcon as={CheckIcon} color="purple.500" />
+                        {feature}
+                      </ListItem>
+                    )
+                  )}
+                </List>
+              </MotionBox>
+            </Flex>
+          </SimpleGrid>
         </Box>
 
         {/* Features Section */}
@@ -279,7 +252,11 @@ export default function PrinterPage() {
             <Heading as="h2" size="2xl">
               {t("printer.features.title")}
             </Heading>
-            <Text fontSize="lg" color={useColorModeValue("gray.600", "gray.400")} maxW="3xl">
+            <Text
+              fontSize="lg"
+              color={useColorModeValue("gray.600", "gray.400")}
+              maxW="3xl"
+            >
               {t("printer.features.subtitle")}
             </Text>
           </VStack>
@@ -297,7 +274,11 @@ export default function PrinterPage() {
             <Heading as="h2" size="2xl">
               {t("printer.howItWorks.title")}
             </Heading>
-            <Text fontSize="lg" color={useColorModeValue("gray.600", "gray.400")} maxW="3xl">
+            <Text
+              fontSize="lg"
+              color={useColorModeValue("gray.600", "gray.400")}
+              maxW="3xl"
+            >
               {t("printer.howItWorks.subtitle")}
             </Text>
           </VStack>
@@ -392,61 +373,16 @@ export default function PrinterPage() {
           </SimpleGrid>
         </Box>
 
-        {/* Pricing Section */}
-        <Box py={16} id="pricing">
-          <VStack spacing={4} textAlign="center" mb={16}>
-            <Heading as="h2" size="2xl">
-              {t("printer.pricing.title")}
-            </Heading>
-            <Text fontSize="lg" color={useColorModeValue("gray.600", "gray.400")} maxW="3xl">
-              {t("printer.pricing.subtitle")}
-            </Text>
-          </VStack>
-
-          <Flex
-            flexWrap="wrap"
-            justify="center"
-            align="center"
-            gap={10}
-          >
-            {pricingOptions.map((option, index) => (
-              <PricingCard key={index} {...option} />
-            ))}
-          </Flex>
-        </Box>
-
-        {/* CTA Section */}
-        <Box
-          py={16}
-          my={10}
-          rounded="lg"
-          bg="purple.600"
-          color="white"
-          textAlign="center"
-          px={{ base: 4, md: 10 }}
-        >
-          <Heading size="xl" mb={6}>
-            {t("printer.cta.title")}
-          </Heading>
-          <Text fontSize="lg" mb={8} maxW="2xl" mx="auto">
-            {t("printer.cta.subtitle")}
-          </Text>
-          <MotionButton
-            size="lg"
-            colorScheme="white"
-            variant="outline"
-            _hover={{ bg: "white", color: "purple.600" }}
-          >
-            {t("printer.cta.button")}
-          </MotionButton>
-        </Box>
-
         {/* Footer */}
         <Box as="footer" py={10} textAlign="center">
           <Text color={useColorModeValue("gray.600", "gray.400")}>
             © {new Date().getFullYear()} Flybooth. {t("printer.footer.rights")}
           </Text>
-          <Text fontSize="sm" mt={2} color={useColorModeValue("gray.500", "gray.500")}>
+          <Text
+            fontSize="sm"
+            mt={2}
+            color={useColorModeValue("gray.500", "gray.500")}
+          >
             {t("printer.footer.codedWithLove")}
           </Text>
         </Box>

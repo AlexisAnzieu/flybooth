@@ -123,22 +123,16 @@
   },
   "email": {
     "sendLink": {
+      "subject": "Ecco il tuo Flybooth!",
+      "preview": "Ecco il collegamento al tuo Flybooth, tienilo al sicuro!",
+      "title": "Grazie per aver creato il tuo Flybooth!",
+      "subtitle": "Ecco un link che ti permetterà di accedervi in qualsiasi momento.",
       "buttonLabel": "Accedi al tuo Flybooth",
       "ending": "A presto !",
-      "footer": "Codificato con ❤ a Montreal",
-      "preview": "Ecco il collegamento al tuo Flybooth, tienilo al sicuro!",
-      "subject": "Ecco il tuo Flybooth!",
-      "subtitle": "Ecco un link che ti permetterà di accedervi in qualsiasi momento.",
-      "title": "Grazie per aver creato il tuo Flybooth!"
+      "footer": "Codificato con ❤ a Montreal"
     }
   },
   "printer": {
-    "hero": {
-      "title": "Stampa termica istantanea per il tuo evento",
-      "subtitle": "Trasforma la tua esperienza fotografica digitale con le nostre stampanti termiche ecologiche, veloci ed economiche. Permetti ai tuoi ospiti di portare a casa ricordi fisici istantaneamente.",
-      "cta": "Vedi opzioni di noleggio",
-      "back": "Torna a Flybooth"
-    },
     "features": {
       "title": "Perché scegliere le nostre stampanti termiche?",
       "subtitle": "Le nostre stampanti termiche forniscono un complemento perfetto alla tua esperienza Flybooth, dando ai tuoi ospiti ricordi fisici del tuo photobooth digitale.",
@@ -189,40 +183,15 @@
       "perDay": "al giorno",
       "rentNow": "Noleggia ora",
       "packages": {
-        "basic": {
-          "title": "Pacchetto base",
-          "description": "Perfetto per piccoli ritrovi ed eventi personali",
+        "standard": {
+          "title": "Pacchetto standard",
+          "description": "Perfetto per eventi di tutte le dimensioni",
           "features": [
-            "1 Stampante termica",
-            "200 fogli di carta termica",
+            "1 Stampante Flybooth",
+            "500 foto incluse",
             "Noleggio 24 ore",
             "Supporto tecnico",
             "Spedizione e reso gratuiti"
-          ]
-        },
-        "standard": {
-          "title": "Pacchetto standard",
-          "description": "Ideale per eventi e feste di medie dimensioni",
-          "features": [
-            "2 Stampanti termiche",
-            "500 fogli di carta termica",
-            "Noleggio 36 ore",
-            "Supporto tecnico prioritario",
-            "Spedizione e reso gratuiti",
-            "Batteria di riserva"
-          ]
-        },
-        "premium": {
-          "title": "Pacchetto premium",
-          "description": "Il migliore per grandi eventi, matrimoni e funzioni aziendali",
-          "features": [
-            "3 Stampanti termiche",
-            "1000 fogli di carta termica",
-            "Noleggio 48 ore",
-            "Supporto premium 24/7",
-            "Consegna e ritiro express",
-            "Batterie di riserva",
-            "Personalizzazione delle stampe"
           ]
         }
       }

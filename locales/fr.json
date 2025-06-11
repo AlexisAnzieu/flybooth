@@ -133,12 +133,6 @@
     }
   },
   "printer": {
-    "hero": {
-      "title": "Impression thermique instantanée pour votre événement",
-      "subtitle": "Transformez votre expérience photo numérique avec nos imprimantes thermiques écologiques, rapides et abordables. Permettez à vos invités de repartir immédiatement avec des souvenirs physiques.",
-      "cta": "Voir les options de location",
-      "back": "Retour à Flybooth"
-    },
     "features": {
       "title": "Pourquoi choisir nos imprimantes thermiques ?",
       "subtitle": "Nos imprimantes thermiques sont le complément parfait à votre expérience Flybooth, offrant à vos invités des souvenirs physiques de votre photobooth numérique.",
@@ -189,40 +183,15 @@
       "perDay": "par jour",
       "rentNow": "Louer maintenant",
       "packages": {
-        "basic": {
-          "title": "Forfait de base",
-          "description": "Parfait pour les petites réunions et événements personnels",
+        "standard": {
+          "title": "Forfait standard",
+          "description": "Parfait pour tous les événements",
           "features": [
-            "1 Imprimante thermique",
-            "200 feuilles de papier thermique",
+            "1 Imprimante Flybooth",
+            "500 photos incluses",
             "Location de 24 heures",
             "Support technique",
             "Livraison et retour gratuits"
-          ]
-        },
-        "standard": {
-          "title": "Forfait standard",
-          "description": "Idéal pour les événements et fêtes de taille moyenne",
-          "features": [
-            "2 Imprimantes thermiques",
-            "500 feuilles de papier thermique",
-            "Location de 36 heures",
-            "Support technique prioritaire",
-            "Livraison et retour gratuits",
-            "Batterie de secours"
-          ]
-        },
-        "premium": {
-          "title": "Forfait premium",
-          "description": "Idéal pour les grands événements, mariages et événements d'entreprise",
-          "features": [
-            "3 Imprimantes thermiques",
-            "1000 feuilles de papier thermique",
-            "Location de 48 heures",
-            "Support premium 24/7",
-            "Livraison express et ramassage",
-            "Batteries de secours",
-            "Personnalisation des impressions"
           ]
         }
       }

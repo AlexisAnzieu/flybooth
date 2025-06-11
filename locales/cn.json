@@ -123,22 +123,16 @@
   },
   "email": {
     "sendLink": {
+      "subject": "这是您的Flybooth！",
+      "preview": "这是您的Flybooth链接，请妥善保管！",
+      "title": "感谢您创建您的Flybooth！",
+      "subtitle": "这是一个链接，您可以随时访问。",
       "buttonLabel": "访问您的Flybooth",
       "ending": "再见！",
-      "footer": "在蒙特利尔用❤编码",
-      "preview": "这是您的Flybooth链接，请妥善保管！",
-      "subject": "这是您的Flybooth！",
-      "subtitle": "这是一个链接，您可以随时访问。",
-      "title": "感谢您创建您的Flybooth！"
+      "footer": "在蒙特利尔用❤编码"
     }
   },
   "printer": {
-    "hero": {
-      "title": "活动即时热敏打印",
-      "subtitle": "通过我们环保、快速、实惠的热敏打印机，让您的数字照片体验更上一层楼。让您的客人即时带走实体纪念品。",
-      "cta": "查看租赁选项",
-      "back": "返回Flybooth"
-    },
     "features": {
       "title": "为什么选择我们的热敏打印机？",
       "subtitle": "我们的热敏打印机为您的Flybooth体验提供完美补充，为您的客人提供数字照相亭的实体纪念品。",
@@ -189,40 +183,15 @@
       "perDay": "每天",
       "rentNow": "立即租赁",
       "packages": {
-        "basic": {
-          "title": "基础套餐",
-          "description": "非常适合小型聚会和个人活动",
+        "standard": {
+          "title": "标准套餐",
+          "description": "适合所有规模的活动",
           "features": [
-            "1台热敏打印机",
-            "200张热敏纸",
+            "1台Flybooth打印机",
+            "包含500张照片",
             "24小时租赁",
             "技术支持",
             "免费配送和取回"
-          ]
-        },
-        "standard": {
-          "title": "标准套餐",
-          "description": "适合中等规模的活动和派对",
-          "features": [
-            "2台热敏打印机",
-            "500张热敏纸",
-            "36小时租赁",
-            "优先技术支持",
-            "免费配送和取回",
-            "备用电池"
-          ]
-        },
-        "premium": {
-          "title": "高级套餐",
-          "description": "最适合大型活动、婚礼和企业活动",
-          "features": [
-            "3台热敏打印机",
-            "1000张热敏纸",
-            "48小时租赁",
-            "24/7高级支持",
-            "快速配送和取回",
-            "备用电池组",
-            "打印定制品牌"
           ]
         }
       }

@@ -133,12 +133,6 @@
     }
   },
   "printer": {
-    "hero": {
-      "title": "Instant Photo Printing for Your Event",
-      "subtitle": "Transform your digital photo experience with our eco-friendly, fast, and affordable thermal printers. Let your guests take home physical memories instantly.",
-      "cta": "View Rental Options",
-      "back": "Back to Flybooth"
-    },
     "features": {
       "title": "Why Choose Our Thermal Printers?",
       "subtitle": "Our thermal printers provide a perfect complement to your experience, giving your guests physical takeaways from your digital photobooth.",
@@ -184,52 +178,27 @@
       }
     },
     "pricing": {
-      "title": "Printer Rental Options",
-      "subtitle": "Choose the package that best fits your event needs",
+      "title": "Printer Rental Option",
+      "subtitle": "Our simple pricing for all event sizes",
       "perDay": "per day",
       "rentNow": "Rent Now",
       "packages": {
-        "basic": {
-          "title": "Basic Package",
-          "description": "Perfect for small gatherings and personal events",
+        "standard": {
+          "title": "Standard Package",
+          "description": "Perfect for all event sizes",
           "features": [
-            "1 Thermal Printer",
-            "200 sheets of thermal paper",
+            "1 Flybooth Printer",
+            "500 pictures included",
             "24-hour rental",
             "Technical support",
             "Free shipping and return"
-          ]
-        },
-        "standard": {
-          "title": "Standard Package",
-          "description": "Ideal for medium-sized events and parties",
-          "features": [
-            "2 Thermal Printers",
-            "500 sheets of thermal paper",
-            "36-hour rental",
-            "Priority technical support",
-            "Free shipping and return",
-            "Backup battery pack"
-          ]
-        },
-        "premium": {
-          "title": "Premium Package",
-          "description": "Best for large events, weddings, and corporate functions",
-          "features": [
-            "3 Thermal Printers",
-            "1000 sheets of thermal paper",
-            "48-hour rental",
-            "24/7 premium support",
-            "Express delivery and pickup",
-            "Backup battery packs",
-            "Custom branding on prints"
           ]
         }
       }
     },
     "cta": {
       "title": "Ready to enhance your Flybooth experience?",
-      "subtitle": "Contact us today to reserve your thermal printer for your upcoming event. Limited quantities available, so book early!",
+      "subtitle": "Contact us today to reserve your Flybooth printer for your upcoming event. Limited quantities available, so book early!",
       "button": "Contact for Reservation"
     },
     "footer": {

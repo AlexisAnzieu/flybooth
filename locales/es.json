@@ -123,22 +123,16 @@
   },
   "email": {
     "sendLink": {
+      "subject": "¡Aquí está tu Flybooth!",
+      "preview": "Aquí está el enlace a su Flybooth, ¡manténgalo a salvo!",
+      "title": "¡Gracias por crear tu Flybooth!",
+      "subtitle": "Aquí te dejamos un enlace que te permitirá acceder a él en cualquier momento.",
       "buttonLabel": "Accede a tu Flybooth",
       "ending": "Hasta pronto !",
-      "footer": "Codificado con ❤ en Montreal",
-      "preview": "Aquí está el enlace a su Flybooth, ¡manténgalo a salvo!",
-      "subject": "¡Aquí está tu Flybooth!",
-      "subtitle": "Aquí te dejamos un enlace que te permitirá acceder a él en cualquier momento.",
-      "title": "¡Gracias por crear tu Flybooth!"
+      "footer": "Codificado con ❤ en Montreal"
     }
   },
   "printer": {
-    "hero": {
-      "title": "Impresión térmica instantánea para tu evento",
-      "subtitle": "Transforma tu experiencia fotográfica digital con nuestras impresoras térmicas ecológicas, rápidas y asequibles. Permite a tus invitados llevarse recuerdos físicos al instante.",
-      "cta": "Ver opciones de alquiler",
-      "back": "Volver a Flybooth"
-    },
     "features": {
       "title": "¿Por qué elegir nuestras impresoras térmicas?",
       "subtitle": "Nuestras impresoras térmicas proporcionan un complemento perfecto para tu experiencia Flybooth, dando a tus invitados recuerdos físicos de tu fotomatón digital.",
@@ -189,40 +183,15 @@
       "perDay": "por día",
       "rentNow": "Alquilar ahora",
       "packages": {
-        "basic": {
-          "title": "Paquete básico",
-          "description": "Perfecto para reuniones pequeñas y eventos personales",
+        "standard": {
+          "title": "Paquete estándar",
+          "description": "Perfecto para eventos de todos los tamaños",
           "features": [
-            "1 Impresora térmica",
-            "200 hojas de papel térmico",
+            "1 Impresora Flybooth",
+            "500 fotos incluidas",
             "Alquiler de 24 horas",
             "Soporte técnico",
             "Envío y devolución gratis"
-          ]
-        },
-        "standard": {
-          "title": "Paquete estándar",
-          "description": "Ideal para eventos y fiestas de tamaño mediano",
-          "features": [
-            "2 Impresoras térmicas",
-            "500 hojas de papel térmico",
-            "Alquiler de 36 horas",
-            "Soporte técnico prioritario",
-            "Envío y devolución gratis",
-            "Batería de respaldo"
-          ]
-        },
-        "premium": {
-          "title": "Paquete premium",
-          "description": "Lo mejor para eventos grandes, bodas y funciones corporativas",
-          "features": [
-            "3 Impresoras térmicas",
-            "1000 hojas de papel térmico",
-            "Alquiler de 48 horas",
-            "Soporte premium 24/7",
-            "Entrega y recogida express",
-            "Baterías de respaldo",
-            "Personalización en las impresiones"
           ]
         }
       }

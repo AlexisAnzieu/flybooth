@@ -123,22 +123,16 @@
   },
   "email": {
     "sendLink": {
+      "subject": "Hier ist Ihr Flybooth!",
+      "preview": "Hier ist der Link zu Ihrem Flybooth, bewahren Sie ihn gut auf!",
+      "title": "Vielen Dank für die Erstellung Ihres Flybooth!",
+      "subtitle": "Hier ist ein Link, über den Sie jederzeit darauf zugreifen können.",
       "buttonLabel": "Greifen Sie auf Ihre Flybooth zu",
       "ending": "Bis bald !",
-      "footer": "In Montreal mit ❤ codiert",
-      "preview": "Hier ist der Link zu Ihrem Flybooth, bewahren Sie ihn gut auf!",
-      "subject": "Hier ist Ihr Flybooth!",
-      "subtitle": "Hier ist ein Link, über den Sie jederzeit darauf zugreifen können.",
-      "title": "Vielen Dank für die Erstellung Ihres Flybooth!"
+      "footer": "In Montreal mit ❤ codiert"
     }
   },
   "printer": {
-    "hero": {
-      "title": "Sofortiger Thermodruck für Ihre Veranstaltung",
-      "subtitle": "Transformieren Sie Ihr digitales Fotoerlebnis mit unseren umweltfreundlichen, schnellen und kostengünstigen Thermodruckern. Ermöglichen Sie Ihren Gästen, sofort physische Erinnerungen mitzunehmen.",
-      "cta": "Mietoptionen anzeigen",
-      "back": "Zurück zu Flybooth"
-    },
     "features": {
       "title": "Warum unsere Thermodrucker wählen?",
       "subtitle": "Unsere Thermodrucker bieten die perfekte Ergänzung zu Ihrem Flybooth-Erlebnis und geben Ihren Gästen physische Erinnerungen aus Ihrer digitalen Fotobox.",
@@ -189,40 +183,15 @@
       "perDay": "pro Tag",
       "rentNow": "Jetzt mieten",
       "packages": {
-        "basic": {
-          "title": "Basis-Paket",
-          "description": "Perfekt für kleine Zusammenkünfte und private Veranstaltungen",
+        "standard": {
+          "title": "Standard-Paket",
+          "description": "Ideal für alle Veranstaltungsgrößen",
           "features": [
-            "1 Thermodrucker",
-            "200 Blatt Thermopapier",
+            "1 Flybooth-Drucker",
+            "500 Fotos inklusive",
             "24-Stunden-Miete",
             "Technischer Support",
             "Kostenlose Lieferung und Abholung"
-          ]
-        },
-        "standard": {
-          "title": "Standard-Paket",
-          "description": "Ideal für mittelgroße Veranstaltungen und Feiern",
-          "features": [
-            "2 Thermodrucker",
-            "500 Blatt Thermopapier",
-            "36-Stunden-Miete",
-            "Prioritäts-Support",
-            "Kostenlose Lieferung und Abholung",
-            "Ersatzakku"
-          ]
-        },
-        "premium": {
-          "title": "Premium-Paket",
-          "description": "Optimal für große Veranstaltungen, Hochzeiten und Firmenfeiern",
-          "features": [
-            "3 Thermodrucker",
-            "1000 Blatt Thermopapier",
-            "48-Stunden-Miete",
-            "24/7 Premium-Support",
-            "Express-Lieferung und Abholung",
-            "Ersatzakkus",
-            "Individuelles Branding der Ausdrucke"
           ]
         }
       }
