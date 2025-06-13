@@ -116,26 +116,26 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
                 src={image.src}
                 onClick={() => openModal(image.src)}
               />
-              {hoveredId === image.id && (
-                <Box
-                  cursor={"pointer"}
-                  py={1}
-                  px={3}
-                  fontSize={30}
-                  color={"white"}
-                  style={{ backgroundColor: "rgba(107, 70, 193, 0.9)" }}
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    window.open(createDownloadLink(image.id), "_blank");
-                  }}
-                  position="absolute"
-                  bottom="2"
-                  right="3"
-                  borderRadius={15}
-                >
-                  <DownloadIcon />
-                </Box>
-              )}
+              <Box
+                cursor={"pointer"}
+                py={1}
+                px={3}
+                fontSize={30}
+                color={"white"}
+                style={{ backgroundColor: "rgba(107, 70, 193, 0.9)" }}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  window.open(createDownloadLink(image.id), "_blank");
+                }}
+                position="absolute"
+                bottom="2"
+                right="3"
+                borderRadius={15}
+                opacity={hoveredId === image.id ? "1" : "0.6"}
+                transition="opacity 0.2s ease"
+              >
+                <DownloadIcon />
+              </Box>
             </Box>
           </Box>
         ))}
