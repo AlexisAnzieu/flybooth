@@ -4,7 +4,7 @@ const REDIS_ENDPOINT = process.env.REDIS_ENDPOINT;
 const REDIS_PASSWORD = process.env.REDIS_PASSWORD;
 
 const client = new Redis(
-  `redis://default:${REDIS_PASSWORD}@${REDIS_ENDPOINT}:41376`
+  `redis://default:${REDIS_PASSWORD}@${REDIS_ENDPOINT}:6379`
 );
 
 export const set = async (key = "none", value: any, expirationInDays = 1) => {
