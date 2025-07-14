@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
+import "../globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import useTranslation from "next-translate/useTranslation";
 
 import { Providers } from "../providers";
 import { inter } from "../font";
-
-
 
 export function generateMetadata(): Metadata {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -35,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang={lang}>
       <link rel="shortcut icon" href="/favicon.svg" />
-      <body style={{fontFamily: '"Twemoji Country Flags", "Helvetica", "Comic Sans", serif;'}} className={inter.className}>
+      <body className={inter.className}>
         <Providers>{children}</Providers>
         <Analytics />
         <SpeedInsights />
