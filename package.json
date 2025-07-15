@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "slides": "npx @slidev/cli slides.md --open"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
@@ -16,6 +17,7 @@
     "@emotion/styled": "^11.11.0",
     "@formatjs/intl-localematcher": "^0.5.4",
     "@react-email/components": "^0.0.15",
+    "@slidev/theme-apple-basic": "^0.25.1",
     "@types/negotiator": "^0.6.3",
     "@types/uuid": "^9.0.8",
     "@upstash/redis": "^1.35.1",
