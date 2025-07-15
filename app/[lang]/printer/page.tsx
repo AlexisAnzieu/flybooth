@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
+
 import {
   Box,
-  Button,
   Container,
   Flex,
   Heading,
@@ -16,7 +16,6 @@ import {
   VStack,
   useColorModeValue,
   Icon,
-  Stack,
   Divider,
   Modal,
   ModalOverlay,
@@ -50,6 +49,21 @@ interface FeatureCardProps {
   description: string;
 }
 
+// Custom hook to detect if device is mobile (<= 768px)
+function useIsMobile() {
+  const [isMobile, setIsMobile] = React.useState(
+    typeof window !== "undefined" ? window.innerWidth <= 768 : false
+  );
+  React.useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 768);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return isMobile;
+}
+
 const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
   return (
     <MotionBox
@@ -77,6 +91,8 @@ export default function PrinterPage() {
   const { t, lang } = useTranslation("main");
   const bgColor = useColorModeValue("purple.50", "gray.900");
   const galleryBg = useColorModeValue("white", "gray.800");
+
+  const isMobile = useIsMobile();
 
   // Modal state for zoom
   const [isOpen, setIsOpen] = React.useState(false);
@@ -342,8 +358,8 @@ export default function PrinterPage() {
                       maxH={{ base: "60vh", md: "80vh" }}
                       rounded="lg"
                       boxShadow="lg"
-                      transform="scale(1.5)"
-                      transformOrigin="center"
+                      transform={isMobile ? undefined : "scale(1.5)"}
+                      transformOrigin={isMobile ? undefined : "center"}
                     />
                   )}
                 </ModalBody>
