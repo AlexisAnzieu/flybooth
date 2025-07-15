@@ -157,6 +157,10 @@
           "title": "Configuração rápida",
           "description": "Conecte-se ao seu Flybooth em minutos com nossas instruções simples"
         }
+        ,"customizable": {
+          "title": "Marca personalizável",
+          "description": "O logotipo e a mensagem inferior são totalmente personalizáveis"
+        }
       }
     },
     "gallery": {
