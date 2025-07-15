@@ -156,6 +156,10 @@
         "fastSetup": {
           "title": "快速设置",
           "description": "通过我们简单的说明，几分钟内即可连接到您的Flybooth"
+        },
+        "customizable": {
+          "title": "可定制品牌",
+          "description": "徽标和底部消息完全可定制"
         }
       }
     },
