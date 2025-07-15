@@ -179,19 +179,19 @@
     },
     "pricing": {
       "title": "打印机租赁选项",
-      "subtitle": "选择最适合您活动需求的套餐",
+      "subtitle": "适用于所有活动规模的简单定价",
       "perDay": "每天",
       "rentNow": "立即租赁",
       "packages": {
         "standard": {
           "title": "标准套餐",
-          "description": "适合所有规模的活动",
+          "description": "适合各种规模的活动",
           "features": [
             "1台Flybooth打印机",
             "包含500张照片",
             "24小时租赁",
             "技术支持",
-            "免费配送和取回"
+            "免费配送和退还"
           ]
         }
       }

@@ -100,6 +100,7 @@ export default function PrinterPage() {
 
   const pricingOptions = [
     {
+      perDay: t("printer.pricing.perDay"),
       price: 200,
       title: t("printer.pricing.packages.standard.title"),
       description: t("printer.pricing.packages.standard.description"),
@@ -217,7 +218,7 @@ export default function PrinterPage() {
                     fontSize="md"
                     color={useColorModeValue("gray.600", "gray.400")}
                   >
-                    per day
+                    {pricingOptions[0].perDay}
                   </Text>
                 </Box>
                 <Heading as="h3" size="lg" mb={4} textAlign="center">

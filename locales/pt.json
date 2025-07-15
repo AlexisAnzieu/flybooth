@@ -178,18 +178,18 @@
       }
     },
     "pricing": {
-      "title": "Opções de aluguel de impressoras",
-      "subtitle": "Escolha o pacote que melhor atende às necessidades do seu evento",
+      "title": "Opção de aluguel de impressora",
+      "subtitle": "Preços simples para todos os tipos de evento",
       "perDay": "por dia",
       "rentNow": "Alugar agora",
       "packages": {
         "standard": {
           "title": "Pacote padrão",
-          "description": "Perfeito para eventos de todos os tamanhos",
+          "description": "Perfeito para qualquer tipo de evento",
           "features": [
-            "1 Impressora Flybooth",
+            "1 impressora Flybooth",
             "500 fotos incluídas",
-            "Aluguel de 24 horas",
+            "Aluguel por 24 horas",
             "Suporte técnico",
             "Envio e devolução grátis"
           ]

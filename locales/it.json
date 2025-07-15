@@ -178,16 +178,16 @@
       }
     },
     "pricing": {
-      "title": "Opzioni di noleggio stampanti",
-      "subtitle": "Scegli il pacchetto più adatto alle esigenze del tuo evento",
+      "title": "Opzione di noleggio stampante",
+      "subtitle": "Prezzi semplici per ogni tipo di evento",
       "perDay": "al giorno",
       "rentNow": "Noleggia ora",
       "packages": {
         "standard": {
           "title": "Pacchetto standard",
-          "description": "Perfetto per eventi di tutte le dimensioni",
+          "description": "Perfetto per ogni tipo di evento",
           "features": [
-            "1 Stampante Flybooth",
+            "1 stampante Flybooth",
             "500 foto incluse",
             "Noleggio 24 ore",
             "Supporto tecnico",

@@ -178,20 +178,20 @@
       }
     },
     "pricing": {
-      "title": "Drucker-Mietoptionen",
-      "subtitle": "Wählen Sie das Paket, das am besten zu Ihren Veranstaltungsbedürfnissen passt",
+      "title": "Drucker-Mietoption",
+      "subtitle": "Einfache Preise für jede Veranstaltungsgröße",
       "perDay": "pro Tag",
       "rentNow": "Jetzt mieten",
       "packages": {
         "standard": {
-          "title": "Standard-Paket",
-          "description": "Ideal für alle Veranstaltungsgrößen",
+          "title": "Standardpaket",
+          "description": "Perfekt für jede Veranstaltungsgröße",
           "features": [
             "1 Flybooth-Drucker",
             "500 Fotos inklusive",
             "24-Stunden-Miete",
             "Technischer Support",
-            "Kostenlose Lieferung und Abholung"
+            "Kostenloser Versand und Rückgabe"
           ]
         }
       }

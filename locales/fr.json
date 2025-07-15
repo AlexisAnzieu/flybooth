@@ -178,8 +178,8 @@
       }
     },
     "pricing": {
-      "title": "Options de location d'imprimantes",
-      "subtitle": "Choisissez le forfait qui correspond le mieux aux besoins de votre événement",
+      "title": "Option de location d'imprimante",
+      "subtitle": "Tarification simple pour tous les types d'événements",
       "perDay": "par jour",
       "rentNow": "Louer maintenant",
       "packages": {
@@ -187,9 +187,9 @@
           "title": "Forfait standard",
           "description": "Parfait pour tous les événements",
           "features": [
-            "1 Imprimante Flybooth",
+            "1 imprimante Flybooth",
             "500 photos incluses",
-            "Location de 24 heures",
+            "Location 24 heures",
             "Support technique",
             "Livraison et retour gratuits"
           ]
