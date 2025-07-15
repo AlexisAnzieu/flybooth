@@ -159,6 +159,10 @@
         }
       }
     },
+    "gallery": {
+      "title": "Galeria",
+      "subtitle": "Um vislumbre da nossa impressora em ação."
+    },
     "howItWorks": {
       "title": "Como funciona",
       "subtitle": "Configurar sua impressora térmica Flybooth é rápido e fácil",

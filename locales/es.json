@@ -133,6 +133,10 @@
     }
   },
   "printer": {
+    "gallery": {
+      "title": "Galería",
+      "subtitle": "Un vistazo a nuestra impresora en acción."
+    },
     "features": {
       "title": "¿Por qué elegir nuestras impresoras térmicas?",
       "subtitle": "Nuestras impresoras térmicas proporcionan un complemento perfecto para tu experiencia Flybooth, dando a tus invitados recuerdos físicos de tu fotomatón digital.",

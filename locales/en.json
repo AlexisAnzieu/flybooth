@@ -133,6 +133,10 @@
     }
   },
   "printer": {
+    "gallery": {
+      "title": "Gallery",
+      "subtitle": "A glimpse of our printer in action."
+    },
     "features": {
       "title": "Why Choose Our Thermal Printers?",
       "subtitle": "Our thermal printers provide a perfect complement to your experience, giving your guests physical takeaways from your digital photobooth.",

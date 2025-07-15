@@ -133,6 +133,10 @@
     }
   },
   "printer": {
+    "gallery": {
+      "title": "Galerie",
+      "subtitle": "Ein Einblick in unseren Drucker in Aktion."
+    },
     "features": {
       "title": "Warum unsere Thermodrucker wählen?",
       "subtitle": "Unsere Thermodrucker bieten die perfekte Ergänzung zu Ihrem Flybooth-Erlebnis und geben Ihren Gästen physische Erinnerungen aus Ihrer digitalen Fotobox.",

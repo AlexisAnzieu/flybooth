@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import {
   Box,
   Button,
@@ -17,6 +18,11 @@ import {
   Icon,
   Stack,
   Divider,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalBody,
+  ModalCloseButton,
 } from "@chakra-ui/react";
 import { CheckIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import {
@@ -69,6 +75,19 @@ const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
 export default function PrinterPage() {
   const { t, lang } = useTranslation("main");
   const bgColor = useColorModeValue("purple.50", "gray.900");
+  const galleryBg = useColorModeValue("white", "gray.800");
+
+  // Modal state for zoom
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [selectedImg, setSelectedImg] = React.useState<string | null>(null);
+  const openModal = (img: string) => {
+    setSelectedImg(img);
+    setIsOpen(true);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
+    setSelectedImg(null);
+  };
 
   const features = [
     {
@@ -244,6 +263,86 @@ export default function PrinterPage() {
                 </List>
               </MotionBox>
             </Flex>
+          </SimpleGrid>
+        </Box>
+
+        {/* Picture Gallery Section */}
+        <Box py={16}>
+          <VStack spacing={4} textAlign="center" mb={10}>
+            <Heading as="h2" size="xl">
+              {t("printer.gallery.title")}
+            </Heading>
+            <Text
+              fontSize="lg"
+              color={useColorModeValue("gray.600", "gray.400")}
+            >
+              {t("printer.gallery.subtitle")}
+            </Text>
+          </VStack>
+          <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
+            {[
+              "IMG_3449.jpg",
+              "IMG_3454.jpg",
+              "IMG_3601.jpg",
+              "IMG_3602.jpg",
+            ].map((img, idx) => (
+              <MotionBox
+                key={img}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 8px 24px rgba(128, 90, 213, 0.2)",
+                }}
+                rounded="xl"
+                overflow="hidden"
+                shadow="md"
+                borderWidth="1px"
+                bg={galleryBg}
+                p={2}
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                cursor="pointer"
+                onClick={() => openModal(img)}
+                tabIndex={0}
+                aria-label={`Zoom photo ${idx + 1}`}
+              >
+                <Image
+                  src={`/printer/${img}`}
+                  alt={`Printer photo ${idx + 1}`}
+                  objectFit="cover"
+                  w="100%"
+                  h={{ base: "200px", md: "250px" }}
+                  rounded="lg"
+                  transition="all 0.3s"
+                />
+              </MotionBox>
+            ))}
+            {/* Modal for zoomed image */}
+            <Modal isOpen={isOpen} onClose={closeModal} isCentered size="xl">
+              <ModalOverlay />
+              <ModalContent bg={galleryBg}>
+                <ModalCloseButton color="purple.500" />
+                <ModalBody
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  p={4}
+                >
+                  {selectedImg && (
+                    <Image
+                      src={`/printer/${selectedImg}`}
+                      alt="Zoomed printer photo"
+                      maxW="100%"
+                      maxH={{ base: "60vh", md: "80vh" }}
+                      rounded="lg"
+                      boxShadow="lg"
+                      transform="scale(1.5)"
+                      transformOrigin="center"
+                    />
+                  )}
+                </ModalBody>
+              </ModalContent>
+            </Modal>
           </SimpleGrid>
         </Box>
 

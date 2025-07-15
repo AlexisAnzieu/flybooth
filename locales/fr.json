@@ -30,6 +30,7 @@
         "a1": "Dédié au organisateurs d'événements, Flybooth est un photobooth en ligne qui permet aux participants de prendre des photos ou d'envoyer des messages à partir de leur smartphone. Les photos et messages peuvent ensuite être projeté en temps réel sur le matériel mis en place par l'organisateur.",
         "q2": "Est-il possible de modérer les photos ?",
         "a2": "Afin de limiter l'activité manuel de l'organisateur au cours de l'événement, les photos inappropriées sont automatiquement supprimées. Il est important de préciser que l'algorithme n'est cependant pas infaillible.",
+
         "q3": "Combien de temps les photos sont-elles conservées ?",
         "a3": "Les photos sont conservées 7 jours durant lesquels les participants peuvent les revisionner ou les télécharger à partir d'une galerie dédiée.",
         "q4": "Combien de photos les participants peuvent-ils poster ?",
@@ -133,6 +134,10 @@
     }
   },
   "printer": {
+    "gallery": {
+      "title": "Galerie",
+      "subtitle": "Un aperçu de notre imprimante en action."
+    },
     "features": {
       "title": "Pourquoi choisir nos imprimantes thermiques ?",
       "subtitle": "Nos imprimantes thermiques sont le complément parfait à votre expérience Flybooth, offrant à vos invités des souvenirs physiques de votre photobooth numérique.",
