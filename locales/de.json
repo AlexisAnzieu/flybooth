@@ -160,6 +160,10 @@
         "fastSetup": {
           "title": "Schnelle Einrichtung",
           "description": "Verbinden Sie sich in wenigen Minuten mit Ihrer Flybooth durch unsere einfachen Anleitungen"
+        },
+        "customizable": {
+          "title": "Anpassbare Markierung",
+          "description": "Das Logo und die untere Nachricht sind vollständig anpassbar"
         }
       }
     },

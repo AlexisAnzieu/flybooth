@@ -31,6 +31,7 @@ import {
   FaBolt,
   FaMoneyBillWave,
   FaClock,
+  FaCog,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { logoFont } from "../../font";
@@ -114,6 +115,11 @@ export default function PrinterPage() {
       icon: FaClock,
       title: t("printer.features.cards.fastSetup.title"),
       description: t("printer.features.cards.fastSetup.description"),
+    },
+    {
+      icon: FaCog,
+      title: t("printer.features.cards.customizable.title"),
+      description: t("printer.features.cards.customizable.description"),
     },
   ];
 

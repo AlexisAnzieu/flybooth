@@ -154,12 +154,16 @@
           "description": "Our printers run efficiently on very little power, making them perfect for events"
         },
         "costEffective": {
-          "title": "Cost-Effective",
-          "description": "Much cheaper than traditional photo printing for events"
+          "title": "Cost Effective",
+          "description": "Far cheaper than traditional photo printing for events"
         },
         "fastSetup": {
           "title": "Fast Setup",
           "description": "Connect to your Flybooth in minutes with our simple instructions"
+        },
+        "customizable": {
+          "title": "Customizable Branding",
+          "description": "The logo and the bottom message are fully customizable"
         }
       }
     },
