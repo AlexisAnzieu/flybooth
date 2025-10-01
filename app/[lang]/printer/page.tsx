@@ -142,7 +142,7 @@ export default function PrinterPage() {
   const pricingOptions = [
     {
       perDay: t("printer.pricing.perDay"),
-      price: 200,
+      price: 350,
       title: t("printer.pricing.packages.standard.title"),
       description: t("printer.pricing.packages.standard.description"),
       features: t(
