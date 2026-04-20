@@ -38,8 +38,17 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
   const numColumns = useBreakpointValue(BREAKPOINT_VALUES);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isZoomed, setIsZoomed] = useState(false);
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [scale, setScale] = useState(1);
+  const [translate, setTranslate] = useState({ x: 0, y: 0 });
+  const [pinchStartDist, setPinchStartDist] = useState<number | null>(null);
+  const [pinchStartScale, setPinchStartScale] = useState(1);
+  const [dragStart, setDragStart] = useState<{
+    x: number;
+    y: number;
+    tx: number;
+    ty: number;
+  } | null>(null);
+  const [swipeStartX, setSwipeStartX] = useState<number | null>(null);
 
   const { data, isLoading } = useSWR(
     `/api/cloudinary?flyboothId=${flyboothId}&maxResults=500`,
@@ -66,26 +75,31 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
 
   const openModal = (index: number) => {
     setCurrentIndex(index);
-    setIsZoomed(false);
+    resetZoom();
     onOpen();
   };
 
+  const resetZoom = useCallback(() => {
+    setScale(1);
+    setTranslate({ x: 0, y: 0 });
+  }, []);
+
   const handleClose = useCallback(() => {
-    setIsZoomed(false);
+    resetZoom();
     onClose();
-  }, [onClose]);
+  }, [onClose, resetZoom]);
 
   const goToPrev = useCallback(() => {
     if (!data) return;
-    setIsZoomed(false);
+    resetZoom();
     setCurrentIndex((prev) => (prev - 1 + data.length) % data.length);
-  }, [data]);
+  }, [data, resetZoom]);
 
   const goToNext = useCallback(() => {
     if (!data) return;
-    setIsZoomed(false);
+    resetZoom();
     setCurrentIndex((prev) => (prev + 1) % data.length);
-  }, [data]);
+  }, [data, resetZoom]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -99,17 +113,62 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
   }, [isOpen, goToPrev, goToNext, handleClose]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.touches[0].clientX);
+    if (e.touches.length === 2) {
+      const dist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY,
+      );
+      setPinchStartDist(dist);
+      setPinchStartScale(scale);
+      setSwipeStartX(null);
+    } else if (e.touches.length === 1) {
+      if (scale > 1) {
+        setDragStart({
+          x: e.touches[0].clientX,
+          y: e.touches[0].clientY,
+          tx: translate.x,
+          ty: translate.y,
+        });
+      } else {
+        setSwipeStartX(e.touches[0].clientX);
+      }
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (e.touches.length === 2 && pinchStartDist !== null) {
+      const dist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY,
+      );
+      const newScale = Math.min(
+        5,
+        Math.max(1, pinchStartScale * (dist / pinchStartDist)),
+      );
+      setScale(newScale);
+      if (newScale <= 1) setTranslate({ x: 0, y: 0 });
+    } else if (e.touches.length === 1 && dragStart !== null && scale > 1) {
+      setTranslate({
+        x: dragStart.tx + (e.touches[0].clientX - dragStart.x),
+        y: dragStart.ty + (e.touches[0].clientY - dragStart.y),
+      });
+    }
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX === null) return;
-    const diff = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) goToNext();
-      else goToPrev();
+    if (pinchStartDist !== null) {
+      setPinchStartDist(null);
+      if (scale < 1.05) resetZoom();
+    } else if (dragStart !== null) {
+      setDragStart(null);
+    } else if (swipeStartX !== null && scale <= 1) {
+      const diff = swipeStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) goToNext();
+        else goToPrev();
+      }
+      setSwipeStartX(null);
     }
-    setTouchStartX(null);
   };
 
   const createDownloadLink = (publicId: string) => {
@@ -326,7 +385,7 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
             onClick={goToPrev}
           />
 
-          {/* Image with swipe support */}
+          {/* Image with pinch-zoom, pan and swipe support */}
           {currentImage && (
             <Box
               display="flex"
@@ -334,14 +393,21 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
               justifyContent="center"
               width="100vw"
               height="100vh"
-              onClick={() => setIsZoomed((z) => !z)}
+              overflow="hidden"
               onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
+              onClick={() => {
+                if (scale > 1) {
+                  resetZoom();
+                } else {
+                  setScale(2);
+                }
+              }}
               cursor={{
                 base: "default",
-                md: isZoomed ? "zoom-out" : "zoom-in",
+                md: scale > 1 ? "zoom-out" : "zoom-in",
               }}
-              overflow="hidden"
             >
               <Image
                 src={currentImage.src}
@@ -350,16 +416,18 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
                 height={1200}
                 unoptimized
                 style={{
-                  maxWidth: isZoomed ? "none" : "90vw",
-                  maxHeight: isZoomed ? "none" : "90vh",
-                  width: isZoomed ? "auto" : undefined,
-                  height: isZoomed ? "auto" : undefined,
-                  transform: isZoomed ? "scale(2)" : "scale(1)",
-                  transition: "transform 0.3s ease",
-                  borderRadius: isZoomed ? 0 : 16,
+                  maxWidth: "90vw",
+                  maxHeight: "90vh",
                   objectFit: "contain",
+                  transform: `translate(${translate.x}px, ${translate.y}px) scale(${scale})`,
+                  transformOrigin: "center center",
+                  transition:
+                    pinchStartDist !== null || dragStart !== null
+                      ? "none"
+                      : "transform 0.25s ease",
                   userSelect: "none",
                   touchAction: "none",
+                  borderRadius: scale > 1 ? 0 : 16,
                 }}
               />
             </Box>
