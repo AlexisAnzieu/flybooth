@@ -10,6 +10,13 @@ const config = nextTranslate({
       },
     };
   },
+  async redirects() {
+    // The printer offer now lives on its own site.
+    return [
+      { source: "/printer", destination: "https://print.flybooth.app/", permanent: false },
+      { source: "/:lang/printer", destination: "https://print.flybooth.app/", permanent: false },
+    ];
+  },
   images: {
     minimumCacheTTL: 60 * 60 * 24 * 3, // 3 days
     remotePatterns: [

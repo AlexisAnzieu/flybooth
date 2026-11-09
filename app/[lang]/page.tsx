@@ -71,7 +71,7 @@ export default function Index() {
       {/* Printer Banner - Positioned at the top of the page */}
       <Box
         as={Link}
-        href={`/${lang}/printer`}
+        href="https://print.flybooth.app/"
         py={{ base: 4, md: 3 }}
         bg="rgba(0, 0, 0, 0.2)"
         color="white"
