@@ -33,7 +33,7 @@
         "q3": "Por quanto tempo as fotos são mantidas?",
         "a3": "As fotos são mantidas por 7 dias, durante os quais os participantes podem revisá-las ou baixá-las de uma galeria dedicada.",
         "q4": "Quantas fotos os participantes podem postar?",
-        "a4": "Os participantes podem postar até 1000 fotos por evento. Este limite pode ser aumentado em incrementos de $10/1000 fotos adicionais. Mais informações por e-mail contact@h2t.club."
+        "a4": "Os participantes podem postar até 1000 fotos por evento. Este limite pode ser aumentado em incrementos de $10/1000 fotos adicionais. Mais informações por e-mail alexis@anzieu.com."
       }
     }
   },
@@ -133,81 +133,84 @@
     }
   },
   "printer": {
-    "features": {
-      "title": "Por que escolher nossas impressoras térmicas?",
-      "subtitle": "Nossas impressoras térmicas fornecem um complemento perfeito para sua experiência Flybooth, dando aos seus convidados lembranças físicas do seu photobooth digital.",
-      "cards": {
-        "instantPrinting": {
-          "title": "Impressão instantânea",
-          "description": "Fotos são impressas em segundos, dando aos seus convidados uma lembrança imediata"
-        },
-        "ecoFriendly": {
-          "title": "Ecológico",
-          "description": "Papel térmico é reciclável e não requer cartuchos de tinta"
-        },
-        "lowEnergy": {
-          "title": "Baixo consumo",
-          "description": "Nossas impressoras funcionam com eficiência usando muito pouca energia"
-        },
-        "costEffective": {
-          "title": "Custo-benefício",
-          "description": "Muito mais barato que impressão fotográfica tradicional para eventos"
-        },
-        "fastSetup": {
-          "title": "Configuração rápida",
-          "description": "Conecte-se ao seu Flybooth em minutos com nossas instruções simples"
-        },
-        "customizable": {
-          "title": "Marca personalizável",
-          "description": "O logotipo e a mensagem inferior são totalmente personalizáveis"
-        }
-      }
+    "hero": {
+      "title": "Suas fotos do Flybooth, impressas na hora.",
+      "lead": "Alugue uma impressora térmica para o seu evento. Cada foto que seus convidados tiram com o Flybooth é impressa em preto e branco poucos segundos depois, com o seu logo no topo e a sua própria frase embaixo.",
+      "cta": "Reservar por e-mail",
+      "price": "{{price}} $ por dia, entrega e devolução incluídas",
+      "messageLabel": "Teste a frase impressa embaixo de cada foto",
+      "messageDefault": "Ana & Pedro, 14 de junho",
+      "stripAlt": "Exemplo de impressão com uma foto, a data e a sua frase"
     },
     "gallery": {
-      "title": "Galeria",
-      "subtitle": "Um vislumbre da nossa impressora em ação."
+      "title": "A impressora em ação",
+      "subtitle": "As fotos saem em papel da largura de um cupom fiscal, em preto e branco, poucos segundos depois de cada foto.",
+      "enlarge": "Ampliar foto",
+      "close": "Fechar",
+      "alts": [
+        "Impressões de uma festa em Montreal, com o logo dos organizadores no topo",
+        "A impressora sobre um balcão de bar iluminado, cercada de impressões",
+        "A impressora térmica Flybooth, preta com borda laranja",
+        "Impressões alinhadas dos dois lados da impressora"
+      ]
     },
-    "howItWorks": {
-      "title": "Como funciona",
-      "subtitle": "Configurar sua impressora térmica Flybooth é rápido e fácil",
-      "steps": {
-        "step1": {
-          "title": "Alugue e receba",
-          "description": "Escolha seu pacote e entregaremos a impressora em seu local antes do evento"
-        },
-        "step2": {
-          "title": "Conecte e configure",
-          "description": "Siga nossas instruções simples para conectar a impressora ao seu evento Flybooth"
-        },
-        "step3": {
-          "title": "Imprima e aproveite",
-          "description": "Enquanto os convidados tiram fotos, eles receberão cópias impressas instantaneamente para levar para casa"
-        }
-      }
-    },
-    "pricing": {
-      "title": "Opção de aluguel de impressora",
-      "subtitle": "Preços simples para todos os tipos de evento",
+    "receipt": {
+      "title": "O que inclui um dia de aluguel",
+      "heading": "Aluguel de impressora",
+      "items": [
+        "1 impressora Flybooth",
+        "500 impressões",
+        "Aluguel de 24 horas",
+        "Suporte técnico",
+        "Entrega e devolução"
+      ],
+      "total": "Total",
       "perDay": "por dia",
-      "rentNow": "Alugar agora",
-      "packages": {
-        "standard": {
-          "title": "Pacote padrão",
-          "description": "Perfeito para qualquer tipo de evento",
-          "features": [
-            "1 impressora Flybooth",
-            "500 fotos incluídas",
-            "Aluguel por 24 horas",
-            "Suporte técnico",
-            "Envio e devolução grátis"
-          ]
+      "thanks": "Obrigado!"
+    },
+    "why": {
+      "title": "Por que papel térmico",
+      "items": [
+        {
+          "title": "Sem tinta",
+          "description": "O cabeçote aquece o papel diretamente: não há cartuchos para comprar, trocar ou acabar no meio da festa."
+        },
+        {
+          "title": "Basta uma tomada",
+          "description": "Consome pouquíssima energia. Qualquer tomada do local serve."
+        },
+        {
+          "title": "Barata por foto",
+          "description": "Cada impressão custa muito menos que uma revelação fotográfica tradicional."
+        },
+        {
+          "title": "Pronta em minutos",
+          "description": "Ligue na tomada, siga o guia rápido e ela fica conectada ao seu evento Flybooth."
         }
-      }
+      ]
+    },
+    "steps": {
+      "title": "Como funciona o aluguel",
+      "items": [
+        {
+          "title": "Nós entregamos",
+          "description": "Escolha a data e levamos a impressora até você antes do evento."
+        },
+        {
+          "title": "Você conecta",
+          "description": "Siga o guia rápido para conectar a impressora ao seu evento Flybooth. Leva poucos minutos."
+        },
+        {
+          "title": "Os convidados levam as fotos",
+          "description": "Cada foto tirada com o Flybooth é impressa em segundos. Depois do evento, a devolução é por nossa conta."
+        }
+      ]
     },
     "cta": {
-      "title": "Pronto para melhorar sua experiência Flybooth?",
-      "subtitle": "Entre em contato hoje para reservar sua impressora térmica para seu próximo evento. Quantidades limitadas, reserve logo!",
-      "button": "Contato para reserva"
+      "title": "Temos poucas impressoras. Reserve com antecedência.",
+      "subtitle": "Mande para nós a data e o local do seu evento e confirmaremos a disponibilidade por e-mail.",
+      "button": "Reservar por e-mail",
+      "mailSubject": "Aluguel de impressora Flybooth"
     },
     "footer": {
       "rights": "Todos os direitos reservados.",

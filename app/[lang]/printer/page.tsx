@@ -1,514 +1,255 @@
 "use client";
 
 import React from "react";
-
-import {
-  Box,
-  Container,
-  Flex,
-  Heading,
-  Text,
-  Image,
-  SimpleGrid,
-  List,
-  ListItem,
-  ListIcon,
-  VStack,
-  useColorModeValue,
-  Icon,
-  Divider,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalBody,
-  ModalCloseButton,
-} from "@chakra-ui/react";
-import { CheckIcon, ChevronRightIcon } from "@chakra-ui/icons";
-import {
-  FaPrint,
-  FaLeaf,
-  FaBolt,
-  FaMoneyBillWave,
-  FaClock,
-  FaCog,
-} from "react-icons/fa";
-import { motion } from "framer-motion";
-import { logoFont } from "../../font";
-import { ReactSVG } from "react-svg";
-import useTranslation from "next-translate/useTranslation";
-import LanguageSwitcher from "@/component/language-switcher";
-import MotionButton from "@/component/motion-button";
+import Image from "next/image";
 import Link from "next/link";
+import useTranslation from "next-translate/useTranslation";
 
-const MotionBox = motion(Box);
-const MotionFlex = motion(Flex);
+import LanguageSwitcher from "@/component/language-switcher";
+import { archivo, logoFont, martianMono } from "../../font";
+import styles from "./printer.module.css";
 
-interface FeatureCardProps {
-  icon: React.ComponentType;
-  title: string;
-  description: string;
+const PRICE_PER_DAY = 350;
+const CONTACT_EMAIL = "alexis@anzieu.com";
+const MESSAGE_MAX_LENGTH = 32;
+
+// Order matters: it drives the gallery layout and matches gallery.alts.
+const PHOTOS = ["IMG_3601.jpg", "IMG_3449.jpg", "IMG_3602.jpg", "IMG_3454.jpg"];
+
+type TitledItem = { title: string; description: string };
+
+function pad(n: number) {
+  return String(n).padStart(2, "0");
 }
 
-// Custom hook to detect if device is mobile (<= 768px)
-function useIsMobile() {
-  const [isMobile, setIsMobile] = React.useState(
-    typeof window !== "undefined" ? window.innerWidth <= 768 : false
-  );
-  React.useEffect(() => {
-    function handleResize() {
-      setIsMobile(window.innerWidth <= 768);
-    }
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  return isMobile;
+// Same format the printer stamps on real prints: "26/04/2024, 23:09".
+function formatPrintTime(date: Date) {
+  return `${pad(date.getDate())}/${pad(date.getMonth() + 1)}/${date.getFullYear()}, ${pad(
+    date.getHours()
+  )}:${pad(date.getMinutes())}`;
 }
 
-const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
+function PrintStrip({ message, alt }: { message: string; alt: string }) {
+  // Rendered after mount so server and client markup match.
+  const [printedAt, setPrintedAt] = React.useState("");
+  React.useEffect(() => setPrintedAt(formatPrintTime(new Date())), []);
+
   return (
-    <MotionBox
-      whileHover={{ y: -5 }}
-      rounded="xl"
-      p={5}
-      shadow="md"
-      borderWidth="1px"
-      bg={useColorModeValue("white", "gray.800")}
-    >
-      <Flex direction="column" align="center" textAlign="center">
-        <Icon as={icon} boxSize={12} color="purple.500" mb={4} />
-        <Heading fontSize="xl" fontWeight="semibold" mb={2}>
-          {title}
-        </Heading>
-        <Text fontSize="md" color={useColorModeValue("gray.600", "gray.400")}>
-          {description}
-        </Text>
-      </Flex>
-    </MotionBox>
+    <figure className={styles.printer} aria-label={alt}>
+      <div className={styles.printerLip} aria-hidden="true">
+        <span className={styles.printerSlot} />
+      </div>
+      <div className={styles.feed}>
+        <div className={styles.stripShadow}>
+          <div className={styles.strip}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.svg" alt="" className={styles.stripLogo} />
+            <div className={styles.stripPhoto}>
+              <Image
+                src="/printer/IMG_3449.jpg"
+                alt=""
+                fill
+                sizes="280px"
+                priority
+              />
+            </div>
+            <p className={styles.stripMeta}>
+              <span>{printedAt || " "}</span>
+              <span className={styles.stripMessage}>{message || " "}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </figure>
   );
-};
+}
 
 export default function PrinterPage() {
   const { t, lang } = useTranslation("main");
-  const bgColor = useColorModeValue("purple.50", "gray.900");
-  const galleryBg = useColorModeValue("white", "gray.800");
 
-  const isMobile = useIsMobile();
+  const [message, setMessage] = React.useState(() =>
+    t("printer.hero.messageDefault")
+  );
 
-  // Modal state for zoom
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selectedImg, setSelectedImg] = React.useState<string | null>(null);
-  const openModal = (img: string) => {
-    setSelectedImg(img);
-    setIsOpen(true);
+  const dialogRef = React.useRef<HTMLDialogElement>(null);
+  const [openPhoto, setOpenPhoto] = React.useState<number | null>(null);
+
+  const openLightbox = (index: number) => {
+    setOpenPhoto(index);
+    dialogRef.current?.showModal();
   };
-  const closeModal = () => {
-    setIsOpen(false);
-    setSelectedImg(null);
-  };
+  const closeLightbox = () => dialogRef.current?.close();
 
-  const features = [
-    {
-      icon: FaPrint,
-      title: t("printer.features.cards.instantPrinting.title"),
-      description: t("printer.features.cards.instantPrinting.description"),
-    },
-    {
-      icon: FaLeaf,
-      title: t("printer.features.cards.ecoFriendly.title"),
-      description: t("printer.features.cards.ecoFriendly.description"),
-    },
-    {
-      icon: FaBolt,
-      title: t("printer.features.cards.lowEnergy.title"),
-      description: t("printer.features.cards.lowEnergy.description"),
-    },
-    {
-      icon: FaMoneyBillWave,
-      title: t("printer.features.cards.costEffective.title"),
-      description: t("printer.features.cards.costEffective.description"),
-    },
-    {
-      icon: FaClock,
-      title: t("printer.features.cards.fastSetup.title"),
-      description: t("printer.features.cards.fastSetup.description"),
-    },
-    {
-      icon: FaCog,
-      title: t("printer.features.cards.customizable.title"),
-      description: t("printer.features.cards.customizable.description"),
-    },
-  ];
+  const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+    t("printer.cta.mailSubject")
+  )}`;
 
-  const pricingOptions = [
-    {
-      perDay: t("printer.pricing.perDay"),
-      price: 350,
-      title: t("printer.pricing.packages.standard.title"),
-      description: t("printer.pricing.packages.standard.description"),
-      features: t(
-        "printer.pricing.packages.standard.features",
-        {},
-        { returnObjects: true }
-      ) as string[],
-    },
-  ];
+  const alts = t("printer.gallery.alts", {}, { returnObjects: true }) as string[];
+  const receiptItems = t("printer.receipt.items", {}, { returnObjects: true }) as string[];
+  const whyItems = t("printer.why.items", {}, { returnObjects: true }) as TitledItem[];
+  const steps = t("printer.steps.items", {}, { returnObjects: true }) as TitledItem[];
+
+  const price = t("printer.hero.price", { price: PRICE_PER_DAY });
+
   return (
-    <Box bgColor={bgColor} minH="100vh">
-      <Container maxW="7xl">
-        {/* Header */}
-        <Box
-          as="header"
-          position="sticky"
-          top={0}
-          zIndex={10}
-          w="100vw"
-          left={0}
-          right={0}
-          marginLeft="calc(-50vw + 50%)"
-          marginRight="calc(-50vw + 50%)"
-          backdropFilter="blur(10px)"
-          bg={useColorModeValue(
-            "rgba(255, 255, 255, 0.8)",
-            "rgba(26, 32, 44, 0.8)"
-          )}
-          borderBottom="1px"
-          borderColor={useColorModeValue("gray.200", "gray.700")}
-        >
-          <Container maxW="7xl">
-            <Flex justify="space-between" align="center" py={4} px={6}>
-              <Link href={`/${lang}`} style={{ textDecoration: "none" }}>
-                <Box
-                  className={logoFont.className}
-                  display="flex"
-                  alignItems="center"
-                  gap={2}
-                  fontSize="xl"
-                  cursor="pointer"
-                >
-                  <ReactSVG
-                    beforeInjection={(svg) => {
-                      svg.setAttribute("style", "width: 30px");
-                      svg.setAttribute("fill", "black");
-                    }}
-                    src="/logo.svg"
-                  />
-                  Flybooth Printer
-                </Box>
-              </Link>
-              <LanguageSwitcher currentLang={lang} chevronColor="black" />
-            </Flex>
-          </Container>
-        </Box>
+    <div className={`${styles.page} ${archivo.variable} ${martianMono.variable}`}>
+      <header className={`${styles.wrap} ${styles.header}`}>
+        <Link href={`/${lang}`} className={`${styles.brand} ${logoFont.className}`}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.svg" alt="" className={styles.brandMark} />
+          Flybooth
+        </Link>
+        <LanguageSwitcher currentLang={lang} chevronColor="black" />
+      </header>
 
-        {/* Featured Pricing Section - Moved to Top */}
-        <Box
-          py={16}
-          mt={10}
-          rounded="lg"
-          bg="purple.600"
-          color="white"
-          px={{ base: 4, md: 10 }}
-        >
-          <SimpleGrid
-            columns={{ base: 1, lg: 2 }}
-            spacing={10}
-            alignItems="center"
-          >
-            <Box
-              textAlign={{ base: "center", lg: "left" }}
-              mb={{ base: 10, lg: 0 }}
-            >
-              <Heading size="2xl" mb={6}>
-                {t("printer.pricing.title")}
-              </Heading>
-              <Text fontSize="xl" mb={8} maxW="2xl">
-                {t("printer.pricing.subtitle")}
-              </Text>
-              <MotionButton
-                size="lg"
-                colorScheme="white"
-                variant="outline"
-                _hover={{ bg: "white", color: "purple.600" }}
-                as="a"
-                href="mailto:contact@h2t.club"
-              >
-                {t("printer.cta.button")}
-              </MotionButton>
-            </Box>
-            <Flex justify="center">
-              <MotionBox
-                whileHover={{
-                  y: -10,
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-                }}
-                maxW="400px"
-                w="full"
-                rounded="lg"
-                overflow="hidden"
-                borderWidth="1px"
-                p={8}
-                bg={useColorModeValue("white", "gray.800")}
-                color={useColorModeValue("gray.800", "white")}
-                transform="scale(1.05)"
-              >
-                <Box mb={4} textAlign="center">
-                  <Text fontSize="6xl" fontWeight="bold" color="purple.500">
-                    ${pricingOptions[0].price}
-                  </Text>
-                  <Text
-                    fontSize="md"
-                    color={useColorModeValue("gray.600", "gray.400")}
-                  >
-                    {pricingOptions[0].perDay}
-                  </Text>
-                </Box>
-                <Heading as="h3" size="lg" mb={4} textAlign="center">
-                  {pricingOptions[0].title}
-                </Heading>
-                <Text
-                  color={useColorModeValue("gray.600", "gray.400")}
-                  mb={6}
-                  textAlign="center"
-                >
-                  {pricingOptions[0].description}
-                </Text>
-                <Divider mb={6} />
-                <List spacing={3}>
-                  {pricingOptions[0].features.map(
-                    (feature: string, index: number) => (
-                      <ListItem key={index}>
-                        <ListIcon as={CheckIcon} color="purple.500" />
-                        {feature}
-                      </ListItem>
-                    )
-                  )}
-                </List>
-              </MotionBox>
-            </Flex>
-          </SimpleGrid>
-        </Box>
+      <main>
+        <section className={`${styles.wrap} ${styles.hero}`}>
+          <div className={styles.heroCopy}>
+            <h1 className={styles.display}>{t("printer.hero.title")}</h1>
+            <p className={styles.lead}>{t("printer.hero.lead")}</p>
+            <div className={styles.actions}>
+              <a href={mailto} className={styles.button}>
+                {t("printer.hero.cta")}
+              </a>
+              <p className={styles.priceNote}>{price}</p>
+            </div>
+          </div>
 
-        {/* Picture Gallery Section */}
-        <Box py={16}>
-          <VStack spacing={4} textAlign="center" mb={10}>
-            <Heading as="h2" size="xl">
-              {t("printer.gallery.title")}
-            </Heading>
-            <Text
-              fontSize="lg"
-              color={useColorModeValue("gray.600", "gray.400")}
-            >
-              {t("printer.gallery.subtitle")}
-            </Text>
-          </VStack>
-          <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
-            {[
-              "IMG_3449.jpg",
-              "IMG_3454.jpg",
-              "IMG_3601.jpg",
-              "IMG_3602.jpg",
-            ].map((img, idx) => (
-              <MotionBox
-                key={img}
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 8px 24px rgba(128, 90, 213, 0.2)",
-                }}
-                rounded="xl"
-                overflow="hidden"
-                shadow="md"
-                borderWidth="1px"
-                bg={galleryBg}
-                p={2}
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                cursor="pointer"
-                onClick={() => openModal(img)}
-                tabIndex={0}
-                aria-label={`Zoom photo ${idx + 1}`}
+          <div className={styles.heroObject}>
+            <PrintStrip message={message} alt={t("printer.hero.stripAlt")} />
+            <label className={styles.messageField}>
+              <span>{t("printer.hero.messageLabel")}</span>
+              <input
+                type="text"
+                value={message}
+                maxLength={MESSAGE_MAX_LENGTH}
+                onChange={(e) => setMessage(e.target.value)}
+              />
+            </label>
+          </div>
+        </section>
+
+        <section className={`${styles.wrap} ${styles.section}`}>
+          <div className={styles.sectionIntro}>
+            <h2 className={styles.heading}>{t("printer.gallery.title")}</h2>
+            <p className={styles.muted}>{t("printer.gallery.subtitle")}</p>
+          </div>
+          <div className={styles.gallery}>
+            {PHOTOS.map((photo, index) => (
+              <button
+                key={photo}
+                type="button"
+                className={styles.tile}
+                onClick={() => openLightbox(index)}
+                aria-label={`${t("printer.gallery.enlarge")}: ${alts[index]}`}
               >
                 <Image
-                  src={`/printer/${img}`}
-                  alt={`Printer photo ${idx + 1}`}
-                  objectFit="cover"
-                  w="100%"
-                  h={{ base: "200px", md: "250px" }}
-                  rounded="lg"
-                  transition="all 0.3s"
+                  src={`/printer/${photo}`}
+                  alt={alts[index]}
+                  fill
+                  sizes="(min-width: 900px) 50vw, 100vw"
                 />
-              </MotionBox>
+              </button>
             ))}
-            {/* Modal for zoomed image */}
-            <Modal isOpen={isOpen} onClose={closeModal} isCentered size="xl">
-              <ModalOverlay />
-              <ModalContent bg={galleryBg}>
-                <ModalCloseButton color="purple.500" />
-                <ModalBody
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  p={4}
-                >
-                  {selectedImg && (
-                    <Image
-                      src={`/printer/${selectedImg}`}
-                      alt="Zoomed printer photo"
-                      maxW="100%"
-                      maxH={{ base: "60vh", md: "80vh" }}
-                      rounded="lg"
-                      boxShadow="lg"
-                      transform={isMobile ? undefined : "scale(1.5)"}
-                      transformOrigin={isMobile ? undefined : "center"}
-                    />
-                  )}
-                </ModalBody>
-              </ModalContent>
-            </Modal>
-          </SimpleGrid>
-        </Box>
+          </div>
+        </section>
 
-        {/* Features Section */}
-        <Box py={16}>
-          <VStack spacing={4} textAlign="center" mb={10}>
-            <Heading as="h2" size="2xl">
-              {t("printer.features.title")}
-            </Heading>
-            <Text
-              fontSize="lg"
-              color={useColorModeValue("gray.600", "gray.400")}
-              maxW="3xl"
-            >
-              {t("printer.features.subtitle")}
-            </Text>
-          </VStack>
+        <section className={`${styles.wrap} ${styles.section} ${styles.offer}`}>
+          <div className={styles.offerReceipt}>
+            <h2 className={styles.heading}>{t("printer.receipt.title")}</h2>
+            <div className={styles.receiptShadow}>
+              <div className={styles.receipt}>
+                <p className={`${styles.receiptBrand} ${logoFont.className}`}>Flybooth</p>
+                <p className={styles.receiptHeading}>{t("printer.receipt.heading")}</p>
+                <ul className={styles.receiptItems}>
+                  {receiptItems.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+                <div className={styles.receiptTotal}>
+                  <span>{t("printer.receipt.total")}</span>
+                  <span className={styles.receiptAmount}>${PRICE_PER_DAY}</span>
+                </div>
+                <p className={styles.receiptPerDay}>{t("printer.receipt.perDay")}</p>
+                <p className={styles.receiptThanks}>{t("printer.receipt.thanks")}</p>
+              </div>
+            </div>
+          </div>
 
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10} mt={10}>
-            {features.map((feature, index) => (
-              <FeatureCard key={index} {...feature} />
+          <div className={styles.offerWhy}>
+            <h2 className={styles.heading}>{t("printer.why.title")}</h2>
+            <dl className={styles.why}>
+              {whyItems.map((item) => (
+                <div key={item.title}>
+                  <dt>{item.title}</dt>
+                  <dd>{item.description}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
+        <section className={`${styles.wrap} ${styles.section}`}>
+          <h2 className={styles.heading}>{t("printer.steps.title")}</h2>
+          <ol className={styles.steps}>
+            {steps.map((step) => (
+              <li key={step.title}>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </li>
             ))}
-          </SimpleGrid>
-        </Box>
+          </ol>
+        </section>
 
-        {/* How It Works */}
-        <Box py={16}>
-          <VStack spacing={4} textAlign="center" mb={16}>
-            <Heading as="h2" size="2xl">
-              {t("printer.howItWorks.title")}
-            </Heading>
-            <Text
-              fontSize="lg"
-              color={useColorModeValue("gray.600", "gray.400")}
-              maxW="3xl"
-            >
-              {t("printer.howItWorks.subtitle")}
-            </Text>
-          </VStack>
+        <section className={`${styles.wrap} ${styles.closing}`}>
+          <h2 className={styles.display}>{t("printer.cta.title")}</h2>
+          <p className={styles.lead}>{t("printer.cta.subtitle")}</p>
+          <div className={styles.actions}>
+            <a href={mailto} className={styles.button}>
+              {t("printer.cta.button")}
+            </a>
+            <a href={mailto} className={styles.emailLink}>
+              {CONTACT_EMAIL}
+            </a>
+          </div>
+        </section>
+      </main>
 
-          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
-            <MotionFlex
-              whileHover={{ y: -5 }}
-              direction="column"
-              align="center"
-              textAlign="center"
-            >
-              <Box
-                rounded="full"
-                bg="purple.100"
-                p={4}
-                mb={6}
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                w="80px"
-                h="80px"
-              >
-                <Text fontSize="3xl" fontWeight="bold" color="purple.500">
-                  1
-                </Text>
-              </Box>
-              <Heading as="h3" size="lg" mb={4}>
-                {t("printer.howItWorks.steps.step1.title")}
-              </Heading>
-              <Text color={useColorModeValue("gray.600", "gray.400")}>
-                {t("printer.howItWorks.steps.step1.description")}
-              </Text>
-            </MotionFlex>
+      <footer className={`${styles.wrap} ${styles.footer}`}>
+        <p>
+          © {new Date().getFullYear()} Flybooth. {t("printer.footer.rights")}
+        </p>
+        <p>{t("printer.footer.codedWithLove")}</p>
+      </footer>
 
-            <MotionFlex
-              whileHover={{ y: -5 }}
-              direction="column"
-              align="center"
-              textAlign="center"
-            >
-              <Box
-                rounded="full"
-                bg="purple.100"
-                p={4}
-                mb={6}
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                w="80px"
-                h="80px"
-              >
-                <Text fontSize="3xl" fontWeight="bold" color="purple.500">
-                  2
-                </Text>
-              </Box>
-              <Heading as="h3" size="lg" mb={4}>
-                {t("printer.howItWorks.steps.step2.title")}
-              </Heading>
-              <Text color={useColorModeValue("gray.600", "gray.400")}>
-                {t("printer.howItWorks.steps.step2.description")}
-              </Text>
-            </MotionFlex>
-
-            <MotionFlex
-              whileHover={{ y: -5 }}
-              direction="column"
-              align="center"
-              textAlign="center"
-            >
-              <Box
-                rounded="full"
-                bg="purple.100"
-                p={4}
-                mb={6}
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                w="80px"
-                h="80px"
-              >
-                <Text fontSize="3xl" fontWeight="bold" color="purple.500">
-                  3
-                </Text>
-              </Box>
-              <Heading as="h3" size="lg" mb={4}>
-                {t("printer.howItWorks.steps.step3.title")}
-              </Heading>
-              <Text color={useColorModeValue("gray.600", "gray.400")}>
-                {t("printer.howItWorks.steps.step3.description")}
-              </Text>
-            </MotionFlex>
-          </SimpleGrid>
-        </Box>
-
-        {/* Footer */}
-        <Box as="footer" py={10} textAlign="center">
-          <Text color={useColorModeValue("gray.600", "gray.400")}>
-            © {new Date().getFullYear()} Flybooth. {t("printer.footer.rights")}
-          </Text>
-          <Text
-            fontSize="sm"
-            mt={2}
-            color={useColorModeValue("gray.500", "gray.500")}
-          >
-            {t("printer.footer.codedWithLove")}
-          </Text>
-        </Box>
-      </Container>
-    </Box>
+      <dialog
+        ref={dialogRef}
+        className={styles.lightbox}
+        onClose={() => setOpenPhoto(null)}
+        onClick={(e) => {
+          // A click on the backdrop lands on the dialog element itself.
+          if (e.target === e.currentTarget) closeLightbox();
+        }}
+      >
+        {openPhoto !== null && (
+          <div className={styles.lightboxFrame}>
+            <Image
+              src={`/printer/${PHOTOS[openPhoto]}`}
+              alt={alts[openPhoto]}
+              fill
+              sizes="100vw"
+              quality={85}
+            />
+          </div>
+        )}
+        <button
+          type="button"
+          className={styles.lightboxClose}
+          onClick={closeLightbox}
+        >
+          {t("printer.gallery.close")}
+        </button>
+      </dialog>
+    </div>
   );
 }

@@ -217,7 +217,7 @@ export default function Index() {
             pb={4}
           >
             <Box fontSize={27}>
-              <Link href="mailto:contact@h2t.club">
+              <Link href="mailto:alexis@anzieu.com">
                 <Icon as={FaEnvelope} />
               </Link>
             </Box>

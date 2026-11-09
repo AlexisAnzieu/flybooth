@@ -129,7 +129,7 @@ h1 {
 <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl">
 <div class="text-4xl mb-4">📅</div>
 <h3 class="font-bold text-blue-800 mb-2">Réservez</h3>
-<p class="text-sm text-gray-600">Réservez votre imprimante Flybooth en nous contactant sur contact@h2t.club</p>
+<p class="text-sm text-gray-600">Réservez votre imprimante Flybooth en nous contactant sur alexis@anzieu.com</p>
 </div>
 </v-click>
 
@@ -168,7 +168,7 @@ Démontrer que le processus est accessible à tous.
 <h3 class="font-bold mb-6 text-xl">Prêt pour votre événement ?</h3>
 
 <div class="space-y-4">
-<a href="mailto:contact@h2t.club" class="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full text-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+<a href="mailto:alexis@anzieu.com" class="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full text-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
   ✉️ Nous contacter
 </a>
 

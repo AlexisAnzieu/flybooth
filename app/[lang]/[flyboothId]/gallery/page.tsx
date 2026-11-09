@@ -292,7 +292,7 @@ export default function Gallery({ params: { flyboothId } }: PageProps) {
         p={5}
       >
         <Box fontSize={27}>
-          <Link href="mailto:contact@h2t.club">
+          <Link href="mailto:alexis@anzieu.com">
             <Icon as={FaEnvelope} />
           </Link>
         </Box>

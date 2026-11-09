@@ -30,11 +30,10 @@
         "a1": "Dédié au organisateurs d'événements, Flybooth est un photobooth en ligne qui permet aux participants de prendre des photos ou d'envoyer des messages à partir de leur smartphone. Les photos et messages peuvent ensuite être projeté en temps réel sur le matériel mis en place par l'organisateur.",
         "q2": "Est-il possible de modérer les photos ?",
         "a2": "Afin de limiter l'activité manuel de l'organisateur au cours de l'événement, les photos inappropriées sont automatiquement supprimées. Il est important de préciser que l'algorithme n'est cependant pas infaillible.",
-
         "q3": "Combien de temps les photos sont-elles conservées ?",
         "a3": "Les photos sont conservées 7 jours durant lesquels les participants peuvent les revisionner ou les télécharger à partir d'une galerie dédiée.",
         "q4": "Combien de photos les participants peuvent-ils poster ?",
-        "a4": "Les participants peuvent poster jusqu'à 1000 photos par événement. Cette limite peut-être augmentée par palier de 10$/1000 photos additionnelles. Plus d'information par courriel contact@h2t.club."
+        "a4": "Les participants peuvent poster jusqu'à 1000 photos par événement. Cette limite peut-être augmentée par palier de 10$/1000 photos additionnelles. Plus d'information par courriel alexis@anzieu.com."
       }
     }
   },
@@ -134,81 +133,84 @@
     }
   },
   "printer": {
+    "hero": {
+      "title": "Vos photos Flybooth, imprimées sur place.",
+      "lead": "Louez une imprimante thermique pour votre événement. Chaque photo prise par vos invités avec Flybooth s'imprime en noir et blanc quelques secondes plus tard, avec votre logo en haut et votre propre message en bas.",
+      "cta": "Réserver par courriel",
+      "price": "{{price}} $ par jour, livraison et retour inclus",
+      "messageLabel": "Essayez le message imprimé sous chaque photo",
+      "messageDefault": "Léa & Sam, 14 juin",
+      "stripAlt": "Exemple d'impression avec une photo, la date et votre message"
+    },
     "gallery": {
-      "title": "Galerie",
-      "subtitle": "Un aperçu de notre imprimante en action."
+      "title": "L'imprimante en action",
+      "subtitle": "Les impressions sortent sur du papier de la largeur d'un ticket de caisse, en noir et blanc, quelques secondes après chaque photo.",
+      "enlarge": "Agrandir la photo",
+      "close": "Fermer",
+      "alts": [
+        "Des impressions d'une soirée à Montréal, avec le logo des organisateurs en haut",
+        "L'imprimante sur un comptoir de bar illuminé, entourée d'impressions",
+        "L'imprimante thermique Flybooth, noire avec une bordure orange",
+        "Des impressions alignées de chaque côté de l'imprimante"
+      ]
     },
-    "features": {
-      "title": "Pourquoi choisir nos imprimantes thermiques ?",
-      "subtitle": "Nos imprimantes thermiques sont le complément parfait à votre expérience Flybooth, offrant à vos invités des souvenirs physiques de votre photobooth numérique.",
-      "cards": {
-        "instantPrinting": {
-          "title": "Impression instantanée",
-          "description": "Les photos s'impriment en quelques secondes, offrant à vos invités un souvenir immédiat"
-        },
-        "ecoFriendly": {
-          "title": "Écologique",
-          "description": "Le papier thermique est recyclable et ne nécessite pas de cartouches d'encre"
-        },
-        "lowEnergy": {
-          "title": "Faible consommation",
-          "description": "Nos imprimantes fonctionnent efficacement avec très peu d'énergie"
-        },
-        "costEffective": {
-          "title": "Économique",
-          "description": "Bien moins cher que l'impression photo traditionnelle pour les événements"
-        },
-        "fastSetup": {
-          "title": "Installation rapide",
-          "description": "Connectez-vous à votre Flybooth en quelques minutes avec nos instructions simples"
-        },
-        "customizable": {
-          "title": "Personnalisation complète",
-          "description": "Le logo et le message du bas sont entièrement personnalisables"
-        }
-      }
-    },
-    "howItWorks": {
-      "title": "Comment ça marche",
-      "subtitle": "La mise en place de votre imprimante thermique Flybooth est rapide et facile",
-      "steps": {
-        "step1": {
-          "title": "Louez et recevez",
-          "description": "Choisissez votre forfait et nous livrerons l'imprimante à votre emplacement avant votre événement"
-        },
-        "step2": {
-          "title": "Connectez et installez",
-          "description": "Suivez nos instructions simples pour connecter l'imprimante à votre événement Flybooth"
-        },
-        "step3": {
-          "title": "Imprimez et profitez",
-          "description": "À mesure que les invités prennent des photos, ils reçoivent instantanément des copies imprimées à emporter"
-        }
-      }
-    },
-    "pricing": {
-      "title": "Option de location d'imprimante",
-      "subtitle": "Tarification simple pour tous les types d'événements",
+    "receipt": {
+      "title": "Ce que comprend une journée de location",
+      "heading": "Location imprimante",
+      "items": [
+        "1 imprimante Flybooth",
+        "500 impressions",
+        "Location 24 heures",
+        "Support technique",
+        "Livraison et retour"
+      ],
+      "total": "Total",
       "perDay": "par jour",
-      "rentNow": "Louer maintenant",
-      "packages": {
-        "standard": {
-          "title": "Forfait standard",
-          "description": "Parfait pour tous les événements",
-          "features": [
-            "1 imprimante Flybooth",
-            "500 photos incluses",
-            "Location 24 heures",
-            "Support technique",
-            "Livraison et retour gratuits"
-          ]
+      "thanks": "Merci !"
+    },
+    "why": {
+      "title": "Pourquoi le papier thermique",
+      "items": [
+        {
+          "title": "Pas d'encre",
+          "description": "La tête d'impression chauffe directement le papier : aucune cartouche à acheter, à changer ou à voir se vider en pleine soirée."
+        },
+        {
+          "title": "Une simple prise suffit",
+          "description": "Elle consomme très peu d'énergie. N'importe quelle prise de la salle fait l'affaire."
+        },
+        {
+          "title": "Peu coûteux par photo",
+          "description": "Chaque impression revient bien moins cher qu'un tirage photo classique."
+        },
+        {
+          "title": "Prête en quelques minutes",
+          "description": "Branchez-la, suivez le petit guide, et elle est reliée à votre événement Flybooth."
         }
-      }
+      ]
+    },
+    "steps": {
+      "title": "Comment se passe la location",
+      "items": [
+        {
+          "title": "On vous la livre",
+          "description": "Choisissez votre date, nous vous apportons l'imprimante avant l'événement."
+        },
+        {
+          "title": "Vous la connectez",
+          "description": "Suivez le petit guide pour relier l'imprimante à votre événement Flybooth. Ça prend quelques minutes."
+        },
+        {
+          "title": "Vos invités repartent avec leurs photos",
+          "description": "Chaque photo prise avec Flybooth s'imprime en quelques secondes. Après l'événement, le retour est à nos frais."
+        }
+      ]
     },
     "cta": {
-      "title": "Prêt à améliorer votre expérience Flybooth ?",
-      "subtitle": "Contactez-nous dès aujourd'hui pour réserver votre imprimante thermique pour votre prochain événement. Quantités limitées, réservez tôt !",
-      "button": "Contactez-nous pour une réservation"
+      "title": "Nous avons peu d'imprimantes. Réservez tôt.",
+      "subtitle": "Envoyez-nous la date et le lieu de votre événement, nous vous confirmerons la disponibilité par courriel.",
+      "button": "Réserver par courriel",
+      "mailSubject": "Location d'imprimante Flybooth"
     },
     "footer": {
       "rights": "Tous droits réservés.",

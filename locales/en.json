@@ -33,7 +33,7 @@
         "q3": "How long are the photos kept?",
         "a3": "The photos are kept for 7 days during which participants can review or download them from a dedicated gallery.",
         "q4": "How many photos can participants post?",
-        "a4": "Participants can post up to 1000 photos per event. This limit can be increased by increments of $10/1000 additional photos. More information by email contact@h2t.club."
+        "a4": "Participants can post up to 1000 photos per event. This limit can be increased by increments of $10/1000 additional photos. More information by email alexis@anzieu.com."
       }
     }
   },
@@ -133,81 +133,84 @@
     }
   },
   "printer": {
+    "hero": {
+      "title": "Your Flybooth photos, printed on the spot.",
+      "lead": "Rent a thermal printer for your event. Every photo your guests take with Flybooth prints a few seconds later in black and white, with your logo at the top and your own line at the bottom.",
+      "cta": "Reserve by email",
+      "price": "${{price}} a day, delivery and return included",
+      "messageLabel": "Try the line printed under each photo",
+      "messageDefault": "Léa & Sam, June 14",
+      "stripAlt": "Example print with a photo, the date and your line of text"
+    },
     "gallery": {
-      "title": "Gallery",
-      "subtitle": "A glimpse of our printer in action."
+      "title": "The printer at work",
+      "subtitle": "Prints come out on receipt-width paper, in black and white, a few seconds after each photo.",
+      "enlarge": "Enlarge photo",
+      "close": "Close",
+      "alts": [
+        "Prints from a party in Montreal, with the organizers' logos at the top",
+        "The printer on a lit-up bar counter, surrounded by fresh prints",
+        "The Flybooth thermal printer, black with an orange trim",
+        "Prints laid out on both sides of the printer"
+      ]
     },
-    "features": {
-      "title": "Why Choose Our Thermal Printers?",
-      "subtitle": "Our thermal printers provide a perfect complement to your experience, giving your guests physical takeaways from your digital photobooth.",
-      "cards": {
-        "instantPrinting": {
-          "title": "Instant Printing",
-          "description": "Photos print in seconds, giving your guests an immediate keepsake"
-        },
-        "ecoFriendly": {
-          "title": "Eco-Friendly",
-          "description": "Thermal paper is recyclable and do not require ink cartridges, reducing waste"
-        },
-        "lowEnergy": {
-          "title": "Low Energy",
-          "description": "Our printers run efficiently on very little power, making them perfect for events"
-        },
-        "costEffective": {
-          "title": "Cost Effective",
-          "description": "Far cheaper than traditional photo printing for events"
-        },
-        "fastSetup": {
-          "title": "Fast Setup",
-          "description": "Connect to your Flybooth in minutes with our simple instructions"
-        },
-        "customizable": {
-          "title": "Customizable Branding",
-          "description": "The logo and the bottom message are fully customizable"
-        }
-      }
-    },
-    "howItWorks": {
-      "title": "How It Works",
-      "subtitle": "Setting up your Flybooth thermal printer is quick and easy",
-      "steps": {
-        "step1": {
-          "title": "Rent & Receive",
-          "description": "Choose your package and we'll deliver the printer to your location before your event"
-        },
-        "step2": {
-          "title": "Connect & Setup",
-          "description": "Follow our simple instructions to connect the printer to your Flybooth event"
-        },
-        "step3": {
-          "title": "Print & Enjoy",
-          "description": "As guests take photos, they'll receive instant printed copies to take home"
-        }
-      }
-    },
-    "pricing": {
-      "title": "Printer Rental Option",
-      "subtitle": "Our simple pricing for all event sizes",
+    "receipt": {
+      "title": "What a day of rental includes",
+      "heading": "Printer rental",
+      "items": [
+        "1 Flybooth printer",
+        "500 prints",
+        "24-hour rental",
+        "Technical support",
+        "Delivery and return"
+      ],
+      "total": "Total",
       "perDay": "per day",
-      "rentNow": "Rent Now",
-      "packages": {
-        "standard": {
-          "title": "Standard Package",
-          "description": "Perfect for all event sizes",
-          "features": [
-            "1 Flybooth Printer",
-            "500 pictures included",
-            "24-hour rental",
-            "Technical support",
-            "Free shipping and return"
-          ]
+      "thanks": "Thank you!"
+    },
+    "why": {
+      "title": "Why thermal paper",
+      "items": [
+        {
+          "title": "No ink",
+          "description": "The print head heats the paper directly, so there are no cartridges to buy, change or run out of mid-party."
+        },
+        {
+          "title": "Any outlet will do",
+          "description": "It uses very little power. A regular wall socket at the venue is all it needs."
+        },
+        {
+          "title": "Cheap per photo",
+          "description": "Each print costs far less than a traditional photo print."
+        },
+        {
+          "title": "Ready in minutes",
+          "description": "Plug it in, follow the short guide, and it's linked to your Flybooth event."
         }
-      }
+      ]
+    },
+    "steps": {
+      "title": "How the rental works",
+      "items": [
+        {
+          "title": "We deliver it",
+          "description": "Pick your date and we bring the printer to you before the event."
+        },
+        {
+          "title": "You connect it",
+          "description": "Follow the short guide to link the printer to your Flybooth event. It takes a few minutes."
+        },
+        {
+          "title": "Guests take prints home",
+          "description": "Every photo taken with Flybooth prints within seconds. After the event, the return is on us."
+        }
+      ]
     },
     "cta": {
-      "title": "Ready to enhance your Flybooth experience?",
-      "subtitle": "Contact us today to reserve your Flybooth printer for your upcoming event. Limited quantities available, so book early!",
-      "button": "Contact for Reservation"
+      "title": "We only have a few printers. Book early.",
+      "subtitle": "Email us your date and where the event takes place, and we'll confirm availability.",
+      "button": "Reserve by email",
+      "mailSubject": "Flybooth printer rental"
     },
     "footer": {
       "rights": "All rights reserved.",
